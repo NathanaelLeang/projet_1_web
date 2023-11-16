@@ -1,0 +1,106 @@
+/*selecteur universel qui permet de definir la police de tous les textes*/
+* {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*permet de bien afficher la balise header*/
+#agence {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-left: 200px;
+    margin-right: 200px;
+    display: block;
+    color: lawngreen;
+    font-family: 'Brush Script MT';
+    font-size: 70px;
+    text-decoration: underline;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+/*permet de mofifier la balise label*/
+label {
+    cursor: pointer;
+    font-size: 20px;
+    color: darkblue;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/*permet de retirer la case à cocher qui se situe à cote du texte de la balise label*/
+#bouton {
+    display: none;
+}
+
+/*permet de cacher la balise p d'id: text*/
+#text {
+    display: none;
+}
+
+/*permet d'afficher la balise p d'id:text ainsi que son background quand on click sur le label*/
+#bouton:checked + label + #text {
+    display: block;
+    background-color: white;
+    border: 1px solid black;
+}
+
+/*permet de retirer le underline de la balise label quand on click sur le label*/
+#bouton:checked + label {
+    text-decoration: none;
+}
+
+/*permet de mettre la font-size voulu et de souligner la liste de destination de la balise a de class destination*/
+a.destination{
+    font-size: 20px;
+    text-decoration: underline;
+    color: darkblue;
+}
+
+/*permet de changer la couleur du texte de la balise a de class destination quand deja consulte*/
+a.destination:visited {
+    text-decoration: none;
+    color: rebeccapurple;
+}
+
+/*permet de retirer les decoration du texte et de mettre ce dernier en gras quand la balise a de class destination est survolé*/
+a.destination:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: darkblue;
+}
+
+/*permet de retirer les decoration du texte et de changer de couleur quand le click est activé sur le texte de la balise a de class destination*/
+a.destination:active {
+    text-decoration: none;
+    color: red;
+}
+
+/*permet de mettre en gras et couleur dakblue des balises dt d'id: joindre*/
+#joindre dt {
+    font-weight: bold;
+    color: darkblue;
+}
+
+/*permet de modifier les balises dd*/
+#joindre dd {
+    font-style: italic;
+}
+
+/*permet de modifier la 1ere balise dd dans la balise dl d'id:joindre*/
+#joindre dd:first-of-type {
+    text-decoration: underline;
+}
+
+/*permet de creer un background du footer*/
+footer {
+    background: rgba(124, 252, 0, 0.4);
+    margin-right: 900px;
+    border: solid black 2px;
+}
+
+/*permet de definir la taille des images d'id:socialicon*/
+#socialicon img {
+    width: 30px;
+}
