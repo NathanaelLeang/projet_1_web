@@ -1,54 +1,75 @@
 /* Styles généraux */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Style du header */
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Style du lien du header */
-  #agence {
-    text-decoration: none;
-    font-size: 24px;
-    color: #fff;
-  }
-  
-  /* Style du footer */
-  footer {
-    background-color: #f4f4f4;
-    padding: 20px;
-  }
-  
-  /* Style des informations de contact */
-  #joindre {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  #joindre dt {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  #joindre dd {
-    margin-bottom: 10px;
-  }
-  
-  /* Style des icônes sociales */
-  #socialicon {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #socialicon a {
-    margin-right: 10px;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Style du header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style du lien du header */
+#agence {
+  text-decoration: none;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Style du footer */
+footer {
+background-color: #333;
+color: #fff;
+padding: 40px 20px;
+display: flex;
+justify-content: space-between;
+align-items: flex-start; /* Aligner les éléments en haut */
+flex-wrap: wrap;
+}
+
+/* Style des icônes sociales */
+#socialicon {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+align-items: center; /* Centrer verticalement */
+}
+
+#socialicon a {
+margin-right: 30px;
+}
+
+#socialicon img {
+width: 35px;
+height: 35px;
+}
+
+/* Style des informations de contact */
+#joindre {
+flex: 1 1 300px;
+margin: 0;
+padding: 0;
+list-style-type: square; /* Utiliser des points pour la liste */
+}
+
+#joindre dt {
+font-weight: bold;
+margin-top: 10px;
+}
+
+#joindre dd {
+margin-bottom: 10px;
+line-height: 1.5;
+}
+
+/* Style de la carte */
+footer iframe {
+width: 200px;
+height: 150px;
+border: 0;
+margin-left: auto; /* Aligner la carte à droite */
+}
