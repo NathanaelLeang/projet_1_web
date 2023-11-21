@@ -1,3 +1,9 @@
+html {
+    background-image: url(https://www.publicdomainpictures.net/pictures/310000/velka/airplane-flying-1567518449EwC.jpg);
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 /*selecteur universel qui permet de definir la police de tous les textes*/
 * {
     font-size: 18px;
