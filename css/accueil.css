@@ -4,7 +4,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 /*permet de bien afficher la balise header*/
 #agence {
     text-align: center;
@@ -22,6 +21,7 @@
 
 /*permet de mofifier la balise label*/
 label {
+    padding: 15px;
     cursor: pointer;
     font-size: 20px;
     color: darkblue;
@@ -52,27 +52,26 @@ label {
 }
 
 /*permet de mettre la font-size voulu et de souligner la liste de destination de la balise a de class destination*/
-a.destination{
+p.destination{
     font-size: 20px;
     text-decoration: underline;
     color: darkblue;
 }
 
 /*permet de changer la couleur du texte de la balise a de class destination quand deja consulte*/
-a.destination:visited {
+p.destination:visited {
     text-decoration: none;
     color: rebeccapurple;
 }
-
 /*permet de retirer les decoration du texte et de mettre ce dernier en gras quand la balise a de class destination est survolé*/
-a.destination:hover {
+p.destination:hover {
     text-decoration: none;
     font-weight: bold;
     color: darkblue;
 }
 
 /*permet de retirer les decoration du texte et de changer de couleur quand le click est activé sur le texte de la balise a de class destination*/
-a.destination:active {
+p.destination:active {
     text-decoration: none;
     color: red;
 }
@@ -95,6 +94,7 @@ a.destination:active {
 
 /*permet de creer un background du footer*/
 footer {
+    padding: 15px;
     background: rgba(124, 252, 0, 0.4);
     margin-right: 900px;
     border: solid black 2px;
@@ -103,4 +103,94 @@ footer {
 /*permet de definir la taille des images d'id:socialicon*/
 #socialicon img {
     width: 30px;
+}
+
+/*permet de modifier la balise nav*/
+nav {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*permet d'avoir une liste sans les puces decalé de 15px*/
+ul {
+    list-style: none;
+    padding: 15px;
+}
+
+/*permet de définir le type de curseur qui sera affiché lorsque le pointeur de la souris hover la balise p de class destination*/
+p.destination {
+    cursor: auto;
+}
+
+/*cache toutes les images */
+.image-container {
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    top: 125px;
+    left: 250px;
+}
+/*positionne l'image1 dans le .image-container dans la taille voulu*/
+.image-container #img1 {
+    display: none;
+    position: relative;
+    height: 200px;
+    width: 300px;
+    border: solid black 2px;
+}
+/*affiche l'image1 quand text1 hover*/
+#text1:hover ~ .image-container #img1{
+    display: block;
+}
+
+/*positionne l'image2 dans le .image-container dans la taille voulu*/
+.image-container #img2 {
+    display: none;
+    position: relative;
+    height: 200px;
+    width: 300px;
+    border: solid black 2px;
+}
+/*affiche l'image2 quand text2 hover*/
+#text2:hover ~ .image-container #img2 {
+    display: block;
+}
+
+/*positionne l'image3 dans le .image-container dans la taille voulu*/
+.image-container #img3 {
+    display: none;
+    position: relative;
+    height: 200px;
+    width: 300px;
+    border: solid black 2px;
+}
+/*affiche l'image3 quand text3 hover*/
+#text3:hover ~ .image-container #img3 {
+    display: block;
+}
+
+/*positionne l'image4 dans le .image-container dans la taille voulu*/
+.image-container #img4 {
+    display: none;
+    position: relative;
+    height: 200px;
+    width: 300px;
+    border: solid black 2px;
+}
+/*affiche l'image4 quand text4 hover*/
+#text4:hover ~ .image-container #img4 {
+    display: block;
+}
+
+/*positionne l'image5 dans le .image-container dans la taille voulu*/
+.image-container #img5 {
+    display: none;
+    position: relative;
+    height: 200px;
+    width: 300px;
+    border: solid black 2px;
+}
+/*affiche l'image5 quand text5 hover*/
+#text5:hover ~ .image-container #img5 {
+    display: block;
 }
