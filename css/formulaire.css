@@ -1,0 +1,54 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style du header */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Style du lien du header */
+  #agence {
+    text-decoration: none;
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  /* Style du footer */
+  footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  /* Style des informations de contact */
+  #joindre {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  #joindre dt {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  #joindre dd {
+    margin-bottom: 10px;
+  }
+  
+  /* Style des icônes sociales */
+  #socialicon {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #socialicon a {
+    margin-right: 10px;
+  }
+  
