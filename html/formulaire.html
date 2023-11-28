@@ -14,7 +14,85 @@
     </header>
 
     <main>
-        <p>BLABLA</p>
+        <h2>VOUS SOUHAITEZ VOYAGER !!!!!</h2>
+        <h4>Remplissez donc ce formulaire !</h4>
+        <form method="post" action="#" class="Formulaire">
+            <fieldset>
+                <legend>Vos Vist'informations personnelles</legend>
+
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" id="nom" placeholder="Votre nom">
+                <label for="prenom">Prénom :</label>
+                <input type="text" name="prenom" id="prenom" placeholder="Votre prénom">
+                <br><br>
+                <label for="age"> Quel est votre âge ? :"</label>
+                <select id="age" name="age">
+                        <option value="0">- Séléctionner -</option>
+                        <option value="18/25">18 - 25 ans</option>
+                        <option value="26/35">26 - 35 ans</option>
+                        <option value="36/45">36 - 45 ans</option>
+                        <option value="46/55">46 - 55 ans</option>
+                        <option value="56/65">56 - 65 ans</option>
+                        <option value="66/75">66 - 75 ans</option>
+                        <option value="76+">+76 ans</option>
+                </select>
+                <br><br>
+                <label for="naissance">Date de Naissance:</label>
+                <input type="date" id="naissance" name="trip-start" value="2005-08-18" min="1900-01-01" max="2023-12-31" />
+                <br><br>
+                <label for="tel">Téléphone :</label>
+                <input type="tel" name="Téléphone" id="tel" placeholder="ex: (+33) (0)3 01 23 45 67">
+                <br><br>
+                <label for="email">Adresse E-mail :</label>
+                <input style="width:250px"type="email" name="email" id="email" placeholder="ex: xyz@gmail.com">
+                <br><br>
+                <label for="adress">Adresse</label>
+                <input style="width:50px" type="text" name="numrue" id="numadress" placeholder="1">
+                <input type="text" name="adresse" id="adress" placeholder="rue Charles de Gaulle">
+                <label for="nom">Ville</label>
+                <input type="text" name="ville" id="ville" placeholder="ex: Lille">
+                <label for="nom">Code Postal</label>
+                <input type="text" name="codepostal" id="codepostal" placeholder="ex : 59000">
+
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>Destinations</legend>
+
+                <label for="dest?">Avez-vous choisis une déstination ?</label>
+                <select id="dest?" name="dest">
+                    <option value="0">- Séléctionner -</option>
+                    <option value="1">Sichuan</option>
+                    <option value="2">Machu Picchu</option>
+                    <option value="3">Antalya</option>
+                    <option value="4">Île de Paques</option>
+                    <option value="5">Terragone</option>
+                </select>
+                <br><br>
+                <label for="qd?">quand ? décideriez-vous de partir ? :</label>
+                <input type="date" id="qd?" name="trip-start" value="2023-12-24" min="2024-01-01" max="2025-12-31" />
+                <br><br>
+                <label for="CbnTps?">Quel serai la durée de votre voyage ? :</label>
+                <br>
+                <input style="width:25px"type="text" name="sem" placeholder="01">
+                <label for="CbnTps?">semaine(s) et </label>
+                <input style="width:25px"type="text" name="j" placeholder="6">
+                <label for="CbnTps?">jours (entre 0 et 6) </label>
+                <br><br>
+                <label for="Nbvoyageurs">Avec combien de personnes ?</label>
+                <select id="Nbvoyageurs" name="NbVoyageurs">
+                    <option value="0">- Séléctionner -</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 ou 6+</option>
+                </select>
+            </fieldset>
+            <br><br>
+            <input type="submit" value="Envoyer">
+            <input type="reset" value="Réinitialiser">
+        </form>
     </main>
 
     <footer>
@@ -23,7 +101,7 @@
             <li><a href="http://twitter.com/biblioJunia"><img src="../img/twitter.png" alt="Twitter"></a></li>
             <li><a href="http://instagram.com/biblioJunia"><img src="../img/instagram.png" alt="Instagram"></a></li>
         </ul>
-    
+
         <dl id="joindre">
             <dt>Téléphone</dt>
             <dd>+33 1 02 03 04 05</dd>
@@ -34,9 +112,9 @@
                 59800 Lille Cedex
             </dd>
         </dl>
-    
+
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6184678248474!2d3.0487603999999875!3d50.634204099999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0!3m2!1sfr!2sfr!4v1695145218130!5m2!1sfr!2sfr" width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </footer>
-    
+
 </body>
 </html>
