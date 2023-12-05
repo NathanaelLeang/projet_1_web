@@ -15,6 +15,7 @@ Pour ajouter ton code dans ce repository :
 
 - Si tu veux enregistrer et commit et push les modifications
     - Retourne sur Source Control et normalement tu peux voir ce que tu as modifié ou ajouté
+    - Surtout n'oublie pas de mette un commentaire dans ton commit sinon cela ne va pas fonctionner
     - Clique sur la petite flèche à côté du bouton commit et clique sur commit & push
 
 - Voilà mantenant tu peux constater sur GitHub que tout a été ajouté.
