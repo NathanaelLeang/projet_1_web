@@ -35,8 +35,10 @@ header {
 
 /* Le programme */
 .conteneur-programme {
-  display: flex; /* Utilisation de flexbox pour aligner les éléments horizontalement */
-  background-color: brown;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  max-width: 1100px;
 }
 
 .image-deffilante {
@@ -44,33 +46,40 @@ header {
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
   flex: 1; /* Permet à l'image de prendre 50% de la largeur du conteneur */
-  background-color: blue;
 }
 
 /* Pour ajuster la taille de l'image */
 .image-deffilante img {
-  max-width: 80%; /* Pour que l'image s'adapte à la taille du conteneur */
+  max-width: 85%; /* Pour que l'image s'adapte à la taille du conteneur */
   height: auto;
+  border-radius: 5px;
 }
 
 .programme {
   flex: 1; /* Permet au texte de prendre 50% de la largeur du conteneur */
-  background-color: green;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.programme:hover{
+  transform: translateY(-2px) translateX(-1px);
 }
 
 /* Pour styliser le texte, par exemple, si tu veux lui donner une marge */
-.programme p {
+.programme p, .programme h3, .programme ul{
   margin: 10px; /* Exemple de marge autour du paragraphe */
-  background-color: red;
 }
 /*--------------------------------------------------------------------------*/
 
 /*La Description*/
 .conteneur-description {
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si besoin */
-  background-color: blueviolet;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  max-width: 1100px;
 }
+
 
 .conteneur-texte {
   flex: 1 0 50%; /* Fait en sorte que le conteneur-texte prenne la moitié de la largeur et ne soit pas redimensionné */
@@ -78,32 +87,32 @@ header {
   text-align: left;
   padding: 20px;
   box-sizing: border-box; /* Inclut le padding dans la largeur */
-  background-color: aqua;
 }
 
-.description-texte, h2 {
+.description-texte, .conteneur-description h3, .conteneur-description ul {
   text-align: left;
-  background-color: antiquewhite;
 }
 
 .carte {
   flex: 1 0 50%; /* Fait en sorte que la carte prenne la moitié de la largeur et ne soit pas redimensionnée */
-  max-width: 50%; /* Limite la largeur de la carte */
-  padding-top: 50%; /* Définit la hauteur de la carte comme étant égale à 50% de sa largeur */
+  max-width: 40%; /* Limite la largeur de la carte */
+  padding-top: 40%; /* Définit la hauteur de la carte comme étant égale à 50% de sa largeur */
   position: relative;
-  background-color: chartreuse;
   overflow: hidden;
-  display: flex; /* Ajout de flex pour centrer le contenu */
-  justify-content: center; /* Centre le contenu horizontalement */
 }
 
 #carte-sichuan {
   position: absolute;
   width: 80%;
   height: 80%;
-  top: 0;
-  left: 0;
-  
+  top: 10%;
+  left: 10%;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+#carte-sichuan:hover{
+  transform: scale(1.02);
 }
 
 /*--------------------------------------------------------------------------*/
