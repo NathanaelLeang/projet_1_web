@@ -3,68 +3,126 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
   }
-  
-  /* Style du header */
-  header {
-    /* Dégradé linéaire du haut (#333) vers le bas (transparent) pour le fond du header */
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+
+main {
+    border-left: 1px solid #000; /* Bordure côté gauche */
+    border-right: 1px solid #000; /* Bordure côté droit */
+    padding: 0 50px; /* Marge intérieure sur les côtés */
 }
+/*--------------------------------------------------------------------------*/
 
   
-  /* Style du lien du header */
-  #agence {
-    text-decoration: none;
-    font-size: 24px;
-    color: #fff;
-  }
+/* Style du header */
+header {
+  /* Dégradé linéaire du haut (#333) vers le bas (transparent) pour le fond du header */
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+/*--------------------------------------------------------------------------*/
 
-  /* Styles pour le contenu principal */
+  
+/* Style du lien du header */
+#agence {
+  text-decoration: none;
+  font-size: 24px;
+  color: #fff;
+}
+/*--------------------------------------------------------------------------*/
 
-.destination-info {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+/* Styles pour le contenu principal */
+
+/* Le programme */
+.conteneur-programme {
+  display: flex; /* Utilisation de flexbox pour aligner les éléments horizontalement */
+  background-color: brown;
 }
 
-.destination-info img {
-    display: block;
-    margin: 0 auto 20px; /* Centrer l'image et ajouter un espace en bas */
-    max-width: 80%; /* Image adaptative à la largeur du conteneur */
-    height: auto;
+.image-deffilante {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  flex: 1; /* Permet à l'image de prendre 50% de la largeur du conteneur */
+  background-color: blue;
 }
 
-
-.destination-info h3 {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 15px;
-    font-weight: bold;
+/* Pour ajuster la taille de l'image */
+.image-deffilante img {
+  max-width: 80%; /* Pour que l'image s'adapte à la taille du conteneur */
+  height: auto;
 }
 
-.destination-info p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+.programme {
+  flex: 1; /* Permet au texte de prendre 50% de la largeur du conteneur */
+  background-color: green;
+}
+
+/* Pour styliser le texte, par exemple, si tu veux lui donner une marge */
+.programme p {
+  margin: 10px; /* Exemple de marge autour du paragraphe */
+  background-color: red;
+}
+/*--------------------------------------------------------------------------*/
+
+/*La Description*/
+.conteneur-description {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si besoin */
+  background-color: blueviolet;
+}
+
+.conteneur-texte {
+  flex: 1 0 50%; /* Fait en sorte que le conteneur-texte prenne la moitié de la largeur et ne soit pas redimensionné */
+  max-width: 50%; /* Limite la largeur du conteneur texte */
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box; /* Inclut le padding dans la largeur */
+  background-color: aqua;
+}
+
+.description-texte, h2 {
+  text-align: left;
+  background-color: antiquewhite;
+}
+
+.carte {
+  flex: 1 0 50%; /* Fait en sorte que la carte prenne la moitié de la largeur et ne soit pas redimensionnée */
+  max-width: 50%; /* Limite la largeur de la carte */
+  padding-top: 50%; /* Définit la hauteur de la carte comme étant égale à 50% de sa largeur */
+  position: relative;
+  background-color: chartreuse;
+  overflow: hidden;
+  display: flex; /* Ajout de flex pour centrer le contenu */
+  justify-content: center; /* Centre le contenu horizontalement */
+}
+
+#carte-sichuan {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 0;
+  left: 0;
+  
+}
+
+/*--------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------*/
+/* Style du footer */
+footer {
+  background-color: #333; /* Couleur de fond de secours */
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligner les éléments en haut */
+  flex-wrap: wrap;
 }
 
   
-  /* Style du footer */
-  footer {
-    background-color: #333; /* Couleur de fond de secours */
-    color: #fff;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Aligner les éléments en haut */
-    flex-wrap: wrap;
-}
-
-  
-  /* Style des icônes sociales */
-  #socialicon {
+/* Style des icônes sociales */
+#socialicon {
   list-style: none;
   margin-top: 3%;
   margin-right: 10%;
@@ -73,37 +131,37 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centrer verticalement */
-  }
+}
 
   
-  #socialicon img {
+#socialicon img {
   width: 45px;
   height: 45px;
   margin: 10%;
-  }
+}
   
-  /* Style des informations de contact */
-  #joindre {
+/* Style des informations de contact */
+#joindre {
   flex: 1 1 300px;
   margin: 0;
   padding: 0;
   list-style-type: square; /* Utiliser des points pour la liste */
-  }
+}
   
-  #joindre dt {
+#joindre dt {
   font-weight: bold;
   margin-top: 10px;
-  }
+}
   
-  #joindre dd {
+#joindre dd {
   margin-bottom: 10px;
   line-height: 1.5;
-  }
+}
   
-  /* Style de la carte */
-  footer iframe {
+/* Style de la carte */
+footer iframe {
   width: 200px;
   height: 150px;
   border: 0;
   margin-left: auto; /* Aligner la carte à droite */
-  }
+}
