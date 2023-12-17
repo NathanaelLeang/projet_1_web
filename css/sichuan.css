@@ -1,15 +1,12 @@
 /* Styles généraux */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #8d0303;
-  }
-
-main {
-    border-left: 1px solid #000; /* Bordure côté gauche */
-    border-right: 1px solid #000; /* Bordure côté droit */
-    padding: 0 50px; /* Marge intérieure sur les côtés */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #8d0303;
+  padding: 0;
 }
+
+
 /*--------------------------------------------------------------------------*/
 
   
@@ -34,6 +31,7 @@ header {
 
 .corps{
   background-color: white;
+  margin: 0 6% 0 6%;
 }
 
 /* Styles pour le contenu principal */
@@ -47,26 +45,72 @@ header {
   padding: 2%;
 }
 
-.image-deffilante {
+/*---------------------------------------------------------------------------------*/
+
+/*.image-deffilante {
   display: flex;
   justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
-  flex: 1; /* Permet à l'image de prendre 50% de la largeur du conteneur */
+/*  align-items: center; /* Centre verticalement */
+/*  flex: 1; /* Permet à l'image de prendre 50% de la largeur du conteneur */
+/*}*/
+
+/* Pour ajuster la taille de l'image*/
+/*.image-deffilante img {
+  max-width: 85%; /* Pour que l'image s'adapte à la taille du conteneur */
+/*  height: auto;
+  border-radius: 5px;
+}*/
+
+.image-deffilante {
+  max-width: 500px;
+  margin: auto;
+  margin-right: 2%;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
-/* Pour ajuster la taille de l'image */
-.image-deffilante img {
-  max-width: 85%; /* Pour que l'image s'adapte à la taille du conteneur */
-  height: auto;
-  border-radius: 5px;
+.image-deffilante .slider {
+  animation: slider-1 17s infinite ease-in-out;
+  display: flex;
 }
+
+.slider img{
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@keyframes slider-1 {
+  0%,
+  28% {
+    transform: translateX(0);
+  }
+  33%,
+  62% {
+    transform: translateX(-100%);
+  }
+  66%,
+  95% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+/*------------------------------------------------------------------------------------------*/
 
 .programme {
+  overflow: hidden;
+  word-wrap: break-word;
   flex: 1; /* Permet au texte de prendre 50% de la largeur du conteneur */
   padding: 2%;
   border: 1px solid transparent;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
+}
+
+.programme li{
+  padding-bottom: 6px;
 }
 
 .programme:hover{
@@ -101,24 +145,23 @@ header {
 }
 
 .carte {
-  flex: 1 0 50%; /* Fait en sorte que la carte prenne la moitié de la largeur et ne soit pas redimensionnée */
-  max-width: 40%; /* Limite la largeur de la carte */
-  padding-top: 40%; /* Définit la hauteur de la carte comme étant égale à 50% de sa largeur */
+  flex: 1 0 48%; /* Prend la moitié de la largeur disponible */
+  max-width: 48%; /* Limite la largeur */
   position: relative;
   overflow: hidden;
 }
 
 #carte-sichuan {
   position: absolute;
-  width: 80%;
-  height: 80%;
   top: 10%;
-  left: 10%;
+  left: 20%;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   transition: transform 0.3s ease;
 }
 
-#carte-sichuan:hover{
+#carte-sichuan:hover {
   transform: scale(1.02);
 }
 
