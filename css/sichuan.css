@@ -17,6 +17,11 @@ header {
   color: #fff;
   padding: 20px;
   text-align: center;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
 }
 /*--------------------------------------------------------------------------*/
 
@@ -30,7 +35,7 @@ header {
 /*--------------------------------------------------------------------------*/
 
 .corps{
-  background-color: white;
+  background-color: rgb(255, 247, 228);
   margin: 0 6% 0 6%;
 }
 
