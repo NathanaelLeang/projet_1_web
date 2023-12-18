@@ -21,11 +21,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
+  flex-wrap: wrap;
 }
 
 .agency-name{
   margin-left: 10%;
+  transition: transform 0.7s ease;
+}
+
+.agency-name:hover{
+  transform: scale(1.02);
 }
 
 nav ul {
@@ -33,6 +39,7 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 nav ul li {
@@ -141,7 +148,7 @@ header:hover {
   padding: 2%;
   border: 1px solid transparent;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .programme li{
@@ -186,20 +193,15 @@ header:hover {
 }
 
 .carte {
-  flex: 1 0 48%; /* Prend la moitié de la largeur disponible */
   max-width: 48%; /* Limite la largeur */
-  position: relative;
-  overflow: hidden;
+  margin: auto;
 }
 
 #carte-sichuan {
-  position: absolute;
-  top: 10%;
-  left: 20%;
   width: 300px;
   height: 300px;
   border-radius: 20px;
-  transition: transform 0.3s ease, border-radius 0.3s ease;
+  transition: transform 0.3s ease, border-radius 0.2s ease;
 }
 
 #carte-sichuan:hover {
@@ -212,6 +214,8 @@ header:hover {
   margin: auto;
   margin-bottom: 20px;
   margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .conteneur-liste li{
@@ -286,3 +290,64 @@ header:hover {
   opacity: 0.6;
 }
 
+/*################################################################################"*/
+
+/* Media query pour les tablettes */
+/* Media query pour les tablettes */
+@media only screen and (max-width: 1005px) {
+  /* Réorganiser la disposition des éléments */
+  .conteneur-programme {
+    display: block;
+  }
+  
+  .programme,
+  .carte,
+  .conteneur-description,
+  .conteneur-texte,
+  .conteneur-liste {
+    max-width: 100%;
+  }
+  
+  .image-deffilante {
+    margin: auto;
+  }
+  
+  .carte{
+    margin: auto;
+  }
+  
+  .image-deffilante {
+    order: 1; /* Place l'image défilante en premier */
+  }
+
+  .conteneur-programme {
+    order: 2; /* Place le programme après l'image défilante */
+  }
+
+  .conteneur-description {
+    order: 3; /* Place la description après le programme */
+  }
+
+  .carte {
+    order: 4; /* Place la carte après la description */
+  }
+
+  .conteneur-liste {
+    order: 5; /* Place la section "à savoir" à la fin */
+  }
+  
+  /* Si nécessaire, ajuster la taille des polices ou d'autres styles pour une meilleure lisibilité */
+}
+
+
+
+/*################################################################################"*/
+
+
+@media only screen and (max-width: 600px) {
+
+  .corps{
+    margin:0;
+  }
+
+}
