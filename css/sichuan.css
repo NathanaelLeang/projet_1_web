@@ -204,9 +204,19 @@ header:hover {
 
 #carte-sichuan:hover {
   transform: scale(1.1);
-  border-radius: 10px ;
+  border-radius: 10px;
 }
 
+
+.conteneur-liste{
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.conteneur-liste li{
+  margin-bottom: 15px;
+}
 /*--------------------------------------------------------------------------*/
 
 /*--------------------------------------------------------------------------*/
