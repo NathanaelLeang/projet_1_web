@@ -1,0 +1,268 @@
+/* Debut header */
+
+/* style du header (background, display,...), permet la bonne disposition du header */
+header {
+    background: linear-gradient(to bottom right, rgba(50,50,50), rgba(128,128,128)); /* permet d'avoir un background en degrade vers le bas droit */
+    padding: 10px; /* positionne le header comme voulu */
+    display: flex; /* defini comme flex le header */
+    align-items: center; /* centre les elements du header */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /* pas de modification neccessaire pour la balise header */
+}
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour la balise header */
+}
+
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* style titre du header */
+.header-title {
+    margin-right: auto; /* positionne le titre */
+    font-family: 'Brush Script MT'; /* defini la police du titre */
+    color: rgba(39,120,54); /* defini la couleur du titre */
+    font-size: 40px; /* defini la taille de la police du titre */
+    padding-left: 5px; /* positionne le titre comme voulu */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /* pas de modification neccessaire pour le titre du header */
+}
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour le titre du header */
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut style de la balise div de class header-menu-container */
+
+/* style du container */
+.header-menu-container {
+    position: relative; /* defini la position comme reltiv de la balise de cette class */
+    padding-right: 1px; /* positionne la balise de cette class comme voulu */
+    width: 300px; /* defini la largeur de la balise de cette class */
+}
+
+#header-menu-toggle {
+    display: none; /* permet de retirer la puce a cocher de la balise d'id header-menu-toggle */
+}
+
+#header-menu-bouton,
+#header-nav {
+    color: white; /* met la couleur white aux balises d'id header-menu-bouton et header-nav */
+}
+
+/* style de la balise d'id header-menu-bouton */
+#header-menu-bouton {
+    display: block; /* defini comme block la balise de cette id */
+    text-align: center; /* centre le texte */
+    background-color: rgba(39,91,54); /* donne la couleur au background */
+    border: 2px solid black; /* creer une bordure a la balise de cette id */
+    font-size: 20px; /* defini la police du texte */
+    padding: 10px 15px; /* positionne la balise */
+    cursor: pointer; /* permet de changer le cursor en pointer quand la balise de cette id est hover */
+    text-decoration: underline; /* souligne le texte */
+    font-weight: bold; /* met en gras le texte */
+}
+
+/* permet de definir la position de la balise d'id header-nav */
+#header-nav {
+    display: none; /* permet de cacher la balise de cette id */
+    position: absolute; /* defini comme position absolute */
+    top: 100%; /* positionne la balise de cette id */
+    width: 300px; /* defini la largeur de la balise de cette id */
+    flex-direction: column; /* permet la disposition en colonne de la balise de cette id */
+}
+
+/* permet d'afficher la balise d'id header-nav quand on click sur la balise d'id header-menu-bouton */
+#header-menu-toggle:checked + #header-menu-bouton + #header-nav {
+    display: flex;
+}
+
+/* style des balises de class header-destination */
+.header-destination {
+    color: white; /* donne la couleur aux textes des balises de cette class */
+    text-decoration: none; /* enleve les textes decorations des balises de cette class */
+    padding: 10px; /* positionne la balise */
+    display: block; /* defini comme block cette balise */
+    background-color: #333; /* donne une couleur au background de cette balise */
+    z-index: 1; /* met en premier plan cette balise */
+}
+
+/* style des images des balises d'id header-img1,2,3,4 et 5 */
+#header-img1,
+#header-img2,
+#header-img3,
+#header-img4,
+#header-img5 {
+    display: none; /* permet de cacher les balises de ces id */
+    position: relative; /* defini comme positin relative les balises de ces id */
+    border: 2px solid black; /* donne une bordure aux images */
+    right: 1px; /* positionne les images comme voulu */
+    height: 200px; /* defini la hauteur */
+    width: 300px; /* defini la largeur */
+    z-index: 1; /* met en premier plan les balises de ces id */
+}
+
+/* permet d'afficher l'image correspondante a son texte quand ce texte est hover*/
+#header-text1:hover ~ .header-image-container #header-img1,
+#header-text2:hover ~ .header-image-container #header-img2,
+#header-text3:hover ~ .header-image-container #header-img3,
+#header-text4:hover ~ .header-image-container #header-img4,
+#header-text5:hover ~ .header-image-container #header-img5 {
+    display:flex; /* defini comme flex cette balise, permet d'afficher les balises des id header-img1,2,3,4 et 5 */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    #header-nav {
+        width: 211px; /* permet de redefinir la largeur de cette balise */
+    }
+
+    #header-img1,
+    #header-img2,
+    #header-img3,
+    #header-img4,
+    #header-img5 {
+        height: 140px; /* redefini la hauteur des images des balises de ces id */
+        width: 210px; /* redefini la largeur des images des balises de ces id */
+    }
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour la balise de class header-menu-container */
+}
+
+/* Fin style de la balise div de class header-menu-container */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+/* Fin header */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* debut footer */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* style footer */
+footer {
+    background-color: #333; /* donne la couleur du background */
+    color: #fff; /* donne la couleur du text */
+    padding: 40px 20px; /* eloigne les elements du footer des bords de la page */
+    display: flex; /* defini la balise comme flex */
+    justify-content: space-between; /* met un espace entre les elements du footer */
+    align-items: flex-start; /* Aligner les elements en haut */
+    flex-wrap: wrap; /* permet la bonne disposition des elements */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /* pas de modification neccessaire pour la balise footer */
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour la carte */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Style des icones sociales */
+#footer-icon {
+    list-style: none; /* permet de retirer les puces des icons */
+    margin: 0; /* positionne cette balise comme voulu */
+    padding: 0; /* positionne cette balise comme voulu */
+    display: flex; /* defini cette balise comme flex */
+    flex-direction: column; /* permet la disposition en colonne des elements de cette balise */
+    margin-right: 5%; /* positionne cette balise comme voulu */
+    padding-top: 1%; /* positionne cette balise comme voulu */
+}
+
+/* permet de definir la taille des image de la balise d'id footer-icon */
+.footer-img {
+    width: 45px; /* defini la largeur des images des balises de cette class */
+    height: 45px; /* defini la hauteur des images des balises de cette class */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    #footer-icon {
+        flex-direction: row; /* permet de mettre en ligne les elements de cette balise */
+    }
+}
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour les icones des sociales */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Style des informations de contact */
+#footer-joindre {
+    flex: 1 1 300px; /* permet a cette balise de retrecir et grandir selon les besoins avec une taille minimales de 300px */
+    margin: 0; /* positionne cette balise */
+    padding: 0; /* positionne cette balise */
+    list-style-type: square; /* Utiliser des points pour la liste */
+}
+
+/* style des balise de class footer-telephone et footer-adress-title */
+.footer-telephone, .footer-adress-title {
+    font-weight: bold; /* met le texte en gras */
+    margin-top: 10px; /* positionne le texte */
+}
+
+/* positionne les balise de class footer-numero et footer-adress */
+.footer-numero, .footer-adress {
+    margin-bottom: 10px; /* positionne le texte */
+    line-height: 1.5; /* defini la taille des lignes comme 1.5 fois plus haut que la police du texte */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /* pas de modification neccessaire pour les informations de contact */
+}
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour les informations de contact */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Style de la carte */
+.footer-map {
+    width: 200px; /* defini la largeur de la carte */
+    height: 150px; /* defini la hauteur de la carte */
+    margin-left: auto; /* Aligner la carte a droite */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    .footer-map {
+        margin-right: 100%; /* positionne la carte */
+    }
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour la carte */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* fin footer*/
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */

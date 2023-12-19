@@ -1,75 +1,308 @@
-/* Styles généraux */
+/* Styles pour le corps de la page */
+:root{   /* Variable de couleur */
+    --vert:#2f6d42;
+    --noir:#323232;
+    --jaune:#DB9841;
+    --rouge:#9C3848;
+    --violet:#36296E;
+    --belge:#F7E9D3;
+    --belgef:#F7E8D3;
+}
+
+/*selecteur universel qui permet de definir la police de tous les textes*/
+* {
+    font-family: Arial; /* defini le style de la police universel */
+}
+
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    margin: 0; /* positionne le body */
 }
 
-/* Style du header */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+/* debut main */
+
+
+html{                  /*Ici dans tout le html nous allons avoir une animation d'un dégradé qui est en mouvement afin de donner un background animé  */
+    align-items:normal;
+    background-size: 300% 300%; /* On initialise la taille */
+    background-image: linear-gradient(240deg, white 0%, white 45%, #ffe1b0 90%, white  100%); /* le dégradé*/
+    animation: AnimateBG 10s ease infinite; /* appelle de l'animation avec un intervale de 10 seconde indéfiniment*/
 }
 
-/* Style du lien du header */
-#agence {
-  text-decoration: none;
-  font-size: 24px;
-  color: #fff;
+  
+@keyframes AnimateBG { /* keyframe de l'animation du background */
+    0% { /* état initiale */
+      background-position: 0% 50%;
+    }
+    50% { /* état intermédiaire */
+      background-position: 100% 50%;
+    }
+    100% { /* état finale */
+      background-position: 0% 50%;
+    }
 }
 
-/* Style du footer */
-footer {
-background-color: #333;
-color: #fff;
-padding: 40px 20px;
-display: flex;
-justify-content: space-between;
-align-items: flex-start; /* Aligner les éléments en haut */
-flex-wrap: wrap;
+/* ici, nous allons initialiser une grille afin d'améliorer l'organisation de la page.
+    qui sera représenté comme ceci :
+
+    container (display:grid) (grille principale)
+            ligne 1 (nom de la ligne = title)
+            ligne 2 (nom de la ligne = fielsets) (display:grid)
+                    - ligne 1 (nom de la ligne = fieldset 1)
+                    - ligne 2 (nom de la ligne = fieldset 2 + info)
+                    - ligne 3 (nom de la ligne = reset-submit)
+*/
+
+.container{  
+    display:grid; /* initialisation de la grille principale */
+    grid-template-rows:auto auto;  /* de 2 lignes de taille auto*/
+    grid-gap : 10px;  /*avec un ecart de 10 pixel entre les deux lignes */
 }
 
-/* Style des icônes sociales */
-#socialicon {
-list-style: none;
-margin: 0;
-padding: 0;
-display: flex;
-align-items: center; /* Centrer verticalement */
+.title{ /*initialisation de la première ligne*/
+    grid-row: 1; /*ligne 1*/
+    font-family: 'Trebuchet MS'; /* police d'ecriture*/
+    font-size:x-large; /* taille de la police*/
+    text-align: center; /* on centre le texte au mileu de la ligne*/
+    font-weight: bold; /* en gras*/
+    margin:0; /* sans margin*/
 }
 
-#socialicon a {
-margin-right: 30px;
+.fieldsets{ /*initialisation de ladeuxième ligne*/
+    grid-row:2; /*ligne 2*/
+    display:grid; /* on divise la ligne en 3 lignes avec une nouvelle grille*/
+    grid-template-rows: auto auto auto ; /* 3 lignes de taille auto */
 }
 
-#socialicon img {
-width: 35px;
-height: 35px;
+.fieldset1{
+    grid-row:1; /* ligne 1 de la deuxième grille*/
+    box-sizing: border-box; /* hauteur et largeur par défaut */
+    margin:0; /* sans margin et padding */
+    padding:0;
 }
 
-/* Style des informations de contact */
-#joindre {
-flex: 1 1 300px;
-margin: 0;
-padding: 0;
-list-style-type: square; /* Utiliser des points pour la liste */
+.fieldset2{
+    grid-row:2;  /* ligne 2 de la deuxième grille*/
 }
 
-#joindre dt {
-font-weight: bold;
-margin-top: 10px;
+.fieldset2-2{ /* tooltip, info */
+    display: flex;
+    justify-content: center; /* on centre le tooltip*/
+    box-sizing: border-box; 
+    padding-top : 10px;
+    width: 100%;
 }
 
-#joindre dd {
-margin-bottom: 10px;
-line-height: 1.5;
+.Reset-Submit{ /* on  positionne les boutons Reset et submit dans la grille (3e ligne) */
+    grid-row:3;
 }
 
-/* Style de la carte */
-footer iframe {
-width: 200px;
-height: 150px;
-border: 0;
-margin-left: auto; /* Aligner la carte à droite */
+
+form fieldset{  /*mise en page des fieldsets */
+    padding: 25px;
+    margin :0px 50px 0px 50px;
+    color : black;
+    background: linear-gradient(270deg, var(--belgef), #ffffff); /*dégradé de couleur pour le background */
+    border-radius: 15px;
 }
+
+form fieldset:hover{
+    border-color: #999 #777 #777 #999;
+    border : 5px;
+    border-style: solid;
+    border-radius: 10px;
+    animation : fieldsetboxshadowpulse 2s infinite; /* mise en place d'une animation pour que lorsque la souris survole un fieldset, */
+}                                                    /*  le box-shadow (ombre) s'aggrandit et se réduit indefiniment */
+
+@keyframes fieldsetboxshadowpulse{  /* animation */
+    0% {
+        box-shadow: 3px 3px 4px;
+    }
+    50% {
+        box-shadow: 8px 8px 6px;
+    }
+    100% {
+        box-shadow: 3px 3px 4px;
+    }
+}
+
+form legend{     /* mise en page de la légende des fieldsets */
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+    text-decoration: underline;
+    text-shadow : 1px 0.5px;
+    border : 2px solid var(--black);
+    border-radius: 10px;
+}
+
+
+
+form label{
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+form label:hover, h2:hover{
+    animation: clignotelabel 6s infinite; /* animation qui lorsque la souris survole les label (textes dans les fieldsets) ainsi que les titre */
+}                                          /* ils changent de couleurs avec une boucle infinie d'une durée de 6 secondes */
+
+@keyframes clignotelabel{  /* animation */
+    0%{ /*état initial */
+    color : black;
+    }
+    25%{ /*état intermédiaire N°1 */
+    color : darkblue;
+    }
+    50%{ /*état intermédiaire N°2 */
+    color : black;
+    }
+    75%{ /*état intermédiaire N°3 */
+    color : darkred;
+    }
+    100%{ /*état final*/
+    color : black;
+    }
+}
+
+/* les --selectionner-- des balises select, seront afficher en rouge lors du choix des différentes options du select */
+form fieldset > select > option[value="0"]{
+    color : red;
+}
+
+/* les option (sauf ceux avec la value="0" (--selectionner--)) des balises select, seront afficher en bleu lors du choix des différentes options du select */
+form fieldset > select{
+    color : var(--vert);
+}
+
+/* Personalisation des boutons de type SUBMIT et RESET */
+form input[type="reset"]{  /* style pour le bouton réinitialiser */
+    font-weight: bold;
+    border: 2px solid var(--rouge);
+    margin: 10px;
+    padding: 10px 20px;
+    width: 120px;
+    border-radius: 10px;
+    box-shadow: 2px 5px;
+}
+
+form input[type="reset"]:hover{   /* style pourle bouton réinitialisé lorsqu'il est survolé */
+    color: red;
+    border: 2px dashed red;
+    box-shadow: 2px 5px;
+    cursor: pointer;
+    animation: clignotereset 2s infinite;  /* animtion lorsque le bouton est survolé (chgmt de couleur de l'ombre (box-shadow) et du background */
+}
+
+@keyframes clignotereset{   /* animation */
+    0% { background-color: white;
+        box-shadow : 2px 4px red;
+    } /* Couleur de départ */
+    50% { background-color: rgb(255, 200, 200);
+        box-shadow : 2px 5px rgb(255, 200, 200);
+    } /* Couleur à mi-chemin */
+    100% { background-color: white;
+        box-shadow : 2px 4px red;
+    } /* Couleur de retour à la couleur de départ */
+}
+
+form input[type="submit"]{ /* style pour le bouton envoyer */
+    font-weight: bold;
+    border: 2px solid var(--vert);
+    margin: 10px;
+    padding: 10px 20px;
+    width: 120px;
+    border-radius: 20px;
+    box-shadow: 2px 5px;
+}
+
+form input[type="submit"]:hover{  /* style pourle bouton envoyer lorsqu'il est survolé */
+    color: green;
+    border: 2px dotted green;
+    box-shadow: 2px 5px;
+    cursor: pointer;
+    animation: clignotesubmit 2s infinite; /* animtion lorsque le bouton est survolé (chgmt de couleur de l'ombre (box-shadow) et du background */
+}
+
+@keyframes clignotesubmit{  /* animation */
+    0% { background-color: white;
+        box-shadow : 2px 4px green;
+    } /* Couleur de départ */
+    50% { background-color: rgb(184, 240, 207);
+        box-shadow : 2px 5px rgb(184, 240, 207);
+    } /* Couleur à mi-chemin */
+    100% { background-color: white;
+        box-shadow : 2px 4px green;
+    } /* Couleur de retour à la couleur de départ */
+}
+
+
+#tooltip{ /* ici, nous donnons un style pour pouvoir nous premettre que lorsque la souris survole le texte 'info' il y a une bulle qui apparait au dessus */
+    position: absolute;  /* On initialise donc la position absolue */
+    padding: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#tooltipInfo{
+    cursor: pointer; /* lorsque le curseur passe au-dessus de l'élément d'id='tooltipInfo' */
+    border-bottom: 2px dotted; /* on souligne avec des pointillet le texte 'info' pour que l'utilisateur comprenne qu'il peut survoler le texte */
+}
+
+/* Style du tooltip */
+#tooltipText {
+    position: absolute; /* Position absolue pour placer le tooltip */
+    left: 50%;
+    top: 0; 
+    transform: translateX(-50%); /* Centre le tooltip horizontalement */
+    padding: 5px; 
+    background-color: #000; 
+    color: #fff; 
+    border-radius: 7px; /* Coins arrondis */
+    visibility: hidden; /* Rend le tooltip invisible */
+    opacity: 0; /* Opacité à 0 (transparent) */
+    transition: opacity 0.5s ease; /* Animation de transition pour l'opacité */
+}
+
+/* Flèche du tooltip */
+#tooltipText::before {
+    content: ""; /* Contenu vide pour créer la forme de la flèche */
+    position: absolute; /* Position absolue pour la flèche */
+    left: 50%; /* Centrage horizontal de la flèche */
+    top: 100%; /* Position sous le tooltip principal */
+    transform: translateX(-50%); /* Centre la flèche horizontalement */
+    border: 15px solid; /* Taille de la flèche */
+    border-color: #000 #0000 #0000 #0000; /* Couleurs des bords (transparent pour la pointe de la flèche) */
+}
+
+/* Action lorsque l'élément associé au tooltip est survolé */
+#tooltipInfo:hover ~ #tooltipText { /*permet de sélectionner l'element tooltipText qui suit un élément spécifique, car ils partagent le meme parent */
+    top: -130%; /* Déplace le tooltip vers le haut */
+    visibility: visible; /* Rend le tooltip visible */
+    opacity: 1; /* Opacité à 1*/
+}
+
+/* Mise en forme du bouton retour */
+.Retour{
+    text-decoration: None;
+    color: black;
+    position :fixed;
+    text-align: right;
+    right: 5%;
+    bottom: 5%;
+    border: 1px solid black;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.Retour:hover{
+    text-decoration:underline;
+}
+
+/* fin main */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+

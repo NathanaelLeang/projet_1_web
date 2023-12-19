@@ -1,0 +1,184 @@
+<!Doctype html>
+<html lang="fr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title> Formulaire : Machu Picchu </title>
+    <link rel="icon" type="images/x-icon" href="../../img/logo_vistavoyage.png">
+    <link rel="stylesheet" type="text/css" href="../../css/formulaire.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/header-footer.css" />
+</head>
+<body>
+    <header>
+        
+        <h1 class="header-title">VistaVoyage</h1> <!-- titre -->
+        <div class="header-menu-container"> <!-- menu destination -->
+            <input type="checkbox" id="header-menu-toggle"> <!-- permet de donner le type bouton a #menu-toggle -->
+            <label for="header-menu-toggle" id="header-menu-bouton">VistaDestinations</label> <!-- permet d'appliquer le type bouton grace a #menu-toggle -->
+            <nav id="header-nav"> <!-- liste des destinations -->
+                <a id="header-text1" class="header-destination" href="">Tarragone (Espagne)</a> <!-- destinations 1 -->
+                <a id="header-text2" class="header-destination" href="">Antalya (Turquie)</a> <!-- destinations 2 -->
+                <a id="header-text3" class="header-destination" href="">Sichuan (Chine)</a> <!-- destinations 3 -->
+                <a id="header-text4" class="header-destination" href="">L'Île de Paques (Chili)</a> <!-- destinations 4 -->
+                <a id="header-text5" class="header-destination" href="">Machu Picchu (Pérou)</a> <!-- destinations 5 -->
+                <div class="header-image-container"> <!-- images des destinations de la liste -->
+                    <img id="header-img1" class="header-img" src="../../img/tarragone.jpg" alt="Image 1"> <!-- image 1 -->
+                    <img id="header-img2" class="header-img" src="../../img/antalya.jpg" alt="Image 2"> <!-- image 2 -->
+                    <img id="header-img3" class="header-img" src="../../img/sichuan.jpg" alt="Image 3"> <!-- image 3 -->
+                    <img id="header-img4" class="header-img" src="../../img/paques.jpg" alt="Image 4"> <!-- image 4 -->
+                    <img id="header-img5" class="header-img" src="../../img/machu.jpg" alt="Image 5"> <!-- image 5 -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main> <!-- début main -->
+
+        <div class="container"> <!-- Conteneur pour faire une grid et pour pouvoire organiser ma page html depuis le css-->
+                                <!-- (la grille sera composé de 2 lignes) -->
+                                
+            <div class="title"> <!-- Titre (ligne 1 de ma grille)-->
+                <h2>Formulaire : Machu Picchu</h2>
+            </div> 
+
+
+            <div class="fieldsets"></div> <!-- Début du regroupement des Fieldsets 1 et 2 ainsi que des boutons envoyer et reset (ligne 2)-->
+                                        
+                <form method="post" action="#" class="Formulaire">
+
+                    <div class="fieldset1"> <!-- Début du Fieldset 1 -->
+                        <fieldset> 
+                            <legend>Vos Vist'informations personnelles</legend> <!-- balise legend pour pouvoir nommer mon fieldsets-->
+                            <label for="nom">Nom :</label> <!-- Nom et prénom avec des méthode de saisie de typ text-->
+                            <input type="text" name="nom" id="nom" placeholder="Votre nom">
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom">
+                            <br><br> <!-- (saut de ligne) -->
+                            <label for="age"> Quel est votre âge ? :"</label> <!-- saisir l'âge de l'utilisateur-->
+                            <select id="age" name="age"> <!-- cette fois ci, on utilise pas une balise input mais select pour que l'utilisateur puisse choisir l'option qui lui convient-->
+                                    <option value="0">- Séléctionner -</option>
+                                    <option value="18/25">18 - 25 ans</option>
+                                    <option value="26/35">26 - 35 ans</option>
+                                    <option value="36/45">36 - 45 ans</option>
+                                    <option value="46/55">46 - 55 ans</option>
+                                    <option value="56/65">56 - 65 ans</option>
+                                    <option value="66/75">66 - 75 ans</option>
+                                    <option value="76+">+76 ans</option>
+                            </select>
+                            <br><br>
+                            <label for="naissance">Date de Naissance:</label> <!-- pour pouvoir sélectionner sa date de naissance-->
+                            <input type="date" id="naissance" name="trip-start" value="2005-08-18" min="1900-01-01" max="2023-12-31" /> <!-- Type date jour mois année-->
+                            <br><br>
+                            <label for="tel">Téléphone :</label> <!-- pour pouvoir écrire son numéro de téléphone -->
+                            <input type="tel" name="Téléphone" id="tel" placeholder="ex: (+33) (0)3 01 23 45 67"> <!-- type tel -->
+                            <br><br>
+                            <label for="email">Adresse E-mail :</label> <!-- pour pouvoir écrire une adresse email -->
+                            <input style="width:250px" type="email" name="email" id="email" placeholder="ex: xyz@gmail.com"> <!-- type email (pour qu'il y ait au moins un '@')-->
+                            <br><br>  <!-- ici le style permet de mettre un style directement dans le fichier html au lieu de le mettre dans le fichier css link à cette page -->
+                            <label for="adress">Adresse</label> <!-- pour pouvoir saisir son adresse avec ville, nom de rue, numéro etc...  -->
+                            <input style="width:50px" type="text" name="numrue" id="numadress" placeholder="1"> <!-- type text -->
+                            <input type="text" name="adresse" id="adress" placeholder="rue Charles de Gaulle"> <!-- type text -->
+                            <br>
+                            <label for="nom">Ville</label>
+                            <input type="text" name="ville" id="ville" placeholder="ex: Lille"> <!-- type text -->
+                            <br>
+                            <label for="nom">Code Postal</label>
+                            <input type="text" name="codepostal" id="codepostal" placeholder="ex : 59000"> <!-- type text -->
+                        </fieldset>
+                    </div> <!-- Fin du Fieldset 1 --> <!--( fin de la ligne 2 de la grille )-->
+                    
+                    <br><br> <!-- saut de ligne entre les deux fieldsets -->
+
+                    <div class="fieldset2"> <!-- Début du Fieldset 2 -->
+                        <div class="fieldset2-1"> <!-- en effet je divise ici le fieldsets2 en deux parties. 1: le fieldset en lui meme-->
+                            <fieldset>                                                                  <!-- 2: le text informatif 'info' afin de pouvoir faire un tooltip -->
+                                <legend>Destination</legend>                                           <!-- un tooltip est une petite bulle qui s'affiche lorsqu'on survole un texte, image, etc...-->
+                                <!-- balise legend pour pouvoir nommer mon fieldsets-->
+                                <label for="qd?">quand décideriez-vous de partir ? :</label> <!-- l'utilisateur choisi quand partir -->
+                                <input type="date" id="qd?" name="trip-start" value="2024-01-01" min="2024-01-01" max="2025-12-31" /> <!--type date pour séléctionner la date de départ-->
+                                <br><br>
+                                <label for="Formule?">Quelle formule choisissez-vous ?</label> <!-- Quelle formule ? -->
+                                <select id="Formule?" name="Formule">
+                                    <option value="0">- Séléctionner -</option>
+                                    <option value="1"> <!-- -------------------------------------------------- --> </option>
+                                    <option value="2"> <!-- -------------------------------------------------- --> </option>
+                                    <option value="3"> <!-- -------------------------------------------------- --> </option>
+                                </select>
+                                <br><br>
+                                <label for="Hotel?">Quelle hotel souhaitez-vous réserver ?</label> <!-- Quel hotel ?-->
+                                <select id="Hotel?" name="Hotel">
+                                    <option value="0">- Séléctionner -</option>
+                                    <option value="1"> <!-- -------------------------------------------------- --> </option>
+                                    <option value="2"> <!-- -------------------------------------------------- --> </option>
+                                    <option value="3"> <!-- -------------------------------------------------- --> </option>
+                                </select>
+                                <br><br>
+                                <label for="Nbvoyageurs">Avec combien de personnes ?</label> <!-- nombre de voyageurs -->
+                                <select id="Nbvoyageurs" name="NbVoyageurs">
+                                    <option value="0">- Séléctionner -</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 ou 6+</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <br>
+                        <div id="tooltip" class="fieldset2-2"> <!-- 2e partie du fieldset2 avec le tooltips.-->
+                            <span id="tooltipInfo">Info</span> <!--affiché sur la page -->
+                            <span id="tooltipText">Nous vous confirmerons par mail votre inscription</span> <!-- text qui apparait lorsque le texte de class tooltipInfo est survolé-->
+                        </div>
+                    </div> <!-- Fin du Fieldset 2 -->
+
+                    <br><br>
+
+                    <div class="Reset-Submit"> <!-- boutons submit et reset -->
+                        <input type="submit" value="Envoyer"> <!-- bouton envoyer -->
+                        <input type="reset" value="Réinitialiser"> <!-- bouton reset (reinitialiser) -->
+                    </div>
+                    
+                    <a class="Retour" href=""> ⟵ Retour </a>  <!-- mettre le lien de la destination precédente-->
+
+                </form>
+            </div> <!-- Fin des Fieldsets -->
+        </div> <!-- fin container -->
+        
+    </main> <!-- fin main -->
+    <footer>
+        <ul id="footer-icon"> <!-- icon container -->
+            <li> <!-- icon facebook + lien facebook -->
+                <a href="http://facebook.com/biblioJunia"><img class="footer-img" src="../../img/facebook.png" alt="Facebook"></a>
+            </li>
+            <li> <!-- icon twitter + lien twitter -->
+                <a href="http://twitter.com/biblioJunia"><img class="footer-img" src="../../img/twitter.png" alt="Twitter"></a>
+            </li>
+            <li> <!-- icon instagram + lien instagram -->
+                <a href="http://instagram.com/biblioJunia"><img class="footer-img" src="../../img/instagram.png" alt="Instagram"></a>
+            </li>
+        </ul>
+
+        <dl id="footer-joindre"> <!--  -->
+            <dt class="footer-telephone">Téléphone</dt> <!-- telephone -->
+            <dd class="footer-numero">+33 1 02 03 04 05</dd> <!-- numero de telephone (numero aleatoire) -->
+            <dt class="footer-adress-title">Adresse</dt> <!-- adresse -->
+            <dd class="footer-adress"> <!-- l'adresse ou on se trouve -->
+                ISEN Lille - Institut Supérieur de l'Electronique et du Numérique <br> <!-- force le retour a la ligne -->
+                41 boulevard Vauban <br> <!-- force le retour a la ligne -->
+                59800 Lille Cedex
+            </dd>
+        </dl>
+
+        <iframe class="footer-map" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6184678248474!
+        2d3.0487603999999875!3d50.634204099999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13
+        .1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0
+        !3m2!1sfr!2sfr!4v1695145218130!5m2!1sfr!2sfr"
+        width="200" height="150" style="border:0;" 
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe> <!-- lien + style de l'image de la carte -->
+    </footer>
+</body>
+</html>
