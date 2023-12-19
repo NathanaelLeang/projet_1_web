@@ -4,7 +4,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, auto);
         grid-template-areas: 
-        "image  image"
+        "titre titre"
         "caroussel description"
         "formules formules"
         
@@ -15,22 +15,26 @@
 /*----------------------------------------------------------------------------------------------------------------------------*/
 .sidebar {
     position: fixed;
-    top: 45%; /* Fixe la barre à a peut près au milieu de la fenetre */
-    left: 2%; /* Fixe la barre latérale à gauche de la fenêtre */
-    width: 150px; /* Ajuste la largeur de la barre latérale selon tes besoins */
+    top: 21%; /* Fixe la barre à a peut près au milieu de la fenetre */
+    right: 0%; /* Fixe la barre latérale à gauche de la fenêtre */
+    width: 115px; /* Ajuste la largeur de la barre latérale selon tes besoins */
     border : 1px solid black;
     border-radius: 10px;
     background-color: whitesmoke;
-    opacity: 0.1;
+    opacity: 0.7;
     transition: opacity 0.5s ease;
     box-shadow: 1px 1px;
     z-index: 10;
     /* ... */
 }
 
+.sidebar ul{
+    position: relative;
+    left: -20%;
+}
 .sidebar h3{
     position: relative;
-    left: 33%;
+    left: 26%;
 }
 
 .sidebar a{
@@ -44,31 +48,44 @@
 /*----------------------------------------------------------------------------------------------------------------------------*/
 html {
     scroll-behavior: smooth; /* Nous permettre que lorsqu'on clique sur un lien la transition ne se fait pas brulament mais en voyant défiler la page. */
-    background-color: darkgreen;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, darkgreen, green);
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
-.image-top {
-    grid-area: image;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Pour cacher le dépassement de l'image */
-    height: 4fr; /* Ajuste la hauteur de la zone image-top */
+
+.conteneur-destination{
+    grid-area: titre;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+}
+  
+.conteneur-destination h1{
+    margin: 0;
+    padding: 0;
+}
+  
+.conteneur-destination h1{
+    margin-top: 15px;
+}
+  
+.conteneur-destination p{
+    font-size: 20px;
 }
 
 
-.image-top img {
-    width: auto; /* La largeur de l'image s'ajustera automatiquement en fonction de la hauteur */
-    max-height: 100%; /* La hauteur maximale de l'image est fixée à 100% de la hauteur du conteneur */
-    display: block; /* Assure-toi que l'image se comporte correctement dans le conteneur */
-}
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
 
 .caroussel {
     max-width: 500px;
-    margin: auto;
+    margin: 3%;
     margin-right: 2%;
     overflow: hidden;
     border-radius: 15px;
@@ -104,26 +121,38 @@ html {
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
 
-.desc{
+.desc {
     grid-area: description;
-    border: 1px solid green;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    max-width: 1100px;
+    padding: 2%;
 }
-
+.desc {
+    overflow: hidden;
+    word-wrap: break-word;
+    flex: 1; /* Permet au texte de prendre 50% de la largeur du conteneur */
+    padding: 2%;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+  
+  
+.desc:hover{
+    transform: translateY(-2px) translateX(-1px);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
+}
+  
+/* Pour styliser le texte, par exemple, si tu veux lui donner une marge */
 .desc p{
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: 15px;
-    border:2px solid black;
-    background-color:white;
-    padding: 5px;
-    border-radius : 20px;
-    box-shadow: 3px 3px 3px;
+    margin: 10px; /* Exemple de marge autour du paragraphe */
 }
 /*----------------------------------------------------------------------------------------------------------------------------*/
 .formule-title{
     grid-area: formules;
-    border: 1px solid black;
     text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;
 }
 /*----------------------------------------------------------------------------------------------------------------------------*/
 .formule1-2{
