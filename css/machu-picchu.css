@@ -12,7 +12,7 @@
             "titre titre"
             "caroussel description"
             "formules formules"
-            "container2 container2"
+            "container2 map"
             "hotels hotels";
         grid-gap : 5px;
     }
@@ -156,54 +156,93 @@ body {
 }
 /*----------------------------------------------------------------------------------------------------------------------------*/
 .formule-title{
+    margin: 10px;
     grid-area: formules;
     text-align: center;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
+
+.formule-title:hover{
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
+}
+
 /*----------------------------------------------------------------------------------------------------------------------------*/
-.formule1-2{
+/* Styles pour le contrôle de l'affichage des formules */
+.toggle {
+    display: none;
+}
+
+.formule1-2 {
+    text-align: center;
     grid-area: container2;
 }
 
-.container2 {
-    display: flex;
-    flex-direction: row;
+/* Ajouter une bordure au contenu des formules */
+#toggleFormule1:checked ~ .container2,
+#toggleFormule2:checked ~ .container3 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px auto; /* Centrer horizontalement */
+    max-width: 600px; /* Changer la largeur maximale selon vos besoins */
+}
+
+/* Afficher les boutons comme des étiquettes stylisées */
+.toggle-button {
+    cursor: pointer;
+    user-select: none; /* Empêcher la sélection de texte */
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+/* Cacher le contenu des détails par défaut */
+.container2,
+.container3 {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-    align-items: center;
+    transition: max-height 0.3s ease-out;
 }
-  
-.formule {
-    border: 1px solid #000000;
-    border-radius: 15px;
-    padding: 20px;
-    width: 90%; /* Ajustez la largeur selon vos besoins */
-    box-sizing: border-box;
-    display: none;
-    margin: 5px auto;
 
+/* Afficher le contenu quand la case est cochée */
+#toggleFormule1:checked ~ .container2,
+#toggleFormule2:checked ~ .container3 {
+    max-height: 500px; /* Ajustez en fonction de votre contenu */
 }
-  
-.toggle {
-    display:none;
+
+/* Afficher le contenu quand la case est cochée et styliser le bouton */
+#toggleFormule1:checked ~ .container2 + .toggle-button,
+#toggleFormule2:checked ~ .container3 + .toggle-button {
+    background-color: #e0e0e0;
+    font-weight: bold;
 }
-  
-.toggle-button {
-    padding: 10px 20px;
-    background-color: #ccc;
-    cursor: pointer;
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+.carte {
+    grid-area: map;
+    position: relative;
+    right: 18%;
+
+    max-width: 48%; /* Limite la largeur */
+    margin: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease, border-radius 0.2s ease;
+    height: auto;
+    width: auto;
 }
+
   
-.toggle:checked ~ .container2 {
-    max-height: 1000px; /* Changez cette valeur en fonction de votre contenu */
-    transition: max-height 0.5s ease-in-out;
+.carte:hover {
+    transform: scale(1.1);
+    border-radius: 10px;
 }
-  
-#toggleFormule1:checked ~ .container2 .formule1,
-#toggleFormule2:checked ~ .container2 .formule2 {
-    display: block;
-}
-  
+
+/* Media queries pour différents écrans */
+
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
 .corps{
@@ -217,6 +256,22 @@ body {
 .hotels{
     grid-area: hotels;
 }
+
+.hotels .hotel-title{
+    text-align: center;
+    margin: 10px;
+    grid-area: formules;
+    text-align: center;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.hotels .hotel-title:hover{
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
+}
+
 
 .hotels table{
     border-collapse: collapse;
