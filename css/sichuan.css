@@ -401,41 +401,24 @@ header:hover {
   .conteneur-programme {
     display: block;
   }
-  
-  .programme,
+
+  .conteneur-description{
+    display: block;
+  }
+
   .carte,
-  .conteneur-description,
   .conteneur-texte,
   .conteneur-liste {
     max-width: 100%;
   }
   
-  .image-deffilante {
-    margin: auto;
-  }
-  
   .carte{
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
   .image-deffilante {
-    order: 1; /* Place l'image défilante en premier */
-  }
-
-  .conteneur-programme {
-    order: 2; /* Place le programme après l'image défilante */
-  }
-
-  .conteneur-description {
-    order: 3; /* Place la description après le programme */
-  }
-
-  .carte {
-    order: 4; /* Place la carte après la description */
-  }
-
-  .conteneur-liste {
-    order: 5; /* Place la section "à savoir" à la fin */
+    margin: 0 auto;
   }
   
   /* Si nécessaire, ajuster la taille des polices ou d'autres styles pour une meilleure lisibilité */
