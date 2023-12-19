@@ -64,6 +64,19 @@ header:hover {
 }
 /*#############################################################"*/
 /* Style pour le bouton déroulant */
+.dropbtn button {
+  /* Réinitialisation des styles */
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  /* Suppression de tout style prédéfini */
+  appearance: none;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -73,25 +86,22 @@ header:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: rgba(51, 51, 51, 0.96);;
   min-width: 160px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 /* Liens dans le menu déroulant */
 .dropdown-content a {
-  color: black;
+  color: #fff;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  
 }
 
-/* Mettre en surbrillance le lien au survol */
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
 
 /* Affichage du menu déroulant lorsque le bouton est survolé */
 .dropdown:hover .dropdown-content {
