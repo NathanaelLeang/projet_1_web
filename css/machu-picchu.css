@@ -1,16 +1,21 @@
 .conteneur{
     background-color: rgb(255, 247, 228);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, auto);
+
+}
+
+@media screen and (min-width: 767px) {
+    .conteneur{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
         grid-template-areas: 
-        "titre titre"
-        "caroussel description"
-        "formules formules"
-        
-        "container2 container2"
-        "hotels hotels";
-    grid-gap : 5px;
+            "titre titre"
+            "caroussel description"
+            "formules formules"
+            "container2 container2"
+            "hotels hotels";
+        grid-gap : 5px;
+    }
 }
 /*----------------------------------------------------------------------------------------------------------------------------*/
 .sidebar {
@@ -249,5 +254,25 @@ body {
 }
 .hotels img{
     width: 250px;
+}
+
+@media only screen and (max-width: 767px) {
+    /* Cache la colonne des images des hôtels */
+    td:nth-child(1) {
+        display: none;
+    }
+
+    /* Ajuste le style des autres colonnes pour une meilleure lisibilité */
+    td:nth-child(2) {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    /* Cible la première ligne (entête) pour la cacher également */
+    th:nth-child(1) {
+        display: none;
+    }
+
 }
 /*----------------------------------------------------------------------------------------------------------------------------*/
