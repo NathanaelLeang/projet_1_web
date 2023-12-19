@@ -80,6 +80,7 @@ header:hover {
 .dropdown {
   position: relative;
   display: inline-block;
+  
 }
 
 /* Contenu du menu déroulant (caché par défaut) */
