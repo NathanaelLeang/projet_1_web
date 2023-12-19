@@ -80,7 +80,7 @@ header:hover {
 .dropdown {
   position: relative;
   display: inline-block;
-  
+
 }
 
 /* Contenu du menu déroulant (caché par défaut) */
@@ -189,6 +189,7 @@ header:hover {
 /*------------------------------------------------------------------------------------------*/
 
 .programme {
+  margin: auto;
   overflow: hidden;
   word-wrap: break-word;
   flex: 1; /* Permet au texte de prendre 50% de la largeur du conteneur */
@@ -198,19 +199,46 @@ header:hover {
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
-.programme li{
-  margin-bottom: 8px;
+.programme .menu{
+  margin-bottom: 5px;
 }
 
+.programme button{
+  font-weight: bold;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 6px;
+  border: 2px solid black;
+  border-image: linear-gradient(to bottom right, #970000, #ff7300);
+  border-image-slice: 1;
+  background-color: white;
+}
+
+.program-details {
+  display: none; /* Masque par défaut */
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: white;
+  margin: 8px 0 15px 0;
+}
+
+.program-toggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Styles lorsque le bouton est cliqué */
+.program-toggle:focus + .program-details {
+  display: block;
+}
+/*___________________________________________________*/
 .programme:hover{
   transform: translateY(-2px) translateX(-1px);
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
 }
+/*___________________________________________________*/
 
-/* Pour styliser le texte, par exemple, si tu veux lui donner une marge */
-.programme p, .programme h3, .programme ul{
-  margin: 10px; /* Exemple de marge autour du paragraphe */
-}
 /*--------------------------------------------------------------------------*/
 
 /*La Description*/
