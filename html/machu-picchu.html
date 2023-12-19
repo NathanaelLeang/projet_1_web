@@ -1,0 +1,198 @@
+<!Doctype html>
+<html lang="fr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title> Machu Picchu </title>
+    <link rel="icon" type="images/x-icon" href="../img/logo_vistavoyage.png">
+    <link rel="stylesheet" type="text/css" href="../css/machu-picchu.css" />
+    <link rel="stylesheet" type="text/css" href="../css/header-footer.css" />
+</head>
+<body>
+    <header>
+        <h1 class="header-title">VistaVoyage</h1> <!-- titre -->
+        <div class="header-menu-container"> <!-- menu destination -->
+            <input type="checkbox" id="header-menu-toggle"> <!-- permet de donner le type bouton a #menu-toggle -->
+            <label for="header-menu-toggle" id="header-menu-bouton">VistaDestinations</label> <!-- permet d'appliquer le type bouton grace a #menu-toggle -->
+            <nav id="header-nav"> <!-- liste des destinations -->
+                <a id="header-text1" class="header-destination" href="">Tarragone (Espagne)</a> <!-- destinations 1 -->
+                <a id="header-text2" class="header-destination" href="">Antalya (Turquie)</a> <!-- destinations 2 -->
+                <a id="header-text3" class="header-destination" href="">Sichuan (Chine)</a> <!-- destinations 3 -->
+                <a id="header-text4" class="header-destination" href="">L'Île de Paques (Chili)</a> <!-- destinations 4 -->
+                <a id="header-text5" class="header-destination" href="">Machu Picchu (Pérou)</a> <!-- destinations 5 -->
+                <div class="header-image-container"> <!-- images des destinations de la liste -->
+                    <img id="header-img1" class="header-img" src="../img/tarragone.jpg" alt="Image 1"> <!-- image 1 -->
+                    <img id="header-img2" class="header-img" src="../img/antalya.jpg" alt="Image 2"> <!-- image 2 -->
+                    <img id="header-img3" class="header-img" src="../img/sichuan.jpg" alt="Image 3"> <!-- image 3 -->
+                    <img id="header-img4" class="header-img" src="../img/paques.jpg" alt="Image 4"> <!-- image 4 -->
+                    <img id="header-img5" class="header-img" src="../img/machu.jpg" alt="Image 5"> <!-- image 5 -->
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="corps">
+            <div class="conteneur">
+                <div class="sidebar">
+                    <h3><a href="#top">Menu</a></h3>
+                    <ul>
+                        <li><a href="#description">Description</a></li>
+                        <li><a href="#formule-title">Formules</a></li>
+                        <li><a href="#hotels">Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="image-top">
+                    <img src="img/machu-picchu-3.jpg" alt="Description de l'image">
+                </div>
+                <div class="caroussel">
+                    <div class="slider">
+                        <img src="../img/machu-picchu/machu-picchu-diapo.webp" alt="machu-picchu">                    
+                        <img src="../img/machu-picchu/cuzco.jpg" alt="cuzco">                    
+                        <img src="../img/machu-picchu/vallée-sacrée-incas.jpg.jpeg" alt="vallée-sacrée-incas">                    
+                        <img src="../img/machu-picchu/machu-picchu-diapo.webp" alt="machu-picchu">
+                    </div>
+                </div>
+                
+
+                <div class="desc" id="description">
+                    <p>Plongez dans l'essence mystique des Andes péruviennes avec nos voyages au Machu Picchu. Nous offrons une variété de formules adaptées à tous les explorateurs en quête de découvertes inoubliables.
+                        Nos formules flexibles sont conçues pour vous immerger dans cette merveille archéologique, que vous souhaitiez une visite éclair d'une journée ou une expérience plus approfondie sur plusieurs jours. Explorez la citadelle inca légendaire, ses temples ancestraux et ses vues panoramiques époustouflantes.
+                        Optez pour cette déstination inoubliable, avec des visites guidées complètes et des temps libres pour explorer à votre rythme. Et admirer les paysages de toute beauté que cette merveille du monde peux vous offrir. De quoi passer de bonnes vacances en famille. </p>
+                </div>
+                <div class="formule-title" id="formule-title"><h2>Formules</h2></div>
+                <div class="formule1-2">
+                    <input type="checkbox" id="toggleFormule1" class="toggle">
+                    <label for="toggleFormule1" class="toggle-button">Voir la formule Découverte</label>
+                    <input type="checkbox" id="toggleFormule2" class="toggle">
+                    <label for="toggleFormule2" class="toggle-button">Voir la formule Expédition</label>
+                    <div class="container2">
+                        <div class="formule formule1">
+                        <h2>Formule 1</h2>
+                        <p><strong>Day 1 :</strong> Arrivé Lima -> cusco</p>
+                        <p><strong>Day 2 :</strong> visite Cusco</p>
+                        <p><strong>Day 3 :</strong> Cusco -> vallée saacrée des incas</p>
+                        <p><strong>Day 4 :</strong> quartier libre.</p>
+                        <p><strong>Day 5 :</strong> Randonnée Machu Picchu.</p>
+                        <p><strong>Day 6 :</strong> Découverte des activités locals</p>
+                        <p><strong>Day 7 :</strong> Cusco -> Lima</p>
+                        <!-- Contenu de la formule 1 -->
+                        </div>
+                        <div class="formule formule2">
+                        <h2>Formule 2</h2>
+                        <p><strong>Day 1 :</strong> Avion Paris -> Arrivé Lima -> cusco</p>
+                        <p><strong>Day 2 :</strong> visite Cusco</p>
+                        <p><strong>Day 3 :</strong> Escale -> Cusco -> vallée saacrée des incas</p>
+                        <p><strong>Day 4 :</strong> Vallée sacrée des incas -> Machu pichu pueblo</p>
+                        <p><strong>Day 5 :</strong> Machu pichu pueblo -> Randonnée Machu Picchu</p>
+                        <p><strong>Day 6 :</strong> retour Cusco</p>
+                        <p><strong>Day 7 :</strong> repos (quartier libre)</p>
+                        <p><strong>Day 8 :</strong> Escale -> Laguna muyna et Laguna Waton -> Lago Titicaca (nuit)</p>
+                        <p><strong>Day 9 :</strong> Lago Titicaca -> visit -> retour nuit cusco</p>
+                        <p><strong>Day 10 :</strong> Quartier libre</p>
+                        <p><strong>Day 11 :</strong> Découverte des activités locales</p>
+                        <p><strong>Day 12 :</strong> quitte cusco -> arret ayacucho -> Lima -> avion to paris</p>
+                    
+                        <!-- Contenu de la formule 2 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="hotels" id="hotels">
+                    <table>
+                        <tr>
+                            <th>Image de l'hôtel</th>
+                            <th>Description</th>
+                            <th>Étoiles</th>
+                        </tr>
+                        <tr class="lignes">
+                        <td><img src="../img/Capac-Rimacpampa-Hostel.jpg" alt="Hotel 1"></td>
+                        <td>
+                            <p><strong>Nom:</strong> Capac Rimacpampa </p>
+                            <p><strong>Lieu:</strong> Limacpampa Chico 493, Cusco City Centre, Cusco, Pérou</p>
+                            <p><strong>Description:</strong> L’établissement Capac Rimacpampa se situe dans le centre de Cusco,
+                                à respectivement 1,6 km et 500 mètres de ces lieux d’intérêt : Gare de Wanchaq et Religious Art Museum.
+                                Vous séjournerez à proximité de ces lieux d’intérêt prisés : Santo Domingo Church, Church of the Company et Holy Family Church.
+                                Cet établissement non-fumeurs vous accueille à 500 mètres de : Twelve Angled Stone.</p>
+                            <p><strong>Prix par nuit:</strong> 40€</p>
+                            <a href="https://capac-rimacpampa.cusco-hotels.net/fr/"> Pour plus d'info </a>
+                        </td>
+                        <td class="notes"><p><strong>Note :</strong>8.1/10</p></td>
+                        </tr>
+                        <tr>
+                        <td class="lignes"><img src="../img/Aitana's-house-san-blas-Hostel.jpg" alt="Hotel 2"></td>
+                        <td>
+                            <p><strong>Nom:</strong>AITANA'S HOUSE - SAN BLAs</p>
+                            <p><strong>Lieu:</strong> Choqechaka, Cusco City Centre, Cusco, Pérou</p>
+                            <p><strong>Description:</strong> Proposant un jardin et une connexion Wi-Fi gratuite, l’établissement AITANA'S HOUSE - SAN BLAs se situe dans le centre de Cusco, près de ces lieux d’intérêt : Gare de Wanchaq, Twelve Angled Stone et Religious Art Museum.
+
+                                Chaque hébergement est pourvu d’un patio avec vue sur la ville, d’une télévision à écran plat et d’un espace salon. 
+                                Vous bénéficierez également d’une cuisine bien équipée, ainsi que d’une salle de bains privative comprenant une douche.
+                                Certains logements sont dotés d’une terrasse et/ou d’un balcon avec une vue sur la montagne ou le jardin.</p>
+                            <p><strong>Prix par nuit:</strong> 49€</p>
+                            <a href="https://www.gites.fr/gites_aitana-s-house---san-blas_cuzco_h7181176.htm"> Pour plus d'info </a>
+                        </td>
+                        <td class="notes"><p>9.1/10</p></td>
+                        </tr>
+                        <tr class="lignes">
+                        <td><img src="../img/Nao-Victoria-Hostel.jpg" alt="Hotel 3"></td>
+                        <td>
+                            <p><strong>Nom:</strong>Nao Victoria Hostel</p>
+                            <p><strong>Lieu:</strong> Calle Procuradores, 357, Cusco City Centre, Cusco, Pérou</p>
+                            <p><strong>Description:</strong> L’établissement Nao Victoria Hostel se trouve à Cusco,
+                                à 3 km de ce lieu d’intérêt : Gare de Wanchaq. Il propose un service de concierge, un restaurant, un bar, des hébergements non-fumeurs, ainsi qu'une connexion Wi-Fi gratuite dans l’ensemble de ses locaux.
+                                Cet hôtel 3 étoiles propose un service d'étage et une réception ouverte 24h/24.
+                                Vous pourrez prendre un verre au snack-bar sur place.<br>
+                                Tous les hébergements comprennent une armoire.<br>
+                                Vous séjournerez à proximité de ces lieux d’intérêt : Cathedral of Cusco, Place principale de Cusco et Santa Catalina Convent. L'aéroport le plus proche (Aéroport international Alejandro Velasco Astete) est implanté à 5 km. Un service de navette aéroport payant peut être assuré par l’établissement.</p>
+                            <p><strong>Prix par nuit:</strong> 55€</p>
+                            <a href="https://www.booking.com/hotel/pe/nao-victoria-hostel.fr.html?aid=2378099&label=huno.
+                            1-bing%3A1d9ea20cbcaa1aca9d8dc78c99ef9dd6&sid=e66728c692bed00f2dc5c3c7f18bf3c1&all_sr_blocks=
+                            354496412_334378451_2_1_0;checkin=2023-12-25;checkout=2023-12-26;dest_id=-345275;dest_type=city;
+                            dist=0;group_adults=2;group_children=0;hapos=1;highlighted_blocks=354496412_334378451_2_1_0;hpos=1
+                            ;matching_block_id=354496412_334378451_2_1_0;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;
+                            sb_price_type=total;sr_order=popularity;sr_pri_blocks=354496412_334378451_2_1_0__6000;srepoch=1702897241;
+                            srpvid=8fa54d69ec5f01f4;type=total;ucfs=1&#hotelTmpl"> Pour plus d'info </a>
+                        </td>
+                        <td class="notes"><p>9.3/10</p></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <ul id="footer-icon"> <!-- icon container -->
+            <li> <!-- icon facebook + lien facebook -->
+                <a href="http://facebook.com/biblioJunia"><img class="footer-img" src="../img/facebook.png" alt="Facebook"></a>
+            </li>
+            <li> <!-- icon twitter + lien twitter -->
+                <a href="http://twitter.com/biblioJunia"><img class="footer-img" src="../img/twitter.png" alt="Twitter"></a>
+            </li>
+            <li> <!-- icon instagram + lien instagram -->
+                <a href="http://instagram.com/biblioJunia"><img class="footer-img" src="../img/instagram.png" alt="Instagram"></a>
+            </li>
+        </ul>
+
+        <dl id="footer-joindre"> <!--  -->
+            <dt class="footer-telephone">Téléphone</dt> <!-- telephone -->
+            <dd class="footer-numero">+33 1 02 03 04 05</dd> <!-- numero de telephone (numero aleatoire) -->
+            <dt class="footer-adress-title">Adresse</dt> <!-- adresse -->
+            <dd class="footer-adress"> <!-- l'adresse ou on se trouve -->
+                ISEN Lille - Institut Supérieur de l'Electronique et du Numérique <br> <!-- force le retour a la ligne -->
+                41 boulevard Vauban <br> <!-- force le retour a la ligne -->
+                59800 Lille Cedex
+            </dd>
+        </dl>
+
+        <iframe class="footer-map" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6184678248474!
+        2d3.0487603999999875!3d50.634204099999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13
+        .1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0
+        !3m2!1sfr!2sfr!4v1695145218130!5m2!1sfr!2sfr"
+        width="200" height="150" style="border:0;" 
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe> <!-- lien + style de l'image de la carte -->
+    </footer>
+</body>
+</html>
