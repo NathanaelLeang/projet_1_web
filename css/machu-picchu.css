@@ -1,20 +1,20 @@
-.conteneur{
-    background-color: rgb(255, 247, 228);
+.conteneur{ /* nous une couleurs au background de la grille*/
+    background-color: rgb(255, 247, 228); 
 
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 767px) {  /* ici on initialise une grille pour le format ordinateur */
     .conteneur{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, auto);
+        grid-template-columns: repeat(2, 1fr); /* 2 colones */
+        grid-template-rows: repeat(5, auto);  /* 5 lignes */
         grid-template-areas: 
             "titre titre"
             "caroussel description"
             "formules formules"
             "container2 map"
             "hotels hotels";
-        grid-gap : 5px;
+        grid-gap : 5px;  /* un ecart de 5px entre les lignes */
     }
 }
 /*----------------------------------------------------------------------------------------------------------------------------*/
@@ -59,28 +59,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, darkgreen, rgb(9, 167, 0));
+    background: linear-gradient(to bottom right, darkgreen, rgb(9, 167, 0));  /* dégradé de couleur au fond décrand */
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
 
-.conteneur-destination{
-    grid-area: titre;
+.conteneur-destination{ /*position pour le titre "Machu Picchu"*/
+    grid-area: titre; /*Ici on place avec l'aide du grid-area dans la grille conteneur*/
     text-align: center;
     margin: auto;
     padding-top: 10px;
 }
   
-.conteneur-destination h1{
+.conteneur-destination h1{ /*Style pour le titre "Machu Picchu"*/
     margin: 0;
     padding: 0;
-}
-  
-.conteneur-destination h1{
     margin-top: 15px;
 }
   
-.conteneur-destination p{
+.conteneur-destination p{ /* On définis la taille de la police */
     font-size: 20px;
 }
 
@@ -88,25 +85,25 @@ body {
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
 
-.caroussel {
+.caroussel { /* Ici on va effectuer un diaporama d'image */
     max-width: 500px;
-    margin: 3%;
+    margin: 3%;  /* on défini le margin */
     margin-right: 2%;
-    overflow: hidden;
-    border-radius: 15px;
+    overflow: hidden; /* cacher lorsque les images dépasse du conteneur */
+    border-radius: 15px;  /* on arrondi les bord */
 }
   
-.caroussel .slider {
-    animation: slider-1 17s infinite ease-in-out;
-    display: flex;
+.caroussel .slider { /* on effectue une animation de manière à se que les images déffiles de droite à gauche comme un diaporama d'iamge */
+    animation: slider-1 17s infinite ease-in-out; /*animation durrée */
+    display: flex; /* position flex de manière à pouvoir manipuler les images */
 }
   
 .slider img{
-    flex-shrink: 0;
+    flex-shrink: 0; /*défini comment les images vont se réduire par rapport au conteneur */
     width: 100%;
 }
   
-@keyframes slider-1 {
+@keyframes slider-1 {  /*initialisation de l'animation */
     0%,
     28% {
       transform: translateX(0);
@@ -126,17 +123,17 @@ body {
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
 
-.desc {
+.desc { /* ici on va mettre en page le contenue de la description */
     grid-area: description;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* felx-warp sert a mettre à la ligne le contenue en fonction du conteneur */
     margin: 30px auto;
     max-width: 1100px;
     padding: 2%;
 }
 .desc {
-    overflow: hidden;
-    word-wrap: break-word;
+    overflow: hidden; /* cacher lorsque les images dépasse du conteneur */
+    word-wrap: break-word; /*Les mots vont 
     flex: 1; /* Permet au texte de prendre 50% de la largeur du conteneur */
     padding: 2%;
     border: 1px solid transparent;
@@ -145,26 +142,26 @@ body {
 }
   
   
-.desc:hover{
+.desc:hover{ /* fait un déplacement lorsque survolé */
     transform: translateY(-2px) translateX(-1px);
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
 }
   
-/* Pour styliser le texte, par exemple, si tu veux lui donner une marge */
+/* Pour styliser le texte*/
 .desc p{
     margin: 10px; /* Exemple de marge autour du paragraphe */
 }
 /*----------------------------------------------------------------------------------------------------------------------------*/
-.formule-title{
+.formule-title{ /*style pour le titre 'formule' */
     margin: 10px;
     grid-area: formules;
-    text-align: center;
+    text-align: center; /*centré*/
     border: 1px solid transparent;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
-.formule-title:hover{
+.formule-title:hover{/* quand survolé */
     transform: translateY(2px) translateX(1px);
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
 }
@@ -177,7 +174,7 @@ body {
 
 .formule1-2 {
     text-align: center;
-    grid-area: container2;
+    grid-area: container2; /* dans la case container2 de la grille*/
 }
 
 /* Ajouter une bordure au contenu des formules */
@@ -186,13 +183,13 @@ body {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px auto; /* Centrer horizontalement */
-    max-width: 600px; /* Changer la largeur maximale selon vos besoins */
+    max-width: 600px; 
 }
 
-/* Afficher les boutons comme des étiquettes stylisées */
+/* Afficher les boutons comme des étiquettes */
 .toggle-button {
     cursor: pointer;
-    user-select: none; /* Empêcher la sélection de texte */
+    user-select: none; /* pour empêcher la sélection de texte */
     padding: 5px;
     background-color: #f0f0f0;
     border-radius: 5px;
@@ -223,20 +220,20 @@ body {
 }
 /*----------------------------------------------------------------------------------------------------------------------------*/
 
-.carte {
-    grid-area: map;
+.carte { /* style pour la carte de cusco*/
+    grid-area: map; /* dans la case map de la grille */
     display: flex;
     position: relative;
     align-items: center;
     max-width: 48%; /* Limite la largeur */
     margin: auto;
-    transition: transform 0.3s ease, border-radius 0.2s ease;
+    transition: transform 0.3s ease;
     height: auto;
     width: auto;
 }
 
   
-.carte:hover {
+.carte:hover { /*lorsque la carte est survolé la taille s'agrandi */
     transform: scale(1.1);
     border-radius: 10px;
 }
@@ -246,15 +243,15 @@ body {
 
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
-.corps{
+.corps{ /*pour faire les bordures vertes sur le coté */
     margin: 0 9% 0 9% ;
 }
 
-.body{
+.body{ /* fond de couleur vert foncé dégradant vers le vert */
     background-color: linear-gradient(to bottom right, darkgreen, green)  ;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) { /* enlève les bordures au format tééphone */
 
     .corps{
       margin:0px;
@@ -264,10 +261,11 @@ body {
 
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
-.hotels{
+.hotels{ /* dans la case hotels de la grille */
     grid-area: hotels;
 }
 
+/* Style du titre de la section des hôtels */
 .hotels .hotel-title{
     text-align: center;
     margin: 10px;
@@ -277,30 +275,32 @@ body {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
-
+/* Au survol du titre, applique une légère animation de transformation et d'ombre */
 .hotels .hotel-title:hover{
     transform: translateY(2px) translateX(1px);
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Supprime les espacements entre les cellules du tableau */
 .hotels table{
     border-collapse: collapse;
 }
-
+/* Style des lignes et des cellules du tableau des hôtels */
 .hotels tr{
-    border-bottom: 10px double black;
+    border-bottom: 10px double black; /* Ajoute une ligne noire en bas de chaque ligne du tableau */
 }
+
 .hotels td{
     border-left: 2px solid black;
     border-right: 2px solid black;
     background-color: white;
 }
+/* Au survol d'une cellule, applique une animation de changement de couleur */
 .hotels td:hover{
     background-color: white;
     animation: bg-tr-hover-anim 4s infinite;
 }
-
+/* Animation de changement de couleur pour les cellules du tableau */
 @keyframes bg-tr-hover-anim {
     0%{
     background-color: white;
@@ -313,22 +313,24 @@ body {
     }
     
 }
-
+/* Style des en-têtes de colonnes du tableau */
 .hotels th{
     border: 2px solid black;
     border-radius: 3px;
 }
+
+/* Ajustement de la largeur des images des hôtels dans le tableau */
 .hotels img{
     width: 250px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) { /* Pour le format téléphone */
     /* Cache la colonne des images des hôtels */
     td:nth-child(1) {
         display: none;
     }
 
-    /* Ajuste le style des autres colonnes pour une meilleure lisibilité */
+    /* Ajuste le style des autres colonnes afin d'avoir une meilleure lisibilité */
     td:nth-child(2) {
         display: block;
         text-align: left;
@@ -341,7 +343,7 @@ body {
     }
 
 }
-
+/* Style du bouton pour accéder au formulaire */
 .conteneur-bouton-formulaire button{
     display: flex;
     margin: auto;
@@ -350,17 +352,17 @@ body {
     border: 2px solid black;
     border-image: linear-gradient(to bottom right, darkgreen, green);
     border-image-slice: 1;
-    border-radius: 6px; /* Ajout du border-radius */
-    padding: 5px 10px; /* Ajout de padding pour espacer le contenu du bord */
+    border-radius: 6px;
+    padding: 5px 10px;
     box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5);
     transition: all 0.2s ease-in-out;
   }
-  
+  /* Style du lien dans le bouton */
   .conteneur-bouton-formulaire a{
     text-decoration: none;
     color: #000;
   }
-  
+  /* Au survol du bouton, applique une légère animation de transformation */
   .conteneur-bouton-formulaire button:hover{
     transform: translateY(1px) translateX(1px);
     box-shadow: none;
