@@ -211,7 +211,7 @@ body {
 /* Afficher le contenu quand la case est cochée */
 #toggleFormule1:checked ~ .container2,
 #toggleFormule2:checked ~ .container3 {
-    max-height: 500px; /* Ajustez en fonction de votre contenu */
+    max-height: 1000px;
 }
 
 /* Afficher le contenu quand la case est cochée et styliser le bouton */
@@ -224,12 +224,11 @@ body {
 
 .carte {
     grid-area: map;
+    display: flex;
     position: relative;
-    right: 18%;
-
+    align-items: center;
     max-width: 48%; /* Limite la largeur */
     margin: auto;
-    border-radius: 20px;
     transition: transform 0.3s ease, border-radius 0.2s ease;
     height: auto;
     width: auto;
@@ -240,6 +239,7 @@ body {
     transform: scale(1.1);
     border-radius: 10px;
 }
+
 
 /* Media queries pour différents écrans */
 
@@ -252,6 +252,16 @@ body {
 .body{
     background-color: linear-gradient(to bottom right, darkgreen, green)  ;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .corps{
+      margin:0px;
+    }
+  
+}
+
+
 /*----------------------------------------------------------------------------------------------------------------------------*/
 .hotels{
     grid-area: hotels;
