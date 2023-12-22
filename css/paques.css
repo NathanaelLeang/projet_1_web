@@ -1,0 +1,353 @@
+﻿
+/* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #970000, #ff7300);
+}
+
+
+/*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
+
+.corps {
+    background-color: rgb(255, 247, 228);
+    margin: 0 9% 0 9%;
+}
+
+/* Styles pour le contenu principal */
+
+/* Titre */
+.conteneur-destination {
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+}
+
+    .conteneur-destination h1, .conteneur-destination p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .conteneur-destination h1 {
+        margin-top: 15px;
+    }
+
+    .conteneur-destination p {
+        font-size: 20px;
+    }
+
+
+/*--------------------------------------------------------------------------*/
+/* Le programme */
+.conteneur-programme {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    max-width: 1100px;
+    padding: 2%;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+.image-deffilante {
+    max-width: 500px;
+    margin: auto;
+    margin-right: 2%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+    .image-deffilante .slider {
+        animation: slider-1 22s infinite ease-in-out;
+        display: flex;
+    }
+
+.slider img {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+@keyframes slider-1 {
+    0%, 18% {
+        transform: translateX(0);
+    }
+
+    22%, 40% {
+        transform: translateX(-100%);
+    }
+
+    42%, 60% {
+        transform: translateX(-100%);
+    }
+
+    62%, 99% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(-300%);
+    }
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+.programme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
+    flex: 1;
+    padding: 2%;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+}
+
+    .programme .menu {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
+    .programme button {
+        font-weight: bold;
+        text-align: left;
+        border: 2px solid black;
+        border-image: linear-gradient(to bottom right, #970000, #ff7300);
+        border-image-slice: 1;
+        border-radius: 6px; /* Ajout du border-radius */
+        padding: 5px 10px; /* Ajout de padding pour espacer le contenu du bord */
+    }
+
+.program-details {
+    display: none; /* Masque par défaut */
+    border: 2px solid black;
+    border-image: linear-gradient(to bottom right, #970000, #ff7300);
+    border-image-slice: 1;
+    border-radius: 12px; /* Ajout du border-radius */
+    margin: 8px 0 15px 0;
+    height: 300px;
+    overflow: hidden scroll;
+}
+
+
+    .program-details li {
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+.program-toggle {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+    /* Styles lorsque le bouton est cliqué */
+    .program-toggle:focus + .program-details {
+        display: block;
+    }
+/*___________________________________________________*/
+.programme:hover {
+    transform: translateY(-2px) translateX(-1px);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
+}
+/*___________________________________________________*/
+
+/*--------------------------------------------------------------------------*/
+
+/*La Description*/
+.conteneur-description {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    max-width: 1100px;
+}
+
+
+.conteneur-texte {
+    flex: 1 0 50%; /* Fait en sorte que le conteneur-texte prenne la moitié de la largeur et ne soit pas redimensionné */
+    max-width: 50%; /* Limite la largeur du conteneur texte */
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    padding-left: 3%;
+    margin-left: 2%;
+    border: 1px solid transparent;
+    box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+    .conteneur-texte:hover {
+        transform: translateY(-2px) translateX(1px);
+        box-shadow: -8px 8px 12px rgba(0, 0, 0, 0.1);
+    }
+
+.description-texte, .conteneur-description h3, .conteneur-description ul {
+    text-align: left;
+}
+
+.conteneur-texte li {
+    margin-bottom: 8px;
+}
+
+.carte {
+    max-width: 48%; /* Limite la largeur */
+    margin: auto;
+}
+
+#carte-paques {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, border-radius 0.2s ease;
+}
+
+    #carte-paques:hover {
+        transform: scale(1.1);
+        border-radius: 10px;
+    }
+
+/*--------------------------------------------------------------------------*/
+/*css de l'hotel*/
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.hotel-container {
+    position: relative; /* Ajout d'une position relative pour positionner le texte */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .hotel-container img {
+        width: 100%;
+        border-radius: 8px; /* Ajout de bordures arrondies pour l'image */
+    }
+
+    .hotel-container .hotel-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .hotel-container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    }
+
+        .hotel-container:hover .hotel-info {
+            opacity: 1;
+        }
+
+.hotel-info {
+    height: 200px;
+    overflow: hidden scroll;
+}
+
+.hotel-container:hover img {
+    opacity: 0;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .hotel-grid {
+        grid-template-columns: 1fr; /* Affichez les hôtels en colonne */
+    }
+
+    .hotel-container {
+        max-width: 300px;
+        margin: 0 auto 20px;
+    }
+}
+/*--------------------------------------------------------------------------*/
+/*################################################################################"*/
+
+/* Media query pour les tablettes */
+/* Media query pour les tablettes */
+@media only screen and (max-width: 1005px) {
+    /* Réorganiser la disposition des éléments */
+    .conteneur-programme {
+        display: block;
+    }
+
+    .conteneur-description {
+        display: block;
+    }
+
+    .carte,
+    .conteneur-texte {
+        max-width: 100%;
+    }
+
+    .carte {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-deffilante {
+        margin: 0 auto;
+    }
+}
+
+
+.conteneur-bouton-formulaire button {
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-image: linear-gradient(to bottom right, #970000, #ff7300);
+    border-image-slice: 1;
+    border-radius: 6px; /* Ajout du border-radius */
+    padding: 5px 10px; /* Ajout de padding pour espacer le contenu du bord */
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-in-out;
+}
+
+.conteneur-bouton-formulaire a {
+    text-decoration: none;
+    color: #000;
+}
+
+.conteneur-bouton-formulaire button:hover {
+    transform: translateY(1px) translateX(1px);
+    box-shadow: none;
+}
+
+
+/*################################################################################"*/
+
+
+@media only screen and (max-width: 750px) {
+
+    .corps {
+        margin: 0;
+    }
+}
