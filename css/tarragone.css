@@ -1,0 +1,648 @@
+/*selecteur universel qui permet de definir la police de tous les textes*/
+* {
+    font-size: 18px; /* defini la taille de la police universel */
+    font-family: Arial; /* defini le style de la police universel */
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+html{
+    background-color: rgba(20,20,70,0.3); /* met un background a l'html */
+}
+
+body {
+    margin: 0; /* positionne le body */
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+/* Debut main */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Style pour la balise <main> */
+main {
+    font-family: 'Exo', sans-serif; /* Définit la police de caractères 'Exo' pour la balise <main> */
+}
+
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut main grid */
+/* Style pour un élément avec la classe .main-grid-0 */
+.main-grid-0 {
+    display: grid; /* Utilise le modèle de mise en page de grille */
+    grid-template-rows: 200px repeat(2, 400px) 600px 700px 300px; /* Définit la taille des lignes de la grille */
+    grid-template-columns: 1fr 1fr; /* Définit la taille des colonnes de la grille */
+    row-gap: 5px; /* Ajoute un espace de 5 pixels entre les lignes de la grille */
+    column-gap: 10px; /* Ajoute un espace de 10 pixels entre les colonnes de la grille */
+    padding-right: 20px; /* Ajoute un rembourrage de 20 pixels à la droite de l'élément */
+    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+}
+
+
+@media screen and (max-width: 767px) {
+    .main-grid-0 {
+        grid-template-rows: 200px repeat(4, 800px);
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut animation */
+
+/* Style pour l'élément avec la classe .area */
+.area {
+    background: #4e54c8; /* Couleur de fond */
+    width: 100%; /* Largeur de 100% */
+    height: 465vh; /* Hauteur de 415vh (viewport height) */
+    z-index: -2; /* Définit l'ordre d'empilement en dessous des autres éléments */
+}
+
+/* Styles pour l'élément avec la classe .circles */
+.circles {
+    position: absolute; /* Position absolue par rapport à l'élément parent */
+    top: 18vh; /* Décale l'élément vers le bas de 18vh */
+    left: 0; /* Alignement à gauche de l'élément parent */
+    width: 95%; /* Largeur de 95% */
+    height: 450%; /* Hauteur de 400% */
+    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+}
+
+/* Styles pour les éléments <li> à l'intérieur de .circles */
+.circles li {
+    position: absolute; /* Position absolue par rapport à .circles */
+    display: block; /* Affiche l'élément en tant que bloc */
+    list-style: none; /* Supprime les puces de liste */
+    background: rgba(255, 255, 255, 0.2); /* Couleur de fond avec une opacité de 0.2 */
+    animation: animate 25s linear infinite; /* Applique l'animation nommée animate */
+    bottom: -150px; /* Décale l'élément vers le bas de 150 pixels */
+}
+
+/* Styles pour chaque élément <li> spécifique */
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 20s;
+}
+
+/* Définition de l'animation nommée "animate" avec @keyframes */
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg); /* Pas de déplacement vertical, pas de rotation */
+        opacity: 1; /* Opacité à 1 (complètement opaque) */
+        border-radius: 0; /* Rayon de la bordure à 0 (pas de bordure arrondie) */
+    }
+    100% {
+        transform: translateY(-3000px) rotate(720deg); /* Déplacement vertical de -3000 pixels, rotation de 720 degrés */
+        opacity: 0.2; /* Opacité à 0.2 (20%) */
+        border-radius: 50%; /* Rayon de la bordure à 50% (bordure arrondie, effet de cercle) */
+    }
+}
+@media screen and (max-width: 767px) {
+    .area{
+        height:440vh;
+    }
+    
+    .circles{
+        height: 425%;
+    }
+}
+/* Fin background anime */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut grid 0 */
+/* Style pour un élément de grille spécifique avec la classe .main-grid-0-0 */
+.main-grid-0-0 {
+    grid-column: 1 /3; /* Occupe les colonnes 1 à 3 de la grille */
+    grid-row: 1/2; /* Occupe la ligne 1 de la grille */
+    width: 200vh; /* Définit une largeur de 200vh (viewport height) */
+    line-height: 20px; /* Définit la hauteur de ligne à 20 pixels */
+}
+
+/* Styles pour l'élément avec la classe .mirrored-text */
+.mirrored-text {
+    position: relative; /* Position relative pour positionner le texte en miroir par rapport à celui principal */
+    display: flex; /* Affiche les éléments enfants en tant que conteneurs flexibles */
+    justify-content: center; /* Centre le contenu horizontalement dans l'élément parent */
+    align-items: center; /* Centre le contenu verticalement dans l'élément parent */
+    color: black; /* Définit la couleur du texte en noir */
+    font-size: 70px; /* Définit la taille de police à 70 pixels */
+
+    text-shadow: #353a94 5px 5px; /* Ajoute une ombre au texte avec un décalage de 5 pixels à droite et en bas */
+}
+
+/* Styles pour le texte en miroir (pseudo-élément ::before) */
+.mirrored-text::before {
+    content: attr(data-text); /* Utilise la valeur de l'attribut data-text comme contenu du pseudo-élément ::before */
+    position: absolute; /* Position absolue par rapport à l'élément parent .mirrored-text */
+    top: 40px; /* Décale le texte en miroir vers le bas de 40 pixels */
+    mask-image: linear-gradient(to bottom, transparent, blue); /* Utilise un masque pour créer un dégradé du texte */
+    transform: scaleY(-1); /* Effectue une symétrie par rapport à l'axe Y (effet miroir) */
+    text-shadow: none; /* Aucune ombre pour le texte en miroir */
+}
+
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    .main-grid-0-0 {
+        grid-column: 1 / 2;
+        grid-row: 1/2;
+        width: 100%;
+    }
+    .main-grid-0-0 h1 {
+        font-size: 40px;
+    }
+}
+/* Fin grid 0 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut grid 1 */
+/* Style pour un élément de grille spécifique avec la classe .main-grid-0-1 */
+.main-grid-0-1 {
+    grid-column: 1/2; /* Occupe la colonne 1 de la grille */
+    grid-row: 2/3; /* Occupe les lignes 2 à 3 de la grille */
+    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
+    max-width: 100vh; /* Définit une largeur maximale de 100vh (viewport height) */
+    margin-left: 1%; /* Définit une marge à gauche de 1% */
+    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    border-radius: 15px; /* Définit le rayon de la bordure à 15 pixels pour créer des coins arrondis */
+}
+
+/* Styles pour les éléments avec la classe .slider à l'intérieur de .main-grid-0-1 */
+.main-grid-0-1 .slider {
+    display: flex; /* Affiche les éléments enfants en tant que conteneurs flexibles */
+}
+
+/* Styles pour les images à l'intérieur de .slider */
+.slider img {
+    flex-shrink: 0; /* Empêche l'image de réduire sa taille en fonction du contenu de la boîte flexible */
+    width: 100vh; /* Définit la largeur de l'image à 100vh (viewport height) */
+    animation: slider1 17s infinite ease-in-out; /* Applique l'animation nommée slider1 */
+}
+
+/* Définition de l'animation slider1 avec @keyframes */
+@keyframes slider1 {
+    0%, 20% {
+        transform: translateX(0%); /* Aucun déplacement horizontal au début et à 20% de l'animation */
+    }
+    25%, 45% {
+        transform: translateX(-100vh); /* Déplacement horizontal de -100vh à 45% de l'animation */
+    }
+    50%, 70% {
+        transform: translateX(-200vh); /* Déplacement horizontal de -200vh à 70% de l'animation */
+    }
+    75%, 80% {
+        transform: translateX(-300vh); /* Déplacement horizontal de -300vh à 80% de l'animation */
+    }
+    100% {
+        transform: translateX(0%); /* Retour à la position initiale à la fin de l'animation */
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .main-grid-0-1 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+}
+/* Fin grid 1 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut grid 2 */
+/* Style pour un élément de grille spécifique avec la classe .main-grid-0-2 */
+.main-grid-0-2 {
+    grid-column: 2/3; /* Occupe la colonne 2 de la grille */
+    grid-row: 2/4; /* Occupe les lignes 2 à 4 de la grille */
+    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
+    background-color: rgb(255, 255, 255, 0.5); /* Définit une couleur de fond semi-transparente */
+    text-align: center; /* Centre le texte à l'intérieur de l'élément */
+}
+
+/* Styles pour les éléments enfants spécifiques au survol */
+.main-grid-0-2 :nth-child(1):hover,
+.main-grid-0-2 :nth-child(9):hover,
+.main-grid-0-2 :nth-child(14):hover,
+.main-grid-0-2 :nth-child(19):hover {
+    color: whitesmoke; /* Change la couleur du texte en blanc fumée au survol */
+    text-shadow: #4e54c8 2px 3px; /* Ajoute une ombre au texte avec une couleur spécifiée et un décalage de 2px à droite et 3px vers le bas */
+}
+
+.main-grid-0-2 :nth-child(3):hover,
+.main-grid-0-2 :nth-child(6):hover,
+.main-grid-0-2 :nth-child(11):hover,
+.main-grid-0-2 :nth-child(16):hover,
+.main-grid-0-2 :nth-child(21):hover,
+.main-grid-0-2 :nth-child(24):hover {
+    color: white; /* Change la couleur du texte en blanc au survol */
+}
+
+/* Styles pour les éléments avec la classe .police-description */
+.police-description {
+    font-size: 20px; /* Définit la taille de police à 20 pixels */
+}
+
+/* Styles pour les éléments avec la classe .police-description-b */
+.police-description-b {
+    font-size: 24px; /* Définit la taille de police à 24 pixels */
+}
+
+
+@media screen and (max-width: 767px) {
+    .main-grid-0-2 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin-top: -180px;
+    }
+    .police-description{
+        font-size: 13px;
+    }
+}
+/* Fin grid 2 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Définition de l'animation color1 avec @keyframes */
+@keyframes color1 {
+    0%   { background: rgba(255, 255, 255, 0.7); } /* Début avec une couleur de fond semi-transparente blanche */
+    20%  { background: rgba(240, 240, 240, 0.7); } /* Changement à une teinte plus claire après 20% de l'animation */
+    40%  { background: rgba(250, 250, 210, 0.7); } /* Changement à une teinte jaune pâle après 40% de l'animation */
+    60%  { background: rgba(242, 229, 155, 0.7); } /* Changement à une teinte plus foncée après 60% de l'animation */
+    80%  { background: rgba(240, 240, 240, 0.7); } /* Changement à une teinte plus claire après 80% de l'animation */
+    100% { background: rgba(255, 255, 255, 0.7); } /* Retour à la couleur de fond initiale à la fin de l'animation */
+}
+
+/* Définition de l'animation color2 avec @keyframes */
+@keyframes color2 {
+    0%   { background: rgba(255, 255, 255); } /* Début avec une couleur de fond blanche */
+    20%  { background: rgba(240, 240, 240); } /* Changement à une teinte plus claire après 20% de l'animation */
+    40%  { background: rgba(250, 250, 210); } /* Changement à une teinte jaune pâle après 40% de l'animation */
+    60%  { background: rgba(242, 229, 155); } /* Changement à une teinte plus foncée après 60% de l'animation */
+    80%  { background: rgba(240, 240, 240); } /* Changement à une teinte plus claire après 80% de l'animation */
+    100% { background: rgba(255, 255, 255); } /* Retour à la couleur de fond initiale à la fin de l'animation */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut grid 3 */
+/* Style pour un élément de grille spécifique avec la classe .main-grid-0-3 */
+.main-grid-0-3 {
+    grid-column: 1/2; /* Occupe la colonne 1 de la grille */
+    grid-row: 3/4; /* Occupe les lignes 3 à 4 de la grille */
+    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
+    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+}
+
+/* Style pour un élément avec l'ID main-formule-toggle */
+#main-formule-toggle {
+    display: none; /* Masque l'élément */
+}
+
+/* Style pour un élément avec l'ID formule1-bouton */
+#formule1-bouton {
+    display: block; /* Affiche l'élément en tant que bloc */
+    cursor: pointer; /* Définit le curseur comme pointeur au survol */
+    animation: color2 9s infinite linear; /* Applique une animation nommée color2 */
+    height: 50px; /* Définit la hauteur de l'élément à 50 pixels */
+    width: 90%; /* Définit la largeur de l'élément à 90% */
+    margin-left: 5%; /* Définit une marge à gauche de 5% */
+    border-radius: 15px; /* Définit le rayon de la bordure à 15 pixels pour créer des coins arrondis */
+    text-align: center; /* Centre le texte à l'intérieur de l'élément */
+    font-size: 30px; /* Définit la taille de police à 30 pixels */
+    line-height: 50px; /* Définit la hauteur de ligne à 50 pixels */
+    border: 2px solid black; /* Définit une bordure de 2 pixels solide et noire */
+    text-decoration: underline; /* Ajoute une soulignement au texte */
+}
+
+/* Style au survol de l'élément avec l'ID formule1-bouton */
+#formule1-bouton:hover {
+    font-weight: bold; /* Met le texte en gras */
+    text-shadow: gray 2px 2px; /* Ajoute une ombre au texte avec un décalage de 2 pixels à droite et en bas de couleur grise */
+}
+
+/* Style pour un élément avec la classe .main-p-1 */
+.main-p-1 {
+    display: none; /* Masque l'élément */
+    border: solid; /* Définit une bordure solide */
+    width: 86%; /* Définit la largeur de l'élément à 86% */
+    margin-left: 5%; /* Définit une marge à gauche de 5% */
+    height: 300px; /* Définit la hauteur de l'élément à 300 pixels */
+    animation: color1 9s infinite linear; /* Applique une animation nommée color1 */
+    overflow-x: hidden; /* Masque tout débordement horizontal du contenu */
+    padding: 10px; /* Ajoute un rembourrage de 10 pixels à tous les côtés de l'élément */
+    overflow: hidden scroll; /* Masque tout débordement et active le défilement vertical en cas de dépassement du contenu */
+}
+
+/* Styles conditionnels basés sur la sélection de la case à cocher main-formule-toggle et le clic sur le bouton formule1-bouton */
+#main-formule-toggle:checked + #formule1-bouton + .main-p-1 {
+    display: block; /* Affiche l'élément lorsque la case à cocher est cochée */
+}
+
+#main-formule-toggle:checked + #formule1-bouton {
+    border-radius: 0; /* Réinitialise le rayon de la bordure à 0 lorsque la case à cocher est cochée */
+}
+
+/* Fin grid 3 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut grid 4 */
+/* Style pour un élément de grille spécifique avec la classe .main-grid-0-4 */
+.main-grid-0-4 {
+    grid-row: 4/5; /* Occupe les lignes 4 à 5 de la grille */
+    grid-column: 1/2; /* Occupe la colonne 1 de la grille */
+    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
+    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+}
+
+/* Style pour un élément avec l'ID main-formule-toggle2 */
+#main-formule-toggle2 {
+    display: none; /* Masque l'élément */
+}
+
+/* Style pour un élément avec l'ID formule2-bouton */
+#formule2-bouton {
+    display: block; /* Affiche l'élément en tant que bloc */
+    cursor: pointer; /* Définit le curseur comme pointeur au survol */
+    animation: color2 9s infinite linear; /* Applique une animation nommée color2 */
+    height: 50px; /* Définit la hauteur de l'élément à 50 pixels */
+    width: 90%; /* Définit la largeur de l'élément à 90% */
+    margin-left: 5%; /* Définit une marge à gauche de 5% */
+    margin-top: 10%; /* Définit une marge en haut de 10% */
+    border-radius: 15px; /* Définit le rayon de la bordure à 15 pixels pour créer des coins arrondis */
+    text-align: center; /* Centre le texte à l'intérieur de l'élément */
+    font-size: 30px; /* Définit la taille de police à 30 pixels */
+    line-height: 50px; /* Définit la hauteur de ligne à 50 pixels */
+    border: 2px solid black; /* Définit une bordure de 2 pixels solide et noire */
+    text-decoration: underline; /* Ajoute une soulignement au texte */
+}
+
+/* Style au survol de l'élément avec l'ID formule2-bouton */
+#formule2-bouton:hover {
+    font-weight: bold; /* Met le texte en gras */
+    text-shadow: gray 2px 2px; /* Ajoute une ombre au texte avec un décalage de 2 pixels à droite et en bas de couleur grise */
+}
+
+/* Style pour un élément avec la classe .main-p-2 */
+.main-p-2 {
+    display: none; /* Masque l'élément */
+    border: solid; /* Définit une bordure solide */
+    width: 86%; /* Définit la largeur de l'élément à 86% */
+    margin-top: 0; /* Réinitialise la marge supérieure à 0 */
+    margin-left: 5%; /* Définit une marge à gauche de 5% */
+    height: 300px; /* Définit la hauteur de l'élément à 300 pixels */
+    animation: color1 9s infinite linear; /* Applique une animation nommée color1 */
+    overflow-x: hidden; /* Masque tout débordement horizontal du contenu */
+    padding: 10px; /* Ajoute un rembourrage de 10 pixels à tous les côtés de l'élément */
+    overflow: hidden scroll; /* Masque tout débordement et active le défilement vertical en cas de dépassement du contenu */
+}
+
+/* Styles conditionnels basés sur la sélection de la case à cocher main-formule-toggle2 et le clic sur le bouton formule2-bouton */
+#main-formule-toggle2:checked + #formule2-bouton + .main-p-2 {
+    display: block; /* Affiche l'élément lorsque la case à cocher est cochée */
+}
+
+#main-formule-toggle2:checked + #formule2-bouton {
+    border-radius: 0; /* Réinitialise le rayon de la bordure à 0 lorsque la case à cocher est cochée */
+}
+
+
+@media screen and (max-width: 767px) {
+    .main-grid-0-3 {
+        grid-column: 1/2;
+        grid-row: 4/5;
+        padding: 0;
+        padding-right: 10%;
+    }
+    #formule1-bouton {
+        width:99%;
+    }
+    #formule2-bouton {
+        width:99%;
+    }
+    .main-p-1 {
+        width: 92%;
+    }
+    .main-p-2 {
+        width: 92%;
+    }
+}
+/* Fin grid 4 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut grid 5 */
+/* Style pour un élément de grille spécifique avec la classe .main-grid-0-5 */
+.main-grid-0-5 {
+    grid-column: 2/3; /* Occupe la colonne 2 de la grille */
+    grid-row: 4/5; /* Occupe les lignes 4 à 5 de la grille */
+    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
+    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+}
+
+/* Style pour un élément avec l'ID map-tarragone */
+#map-tarragone {
+    width: 900px; /* Définit la largeur de l'élément à 900 pixels */
+    height: 675px; /* Définit la hauteur de l'élément à 675 pixels */
+}
+
+
+@media screen and (max-width: 767px) {
+    .main-grid-0-4 {
+        grid-column: 1/2;
+        grid-row: 5/6;
+        margin-left: 5%;
+    }
+    #map-tarragone{
+        padding-top: 0;
+        width:300px;
+        height:225px;
+    }
+}
+/* Fin grid 5 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut grid 6 */
+/* Style pour un élément de grille spécifique avec la classe .main-grid-0-6 */
+.main-grid-0-6 {
+    grid-column: 1/3; /* Occupe les colonnes 1 à 3 de la grille */
+    grid-row: 5/6; /* Occupe les lignes 5 à 6 de la grille */
+    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
+    margin-left: 20px; /* Définit une marge de 20 pixels à gauche */
+    margin-top: 10%; /* Définit une marge de 10% en haut par rapport au conteneur parent */
+    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+}
+
+/* Style pour un élément avec la classe .tableauhotel */
+.tableauhotel {
+    height: 500px; /* Définit la hauteur de l'élément à 500 pixels */
+    overflow-y: scroll; /* Active le défilement vertical */
+    display: block; /* Définit l'élément en tant que bloc */
+}
+
+/* Styles pour le tableau, les cellules de tableau et les en-têtes de tableau */
+table, td, th {
+    border: 1px solid #2e2e2e; /* Définit une bordure pour le tableau, les cellules et les en-têtes */
+}
+
+/* Styles pour la ligne d'en-tête du tableau */
+thead th {
+    background-color: #2e2e2e; /* Définit la couleur de fond pour l'en-tête du tableau */
+    color: #fff; /* Définit la couleur du texte pour l'en-tête du tableau */
+    width: 200vh; /* Définit la largeur de l'en-tête du tableau à 200vh */
+}
+
+/* Styles pour les cellules d'en-tête du tableau */
+tbody th {
+    background-color: darkgray; /* Définit la couleur de fond pour les cellules d'en-tête du tableau */
+}
+
+/* Styles pour les différentes lignes du tableau */
+#tablerow1,
+#tablerow2 {
+    height: 50px; /* Définit la hauteur des lignes 1 et 2 du tableau à 50 pixels */
+}
+
+/* Styles pour la première ligne du tableau en position sticky en haut */
+#tablerow1 {
+    position: sticky;
+    top: 0;
+}
+
+/* Styles pour la deuxième ligne du tableau en position sticky avec un décalage de 50 pixels depuis le haut */
+#tablerow2 {
+    position: sticky;
+    top: 50px;
+}
+
+/* Styles pour les lignes 3, 4 et 5 du tableau avec une hauteur de 400 pixels et une couleur de fond */
+#tablerow3,
+#tablerow4,
+#tablerow5 {
+    height: 400px;
+    background-color: whitesmoke;
+}
+
+/* Styles pour la colonne 3 du tableau avec une taille de police de 17 pixels et des marges intérieures à gauche et à droite de 1% */
+#column3 {
+    font-size: 17px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+/* Styles pour les images dans le tableau avec une hauteur de 400 pixels et une largeur de 600 pixels */
+table img {
+    display: flex;
+    align-items: center;
+    height: 400px;
+    width: 600px;
+}
+
+
+/* Fin grid 6 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut grid 7 */
+
+.main-grid-0-7 {
+    grid-column: 1/3; /* Occupe les colonnes 1 à 3 de la grille */
+    grid-row: 6/7; /* Occupe les lignes 5 à 6 de la grille */
+    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
+    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: whitesmoke;
+    border: solid rgba(12, 3, 84, 0.7) 4px;
+}
+
+
+/* Fin grid 7 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Fin main */
