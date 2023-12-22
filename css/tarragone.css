@@ -20,26 +20,178 @@ body {
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
+/* Debut header */
+
+/* style du header (background, display,...), permet la bonne disposition du header */
+header {
+    position: sticky;
+    top: -30px;
+    background: linear-gradient(to bottom right, rgba(50,50,50), rgba(128,128,128)); /* permet d'avoir un background en degrade vers le bas droit */
+    padding: 10px; /* positionne le header comme voulu */
+    display: flex; /* defini comme flex le header */
+    align-items: center; /* centre les elements du header */
+    z-index: 5;
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /* pas de modification neccessaire pour la balise header */
+}
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour la balise header */
+}
+
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* style titre du header */
+.header-title {
+    margin-right: auto; /* positionne le titre */
+    font-family: 'Brush Script MT'; /* defini la police du titre */
+    color: rgba(39,120,54); /* defini la couleur du titre */
+    font-size: 40px; /* defini la taille de la police du titre */
+    padding-left: 5px; /* positionne le titre comme voulu */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /* pas de modification neccessaire pour le titre du header */
+}
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour le titre du header */
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut style de la balise div de class header-menu-container */
+
+/* style du container */
+.header-menu-container {
+    position: relative; /* defini la position comme reltiv de la balise de cette class */
+    padding-right: 1px; /* positionne la balise de cette class comme voulu */
+    width: 300px; /* defini la largeur de la balise de cette class */
+}
+
+#header-menu-toggle {
+    display: none; /* permet de retirer la puce a cocher de la balise d'id header-menu-toggle */
+}
+
+#header-menu-bouton,
+#header-nav {
+    color: white; /* met la couleur white aux balises d'id header-menu-bouton et header-nav */
+}
+
+/* style de la balise d'id header-menu-bouton */
+#header-menu-bouton {
+    display: block; /* defini comme block la balise de cette id */
+    text-align: center; /* centre le texte */
+    background-color: rgba(39,91,54); /* donne la couleur au background */
+    border: 2px solid black; /* creer une bordure a la balise de cette id */
+    font-size: 20px; /* defini la police du texte */
+    padding: 10px 15px; /* positionne la balise */
+    cursor: pointer; /* permet de changer le cursor en pointer quand la balise de cette id est hover */
+    text-decoration: underline; /* souligne le texte */
+    font-weight: bold; /* met en gras le texte */
+}
+
+/* permet de definir la position de la balise d'id header-nav */
+#header-nav {
+    display: none; /* permet de cacher la balise de cette id */
+    position: absolute; /* defini comme position absolute */
+    top: 100%; /* positionne la balise de cette id */
+    width: 300px; /* defini la largeur de la balise de cette id */
+    flex-direction: column; /* permet la disposition en colonne de la balise de cette id */
+}
+
+/* permet d'afficher la balise d'id header-nav quand on click sur la balise d'id header-menu-bouton */
+#header-menu-toggle:checked + #header-menu-bouton + #header-nav {
+    display: flex;
+}
+
+/* style des balises de class header-destination */
+.header-destination {
+    color: white; /* donne la couleur aux textes des balises de cette class */
+    text-decoration: none; /* enleve les textes decorations des balises de cette class */
+    padding: 10px; /* positionne la balise */
+    display: block; /* defini comme block cette balise */
+    background-color: #333; /* donne une couleur au background de cette balise */
+}
+
+/* style des images des balises d'id header-img1,2,3,4 et 5 */
+#header-img1,
+#header-img2,
+#header-img3,
+#header-img4,
+#header-img5 {
+    display: none; /* permet de cacher les balises de ces id */
+    position: relative; /* defini comme positin relative les balises de ces id */
+    border: 2px solid black; /* donne une bordure aux images */
+    right: 1px; /* positionne les images comme voulu */
+    height: 200px; /* defini la hauteur */
+    width: 300px; /* defini la largeur */
+}
+
+/* permet d'afficher l'image correspondante a son texte quand ce texte est hover*/
+#header-text1:hover ~ .header-image-container #header-img1,
+#header-text2:hover ~ .header-image-container #header-img2,
+#header-text3:hover ~ .header-image-container #header-img3,
+#header-text4:hover ~ .header-image-container #header-img4,
+#header-text5:hover ~ .header-image-container #header-img5 {
+    display:flex; /* defini comme flex cette balise, permet d'afficher les balises des id header-img1,2,3,4 et 5 */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    #header-nav {
+        width: 211px; /* permet de redefinir la largeur de cette balise */
+    }
+    #header-img1,
+    #header-img2,
+    #header-img3,
+    #header-img4,
+    #header-img5 {
+        height: 140px; /* redefini la hauteur des images des balises de ces id */
+        width: 210px; /* redefini la largeur des images des balises de ces id */
+    }
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour la balise de class header-menu-container */
+}
+
+/* Fin style de la balise div de class header-menu-container */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* Fin header */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
 /* Debut main */
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Style pour la balise <main> */
 main {
-    font-family: 'Exo', sans-serif; /* Définit la police de caractères 'Exo' pour la balise <main> */
+    font-family: 'Exo', sans-serif; /* DÃ©finit la police de caractÃ¨res 'Exo' pour la balise <main> */
 }
 
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut main grid */
-/* Style pour un élément avec la classe .main-grid-0 */
+/* Style pour un Ã©lÃ©ment avec la classe .main-grid-0 */
 .main-grid-0 {
-    display: grid; /* Utilise le modèle de mise en page de grille */
-    grid-template-rows: 200px repeat(2, 400px) 600px 700px 200px; /* Définit la taille des lignes de la grille */
-    grid-template-columns: 1fr 1fr; /* Définit la taille des colonnes de la grille */
+    display: grid; /* Utilise le modÃ¨le de mise en page de grille */
+    grid-template-rows: 200px repeat(2, 400px) 600px 700px 300px; /* DÃ©finit la taille des lignes de la grille */
+    grid-template-columns: 1fr 1fr; /* DÃ©finit la taille des colonnes de la grille */
     row-gap: 5px; /* Ajoute un espace de 5 pixels entre les lignes de la grille */
     column-gap: 10px; /* Ajoute un espace de 10 pixels entre les colonnes de la grille */
-    padding-right: 20px; /* Ajoute un rembourrage de 20 pixels à la droite de l'élément */
-    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    padding-right: 20px; /* Ajoute un rembourrage de 20 pixels Ã  la droite de l'Ã©lÃ©ment */
+    overflow: hidden; /* Masque tout contenu dÃ©passant de la boÃ®te */
 }
 
 
@@ -55,35 +207,35 @@ main {
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut animation */
 
-/* Style pour l'élément avec la classe .area */
+/* Style pour l'Ã©lÃ©ment avec la classe .area */
 .area {
     background: #4e54c8; /* Couleur de fond */
     width: 100%; /* Largeur de 100% */
     height: 465vh; /* Hauteur de 415vh (viewport height) */
-    z-index: -2; /* Définit l'ordre d'empilement en dessous des autres éléments */
+    z-index: -2; /* DÃ©finit l'ordre d'empilement en dessous des autres Ã©lÃ©ments */
 }
 
-/* Styles pour l'élément avec la classe .circles */
+/* Styles pour l'Ã©lÃ©ment avec la classe .circles */
 .circles {
-    position: absolute; /* Position absolue par rapport à l'élément parent */
-    top: 18vh; /* Décale l'élément vers le bas de 18vh */
-    left: 0; /* Alignement à gauche de l'élément parent */
+    position: absolute; /* Position absolue par rapport Ã  l'Ã©lÃ©ment parent */
+    top: 18vh; /* DÃ©cale l'Ã©lÃ©ment vers le bas de 18vh */
+    left: 0; /* Alignement Ã  gauche de l'Ã©lÃ©ment parent */
     width: 95%; /* Largeur de 95% */
     height: 450%; /* Hauteur de 400% */
-    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    overflow: hidden; /* Masque tout contenu dÃ©passant de la boÃ®te */
 }
 
-/* Styles pour les éléments <li> à l'intérieur de .circles */
+/* Styles pour les Ã©lÃ©ments <li> Ã  l'intÃ©rieur de .circles */
 .circles li {
-    position: absolute; /* Position absolue par rapport à .circles */
-    display: block; /* Affiche l'élément en tant que bloc */
+    position: absolute; /* Position absolue par rapport Ã  .circles */
+    display: block; /* Affiche l'Ã©lÃ©ment en tant que bloc */
     list-style: none; /* Supprime les puces de liste */
-    background: rgba(255, 255, 255, 0.2); /* Couleur de fond avec une opacité de 0.2 */
-    animation: animate 25s linear infinite; /* Applique l'animation nommée animate */
-    bottom: -150px; /* Décale l'élément vers le bas de 150 pixels */
+    background: rgba(255, 255, 255, 0.2); /* Couleur de fond avec une opacitÃ© de 0.2 */
+    animation: animate 25s linear infinite; /* Applique l'animation nommÃ©e animate */
+    bottom: -150px; /* DÃ©cale l'Ã©lÃ©ment vers le bas de 150 pixels */
 }
 
-/* Styles pour chaque élément <li> spécifique */
+/* Styles pour chaque Ã©lÃ©ment <li> spÃ©cifique */
 .circles li:nth-child(1){
     left: 25%;
     width: 80px;
@@ -159,17 +311,17 @@ main {
     animation-duration: 20s;
 }
 
-/* Définition de l'animation nommée "animate" avec @keyframes */
+/* DÃ©finition de l'animation nommÃ©e "animate" avec @keyframes */
 @keyframes animate {
     0% {
-        transform: translateY(0) rotate(0deg); /* Pas de déplacement vertical, pas de rotation */
-        opacity: 1; /* Opacité à 1 (complètement opaque) */
-        border-radius: 0; /* Rayon de la bordure à 0 (pas de bordure arrondie) */
+        transform: translateY(0) rotate(0deg); /* Pas de dÃ©placement vertical, pas de rotation */
+        opacity: 1; /* OpacitÃ© Ã  1 (complÃ¨tement opaque) */
+        border-radius: 0; /* Rayon de la bordure Ã  0 (pas de bordure arrondie) */
     }
     100% {
-        transform: translateY(-3000px) rotate(720deg); /* Déplacement vertical de -3000 pixels, rotation de 720 degrés */
-        opacity: 0.2; /* Opacité à 0.2 (20%) */
-        border-radius: 50%; /* Rayon de la bordure à 50% (bordure arrondie, effet de cercle) */
+        transform: translateY(-3000px) rotate(720deg); /* DÃ©placement vertical de -3000 pixels, rotation de 720 degrÃ©s */
+        opacity: 0.2; /* OpacitÃ© Ã  0.2 (20%) */
+        border-radius: 50%; /* Rayon de la bordure Ã  50% (bordure arrondie, effet de cercle) */
     }
 }
 @media screen and (max-width: 767px) {
@@ -186,33 +338,33 @@ main {
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut grid 0 */
-/* Style pour un élément de grille spécifique avec la classe .main-grid-0-0 */
+/* Style pour un Ã©lÃ©ment de grille spÃ©cifique avec la classe .main-grid-0-0 */
 .main-grid-0-0 {
-    grid-column: 1 /3; /* Occupe les colonnes 1 à 3 de la grille */
+    grid-column: 1 /3; /* Occupe les colonnes 1 Ã  3 de la grille */
     grid-row: 1/2; /* Occupe la ligne 1 de la grille */
-    width: 200vh; /* Définit une largeur de 200vh (viewport height) */
-    line-height: 20px; /* Définit la hauteur de ligne à 20 pixels */
+    width: 200vh; /* DÃ©finit une largeur de 200vh (viewport height) */
+    line-height: 20px; /* DÃ©finit la hauteur de ligne Ã  20 pixels */
 }
 
-/* Styles pour l'élément avec la classe .mirrored-text */
+/* Styles pour l'Ã©lÃ©ment avec la classe .mirrored-text */
 .mirrored-text {
-    position: relative; /* Position relative pour positionner le texte en miroir par rapport à celui principal */
-    display: flex; /* Affiche les éléments enfants en tant que conteneurs flexibles */
-    justify-content: center; /* Centre le contenu horizontalement dans l'élément parent */
-    align-items: center; /* Centre le contenu verticalement dans l'élément parent */
-    color: black; /* Définit la couleur du texte en noir */
-    font-size: 70px; /* Définit la taille de police à 70 pixels */
+    position: relative; /* Position relative pour positionner le texte en miroir par rapport Ã  celui principal */
+    display: flex; /* Affiche les Ã©lÃ©ments enfants en tant que conteneurs flexibles */
+    justify-content: center; /* Centre le contenu horizontalement dans l'Ã©lÃ©ment parent */
+    align-items: center; /* Centre le contenu verticalement dans l'Ã©lÃ©ment parent */
+    color: black; /* DÃ©finit la couleur du texte en noir */
+    font-size: 70px; /* DÃ©finit la taille de police Ã  70 pixels */
 
-    text-shadow: #353a94 5px 5px; /* Ajoute une ombre au texte avec un décalage de 5 pixels à droite et en bas */
+    text-shadow: #353a94 5px 5px; /* Ajoute une ombre au texte avec un dÃ©calage de 5 pixels Ã  droite et en bas */
 }
 
-/* Styles pour le texte en miroir (pseudo-élément ::before) */
+/* Styles pour le texte en miroir (pseudo-Ã©lÃ©ment ::before) */
 .mirrored-text::before {
-    content: attr(data-text); /* Utilise la valeur de l'attribut data-text comme contenu du pseudo-élément ::before */
-    position: absolute; /* Position absolue par rapport à l'élément parent .mirrored-text */
-    top: 40px; /* Décale le texte en miroir vers le bas de 40 pixels */
-    mask-image: linear-gradient(to bottom, transparent, blue); /* Utilise un masque pour créer un dégradé du texte */
-    transform: scaleY(-1); /* Effectue une symétrie par rapport à l'axe Y (effet miroir) */
+    content: attr(data-text); /* Utilise la valeur de l'attribut data-text comme contenu du pseudo-Ã©lÃ©ment ::before */
+    position: absolute; /* Position absolue par rapport Ã  l'Ã©lÃ©ment parent .mirrored-text */
+    top: 40px; /* DÃ©cale le texte en miroir vers le bas de 40 pixels */
+    mask-image: linear-gradient(to bottom, transparent, blue); /* Utilise un masque pour crÃ©er un dÃ©gradÃ© du texte */
+    transform: scaleY(-1); /* Effectue une symÃ©trie par rapport Ã  l'axe Y (effet miroir) */
     text-shadow: none; /* Aucune ombre pour le texte en miroir */
 }
 
@@ -233,45 +385,45 @@ main {
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut grid 1 */
-/* Style pour un élément de grille spécifique avec la classe .main-grid-0-1 */
+/* Style pour un Ã©lÃ©ment de grille spÃ©cifique avec la classe .main-grid-0-1 */
 .main-grid-0-1 {
     grid-column: 1/2; /* Occupe la colonne 1 de la grille */
-    grid-row: 2/3; /* Occupe les lignes 2 à 3 de la grille */
-    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
-    max-width: 100vh; /* Définit une largeur maximale de 100vh (viewport height) */
-    margin-left: 1%; /* Définit une marge à gauche de 1% */
-    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
-    border-radius: 15px; /* Définit le rayon de la bordure à 15 pixels pour créer des coins arrondis */
+    grid-row: 2/3; /* Occupe les lignes 2 Ã  3 de la grille */
+    z-index: 2; /* DÃ©finit l'ordre d'empilement pour l'Ã©lÃ©ment */
+    max-width: 100vh; /* DÃ©finit une largeur maximale de 100vh (viewport height) */
+    margin-left: 1%; /* DÃ©finit une marge Ã  gauche de 1% */
+    overflow: hidden; /* Masque tout contenu dÃ©passant de la boÃ®te */
+    border-radius: 15px; /* DÃ©finit le rayon de la bordure Ã  15 pixels pour crÃ©er des coins arrondis */
 }
 
-/* Styles pour les éléments avec la classe .slider à l'intérieur de .main-grid-0-1 */
+/* Styles pour les Ã©lÃ©ments avec la classe .slider Ã  l'intÃ©rieur de .main-grid-0-1 */
 .main-grid-0-1 .slider {
-    display: flex; /* Affiche les éléments enfants en tant que conteneurs flexibles */
+    display: flex; /* Affiche les Ã©lÃ©ments enfants en tant que conteneurs flexibles */
 }
 
-/* Styles pour les images à l'intérieur de .slider */
+/* Styles pour les images Ã  l'intÃ©rieur de .slider */
 .slider img {
-    flex-shrink: 0; /* Empêche l'image de réduire sa taille en fonction du contenu de la boîte flexible */
-    width: 100vh; /* Définit la largeur de l'image à 100vh (viewport height) */
-    animation: slider1 17s infinite ease-in-out; /* Applique l'animation nommée slider1 */
+    flex-shrink: 0; /* EmpÃªche l'image de rÃ©duire sa taille en fonction du contenu de la boÃ®te flexible */
+    width: 100vh; /* DÃ©finit la largeur de l'image Ã  100vh (viewport height) */
+    animation: slider1 17s infinite ease-in-out; /* Applique l'animation nommÃ©e slider1 */
 }
 
-/* Définition de l'animation slider1 avec @keyframes */
+/* DÃ©finition de l'animation slider1 avec @keyframes */
 @keyframes slider1 {
     0%, 20% {
-        transform: translateX(0%); /* Aucun déplacement horizontal au début et à 20% de l'animation */
+        transform: translateX(0%); /* Aucun dÃ©placement horizontal au dÃ©but et Ã  20% de l'animation */
     }
     25%, 45% {
-        transform: translateX(-100vh); /* Déplacement horizontal de -100vh à 45% de l'animation */
+        transform: translateX(-100vh); /* DÃ©placement horizontal de -100vh Ã  45% de l'animation */
     }
     50%, 70% {
-        transform: translateX(-200vh); /* Déplacement horizontal de -200vh à 70% de l'animation */
+        transform: translateX(-200vh); /* DÃ©placement horizontal de -200vh Ã  70% de l'animation */
     }
     75%, 80% {
-        transform: translateX(-300vh); /* Déplacement horizontal de -300vh à 80% de l'animation */
+        transform: translateX(-300vh); /* DÃ©placement horizontal de -300vh Ã  80% de l'animation */
     }
     100% {
-        transform: translateX(0%); /* Retour à la position initiale à la fin de l'animation */
+        transform: translateX(0%); /* Retour Ã  la position initiale Ã  la fin de l'animation */
     }
 }
 
@@ -289,23 +441,23 @@ main {
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut grid 2 */
-/* Style pour un élément de grille spécifique avec la classe .main-grid-0-2 */
+/* Style pour un Ã©lÃ©ment de grille spÃ©cifique avec la classe .main-grid-0-2 */
 .main-grid-0-2 {
     grid-column: 2/3; /* Occupe la colonne 2 de la grille */
-    grid-row: 2/4; /* Occupe les lignes 2 à 4 de la grille */
-    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
-    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
-    background-color: rgb(255, 255, 255, 0.5); /* Définit une couleur de fond semi-transparente */
-    text-align: center; /* Centre le texte à l'intérieur de l'élément */
+    grid-row: 2/4; /* Occupe les lignes 2 Ã  4 de la grille */
+    z-index: 2; /* DÃ©finit l'ordre d'empilement pour l'Ã©lÃ©ment */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels Ã  tous les cÃ´tÃ©s de l'Ã©lÃ©ment */
+    background-color: rgb(255, 255, 255, 0.5); /* DÃ©finit une couleur de fond semi-transparente */
+    text-align: center; /* Centre le texte Ã  l'intÃ©rieur de l'Ã©lÃ©ment */
 }
 
-/* Styles pour les éléments enfants spécifiques au survol */
+/* Styles pour les Ã©lÃ©ments enfants spÃ©cifiques au survol */
 .main-grid-0-2 :nth-child(1):hover,
 .main-grid-0-2 :nth-child(9):hover,
 .main-grid-0-2 :nth-child(14):hover,
 .main-grid-0-2 :nth-child(19):hover {
-    color: whitesmoke; /* Change la couleur du texte en blanc fumée au survol */
-    text-shadow: #4e54c8 2px 3px; /* Ajoute une ombre au texte avec une couleur spécifiée et un décalage de 2px à droite et 3px vers le bas */
+    color: whitesmoke; /* Change la couleur du texte en blanc fumÃ©e au survol */
+    text-shadow: #4e54c8 2px 3px; /* Ajoute une ombre au texte avec une couleur spÃ©cifiÃ©e et un dÃ©calage de 2px Ã  droite et 3px vers le bas */
 }
 
 .main-grid-0-2 :nth-child(3):hover,
@@ -317,14 +469,14 @@ main {
     color: white; /* Change la couleur du texte en blanc au survol */
 }
 
-/* Styles pour les éléments avec la classe .police-description */
+/* Styles pour les Ã©lÃ©ments avec la classe .police-description */
 .police-description {
-    font-size: 20px; /* Définit la taille de police à 20 pixels */
+    font-size: 20px; /* DÃ©finit la taille de police Ã  20 pixels */
 }
 
-/* Styles pour les éléments avec la classe .police-description-b */
+/* Styles pour les Ã©lÃ©ments avec la classe .police-description-b */
 .police-description-b {
-    font-size: 24px; /* Définit la taille de police à 24 pixels */
+    font-size: 24px; /* DÃ©finit la taille de police Ã  24 pixels */
 }
 
 
@@ -342,85 +494,85 @@ main {
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
-/* Définition de l'animation color1 avec @keyframes */
+/* DÃ©finition de l'animation color1 avec @keyframes */
 @keyframes color1 {
-    0%   { background: rgba(255, 255, 255, 0.7); } /* Début avec une couleur de fond semi-transparente blanche */
-    20%  { background: rgba(240, 240, 240, 0.7); } /* Changement à une teinte plus claire après 20% de l'animation */
-    40%  { background: rgba(250, 250, 210, 0.7); } /* Changement à une teinte jaune pâle après 40% de l'animation */
-    60%  { background: rgba(242, 229, 155, 0.7); } /* Changement à une teinte plus foncée après 60% de l'animation */
-    80%  { background: rgba(240, 240, 240, 0.7); } /* Changement à une teinte plus claire après 80% de l'animation */
-    100% { background: rgba(255, 255, 255, 0.7); } /* Retour à la couleur de fond initiale à la fin de l'animation */
+    0%   { background: rgba(255, 255, 255, 0.7); } /* DÃ©but avec une couleur de fond semi-transparente blanche */
+    20%  { background: rgba(240, 240, 240, 0.7); } /* Changement Ã  une teinte plus claire aprÃ¨s 20% de l'animation */
+    40%  { background: rgba(250, 250, 210, 0.7); } /* Changement Ã  une teinte jaune pÃ¢le aprÃ¨s 40% de l'animation */
+    60%  { background: rgba(242, 229, 155, 0.7); } /* Changement Ã  une teinte plus foncÃ©e aprÃ¨s 60% de l'animation */
+    80%  { background: rgba(240, 240, 240, 0.7); } /* Changement Ã  une teinte plus claire aprÃ¨s 80% de l'animation */
+    100% { background: rgba(255, 255, 255, 0.7); } /* Retour Ã  la couleur de fond initiale Ã  la fin de l'animation */
 }
 
-/* Définition de l'animation color2 avec @keyframes */
+/* DÃ©finition de l'animation color2 avec @keyframes */
 @keyframes color2 {
-    0%   { background: rgba(255, 255, 255); } /* Début avec une couleur de fond blanche */
-    20%  { background: rgba(240, 240, 240); } /* Changement à une teinte plus claire après 20% de l'animation */
-    40%  { background: rgba(250, 250, 210); } /* Changement à une teinte jaune pâle après 40% de l'animation */
-    60%  { background: rgba(242, 229, 155); } /* Changement à une teinte plus foncée après 60% de l'animation */
-    80%  { background: rgba(240, 240, 240); } /* Changement à une teinte plus claire après 80% de l'animation */
-    100% { background: rgba(255, 255, 255); } /* Retour à la couleur de fond initiale à la fin de l'animation */
+    0%   { background: rgba(255, 255, 255); } /* DÃ©but avec une couleur de fond blanche */
+    20%  { background: rgba(240, 240, 240); } /* Changement Ã  une teinte plus claire aprÃ¨s 20% de l'animation */
+    40%  { background: rgba(250, 250, 210); } /* Changement Ã  une teinte jaune pÃ¢le aprÃ¨s 40% de l'animation */
+    60%  { background: rgba(242, 229, 155); } /* Changement Ã  une teinte plus foncÃ©e aprÃ¨s 60% de l'animation */
+    80%  { background: rgba(240, 240, 240); } /* Changement Ã  une teinte plus claire aprÃ¨s 80% de l'animation */
+    100% { background: rgba(255, 255, 255); } /* Retour Ã  la couleur de fond initiale Ã  la fin de l'animation */
 }
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut grid 3 */
-/* Style pour un élément de grille spécifique avec la classe .main-grid-0-3 */
+/* Style pour un Ã©lÃ©ment de grille spÃ©cifique avec la classe .main-grid-0-3 */
 .main-grid-0-3 {
     grid-column: 1/2; /* Occupe la colonne 1 de la grille */
-    grid-row: 3/4; /* Occupe les lignes 3 à 4 de la grille */
-    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
-    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
-    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    grid-row: 3/4; /* Occupe les lignes 3 Ã  4 de la grille */
+    z-index: 2; /* DÃ©finit l'ordre d'empilement pour l'Ã©lÃ©ment */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels Ã  tous les cÃ´tÃ©s de l'Ã©lÃ©ment */
+    overflow: hidden; /* Masque tout contenu dÃ©passant de la boÃ®te */
 }
 
-/* Style pour un élément avec l'ID main-formule-toggle */
+/* Style pour un Ã©lÃ©ment avec l'ID main-formule-toggle */
 #main-formule-toggle {
-    display: none; /* Masque l'élément */
+    display: none; /* Masque l'Ã©lÃ©ment */
 }
 
-/* Style pour un élément avec l'ID formule1-bouton */
+/* Style pour un Ã©lÃ©ment avec l'ID formule1-bouton */
 #formule1-bouton {
-    display: block; /* Affiche l'élément en tant que bloc */
-    cursor: pointer; /* Définit le curseur comme pointeur au survol */
-    animation: color2 9s infinite linear; /* Applique une animation nommée color2 */
-    height: 50px; /* Définit la hauteur de l'élément à 50 pixels */
-    width: 90%; /* Définit la largeur de l'élément à 90% */
-    margin-left: 5%; /* Définit une marge à gauche de 5% */
-    border-radius: 15px; /* Définit le rayon de la bordure à 15 pixels pour créer des coins arrondis */
-    text-align: center; /* Centre le texte à l'intérieur de l'élément */
-    font-size: 30px; /* Définit la taille de police à 30 pixels */
-    line-height: 50px; /* Définit la hauteur de ligne à 50 pixels */
-    border: 2px solid black; /* Définit une bordure de 2 pixels solide et noire */
+    display: block; /* Affiche l'Ã©lÃ©ment en tant que bloc */
+    cursor: pointer; /* DÃ©finit le curseur comme pointeur au survol */
+    animation: color2 9s infinite linear; /* Applique une animation nommÃ©e color2 */
+    height: 50px; /* DÃ©finit la hauteur de l'Ã©lÃ©ment Ã  50 pixels */
+    width: 90%; /* DÃ©finit la largeur de l'Ã©lÃ©ment Ã  90% */
+    margin-left: 5%; /* DÃ©finit une marge Ã  gauche de 5% */
+    border-radius: 15px; /* DÃ©finit le rayon de la bordure Ã  15 pixels pour crÃ©er des coins arrondis */
+    text-align: center; /* Centre le texte Ã  l'intÃ©rieur de l'Ã©lÃ©ment */
+    font-size: 30px; /* DÃ©finit la taille de police Ã  30 pixels */
+    line-height: 50px; /* DÃ©finit la hauteur de ligne Ã  50 pixels */
+    border: 2px solid black; /* DÃ©finit une bordure de 2 pixels solide et noire */
     text-decoration: underline; /* Ajoute une soulignement au texte */
 }
 
-/* Style au survol de l'élément avec l'ID formule1-bouton */
+/* Style au survol de l'Ã©lÃ©ment avec l'ID formule1-bouton */
 #formule1-bouton:hover {
     font-weight: bold; /* Met le texte en gras */
-    text-shadow: gray 2px 2px; /* Ajoute une ombre au texte avec un décalage de 2 pixels à droite et en bas de couleur grise */
+    text-shadow: gray 2px 2px; /* Ajoute une ombre au texte avec un dÃ©calage de 2 pixels Ã  droite et en bas de couleur grise */
 }
 
-/* Style pour un élément avec la classe .main-p-1 */
+/* Style pour un Ã©lÃ©ment avec la classe .main-p-1 */
 .main-p-1 {
-    display: none; /* Masque l'élément */
-    border: solid; /* Définit une bordure solide */
-    width: 86%; /* Définit la largeur de l'élément à 86% */
-    margin-left: 5%; /* Définit une marge à gauche de 5% */
-    height: 300px; /* Définit la hauteur de l'élément à 300 pixels */
-    animation: color1 9s infinite linear; /* Applique une animation nommée color1 */
-    overflow-x: hidden; /* Masque tout débordement horizontal du contenu */
-    padding: 10px; /* Ajoute un rembourrage de 10 pixels à tous les côtés de l'élément */
-    overflow: hidden scroll; /* Masque tout débordement et active le défilement vertical en cas de dépassement du contenu */
+    display: none; /* Masque l'Ã©lÃ©ment */
+    border: solid; /* DÃ©finit une bordure solide */
+    width: 86%; /* DÃ©finit la largeur de l'Ã©lÃ©ment Ã  86% */
+    margin-left: 5%; /* DÃ©finit une marge Ã  gauche de 5% */
+    height: 300px; /* DÃ©finit la hauteur de l'Ã©lÃ©ment Ã  300 pixels */
+    animation: color1 9s infinite linear; /* Applique une animation nommÃ©e color1 */
+    overflow-x: hidden; /* Masque tout dÃ©bordement horizontal du contenu */
+    padding: 10px; /* Ajoute un rembourrage de 10 pixels Ã  tous les cÃ´tÃ©s de l'Ã©lÃ©ment */
+    overflow: hidden scroll; /* Masque tout dÃ©bordement et active le dÃ©filement vertical en cas de dÃ©passement du contenu */
 }
 
-/* Styles conditionnels basés sur la sélection de la case à cocher main-formule-toggle et le clic sur le bouton formule1-bouton */
+/* Styles conditionnels basÃ©s sur la sÃ©lection de la case Ã  cocher main-formule-toggle et le clic sur le bouton formule1-bouton */
 #main-formule-toggle:checked + #formule1-bouton + .main-p-1 {
-    display: block; /* Affiche l'élément lorsque la case à cocher est cochée */
+    display: block; /* Affiche l'Ã©lÃ©ment lorsque la case Ã  cocher est cochÃ©e */
 }
 
 #main-formule-toggle:checked + #formule1-bouton {
-    border-radius: 0; /* Réinitialise le rayon de la bordure à 0 lorsque la case à cocher est cochée */
+    border-radius: 0; /* RÃ©initialise le rayon de la bordure Ã  0 lorsque la case Ã  cocher est cochÃ©e */
 }
 
 /* Fin grid 3 */
@@ -428,64 +580,64 @@ main {
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut grid 4 */
-/* Style pour un élément de grille spécifique avec la classe .main-grid-0-4 */
+/* Style pour un Ã©lÃ©ment de grille spÃ©cifique avec la classe .main-grid-0-4 */
 .main-grid-0-4 {
-    grid-row: 4/5; /* Occupe les lignes 4 à 5 de la grille */
+    grid-row: 4/5; /* Occupe les lignes 4 Ã  5 de la grille */
     grid-column: 1/2; /* Occupe la colonne 1 de la grille */
-    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
-    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
-    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    z-index: 2; /* DÃ©finit l'ordre d'empilement pour l'Ã©lÃ©ment */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels Ã  tous les cÃ´tÃ©s de l'Ã©lÃ©ment */
+    overflow: hidden; /* Masque tout contenu dÃ©passant de la boÃ®te */
 }
 
-/* Style pour un élément avec l'ID main-formule-toggle2 */
+/* Style pour un Ã©lÃ©ment avec l'ID main-formule-toggle2 */
 #main-formule-toggle2 {
-    display: none; /* Masque l'élément */
+    display: none; /* Masque l'Ã©lÃ©ment */
 }
 
-/* Style pour un élément avec l'ID formule2-bouton */
+/* Style pour un Ã©lÃ©ment avec l'ID formule2-bouton */
 #formule2-bouton {
-    display: block; /* Affiche l'élément en tant que bloc */
-    cursor: pointer; /* Définit le curseur comme pointeur au survol */
-    animation: color2 9s infinite linear; /* Applique une animation nommée color2 */
-    height: 50px; /* Définit la hauteur de l'élément à 50 pixels */
-    width: 90%; /* Définit la largeur de l'élément à 90% */
-    margin-left: 5%; /* Définit une marge à gauche de 5% */
-    margin-top: 10%; /* Définit une marge en haut de 10% */
-    border-radius: 15px; /* Définit le rayon de la bordure à 15 pixels pour créer des coins arrondis */
-    text-align: center; /* Centre le texte à l'intérieur de l'élément */
-    font-size: 30px; /* Définit la taille de police à 30 pixels */
-    line-height: 50px; /* Définit la hauteur de ligne à 50 pixels */
-    border: 2px solid black; /* Définit une bordure de 2 pixels solide et noire */
+    display: block; /* Affiche l'Ã©lÃ©ment en tant que bloc */
+    cursor: pointer; /* DÃ©finit le curseur comme pointeur au survol */
+    animation: color2 9s infinite linear; /* Applique une animation nommÃ©e color2 */
+    height: 50px; /* DÃ©finit la hauteur de l'Ã©lÃ©ment Ã  50 pixels */
+    width: 90%; /* DÃ©finit la largeur de l'Ã©lÃ©ment Ã  90% */
+    margin-left: 5%; /* DÃ©finit une marge Ã  gauche de 5% */
+    margin-top: 10%; /* DÃ©finit une marge en haut de 10% */
+    border-radius: 15px; /* DÃ©finit le rayon de la bordure Ã  15 pixels pour crÃ©er des coins arrondis */
+    text-align: center; /* Centre le texte Ã  l'intÃ©rieur de l'Ã©lÃ©ment */
+    font-size: 30px; /* DÃ©finit la taille de police Ã  30 pixels */
+    line-height: 50px; /* DÃ©finit la hauteur de ligne Ã  50 pixels */
+    border: 2px solid black; /* DÃ©finit une bordure de 2 pixels solide et noire */
     text-decoration: underline; /* Ajoute une soulignement au texte */
 }
 
-/* Style au survol de l'élément avec l'ID formule2-bouton */
+/* Style au survol de l'Ã©lÃ©ment avec l'ID formule2-bouton */
 #formule2-bouton:hover {
     font-weight: bold; /* Met le texte en gras */
-    text-shadow: gray 2px 2px; /* Ajoute une ombre au texte avec un décalage de 2 pixels à droite et en bas de couleur grise */
+    text-shadow: gray 2px 2px; /* Ajoute une ombre au texte avec un dÃ©calage de 2 pixels Ã  droite et en bas de couleur grise */
 }
 
-/* Style pour un élément avec la classe .main-p-2 */
+/* Style pour un Ã©lÃ©ment avec la classe .main-p-2 */
 .main-p-2 {
-    display: none; /* Masque l'élément */
-    border: solid; /* Définit une bordure solide */
-    width: 86%; /* Définit la largeur de l'élément à 86% */
-    margin-top: 0; /* Réinitialise la marge supérieure à 0 */
-    margin-left: 5%; /* Définit une marge à gauche de 5% */
-    height: 300px; /* Définit la hauteur de l'élément à 300 pixels */
-    animation: color1 9s infinite linear; /* Applique une animation nommée color1 */
-    overflow-x: hidden; /* Masque tout débordement horizontal du contenu */
-    padding: 10px; /* Ajoute un rembourrage de 10 pixels à tous les côtés de l'élément */
-    overflow: hidden scroll; /* Masque tout débordement et active le défilement vertical en cas de dépassement du contenu */
+    display: none; /* Masque l'Ã©lÃ©ment */
+    border: solid; /* DÃ©finit une bordure solide */
+    width: 86%; /* DÃ©finit la largeur de l'Ã©lÃ©ment Ã  86% */
+    margin-top: 0; /* RÃ©initialise la marge supÃ©rieure Ã  0 */
+    margin-left: 5%; /* DÃ©finit une marge Ã  gauche de 5% */
+    height: 300px; /* DÃ©finit la hauteur de l'Ã©lÃ©ment Ã  300 pixels */
+    animation: color1 9s infinite linear; /* Applique une animation nommÃ©e color1 */
+    overflow-x: hidden; /* Masque tout dÃ©bordement horizontal du contenu */
+    padding: 10px; /* Ajoute un rembourrage de 10 pixels Ã  tous les cÃ´tÃ©s de l'Ã©lÃ©ment */
+    overflow: hidden scroll; /* Masque tout dÃ©bordement et active le dÃ©filement vertical en cas de dÃ©passement du contenu */
 }
 
-/* Styles conditionnels basés sur la sélection de la case à cocher main-formule-toggle2 et le clic sur le bouton formule2-bouton */
+/* Styles conditionnels basÃ©s sur la sÃ©lection de la case Ã  cocher main-formule-toggle2 et le clic sur le bouton formule2-bouton */
 #main-formule-toggle2:checked + #formule2-bouton + .main-p-2 {
-    display: block; /* Affiche l'élément lorsque la case à cocher est cochée */
+    display: block; /* Affiche l'Ã©lÃ©ment lorsque la case Ã  cocher est cochÃ©e */
 }
 
 #main-formule-toggle2:checked + #formule2-bouton {
-    border-radius: 0; /* Réinitialise le rayon de la bordure à 0 lorsque la case à cocher est cochée */
+    border-radius: 0; /* RÃ©initialise le rayon de la bordure Ã  0 lorsque la case Ã  cocher est cochÃ©e */
 }
 
 
@@ -514,19 +666,19 @@ main {
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut grid 5 */
-/* Style pour un élément de grille spécifique avec la classe .main-grid-0-5 */
+/* Style pour un Ã©lÃ©ment de grille spÃ©cifique avec la classe .main-grid-0-5 */
 .main-grid-0-5 {
     grid-column: 2/3; /* Occupe la colonne 2 de la grille */
-    grid-row: 4/5; /* Occupe les lignes 4 à 5 de la grille */
-    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
-    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
-    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    grid-row: 4/5; /* Occupe les lignes 4 Ã  5 de la grille */
+    z-index: 2; /* DÃ©finit l'ordre d'empilement pour l'Ã©lÃ©ment */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels Ã  tous les cÃ´tÃ©s de l'Ã©lÃ©ment */
+    overflow: hidden; /* Masque tout contenu dÃ©passant de la boÃ®te */
 }
 
-/* Style pour un élément avec l'ID map-tarragone */
+/* Style pour un Ã©lÃ©ment avec l'ID map-tarragone */
 #map-tarragone {
-    width: 900px; /* Définit la largeur de l'élément à 900 pixels */
-    height: 675px; /* Définit la hauteur de l'élément à 675 pixels */
+    width: 900px; /* DÃ©finit la largeur de l'Ã©lÃ©ment Ã  900 pixels */
+    height: 675px; /* DÃ©finit la hauteur de l'Ã©lÃ©ment Ã  675 pixels */
 }
 
 
@@ -547,53 +699,53 @@ main {
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Debut grid 6 */
-/* Style pour un élément de grille spécifique avec la classe .main-grid-0-6 */
+/* Style pour un Ã©lÃ©ment de grille spÃ©cifique avec la classe .main-grid-0-6 */
 .main-grid-0-6 {
-    grid-column: 1/3; /* Occupe les colonnes 1 à 3 de la grille */
-    grid-row: 5/6; /* Occupe les lignes 5 à 6 de la grille */
-    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
-    margin-left: 20px; /* Définit une marge de 20 pixels à gauche */
-    margin-top: 10%; /* Définit une marge de 10% en haut par rapport au conteneur parent */
-    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    grid-column: 1/3; /* Occupe les colonnes 1 Ã  3 de la grille */
+    grid-row: 5/6; /* Occupe les lignes 5 Ã  6 de la grille */
+    z-index: 2; /* DÃ©finit l'ordre d'empilement pour l'Ã©lÃ©ment */
+    margin-left: 20px; /* DÃ©finit une marge de 20 pixels Ã  gauche */
+    margin-top: 10%; /* DÃ©finit une marge de 10% en haut par rapport au conteneur parent */
+    overflow: hidden; /* Masque tout contenu dÃ©passant de la boÃ®te */
 }
 
-/* Style pour un élément avec la classe .tableauhotel */
+/* Style pour un Ã©lÃ©ment avec la classe .tableauhotel */
 .tableauhotel {
-    height: 500px; /* Définit la hauteur de l'élément à 500 pixels */
-    overflow-y: scroll; /* Active le défilement vertical */
-    display: block; /* Définit l'élément en tant que bloc */
+    height: 500px; /* DÃ©finit la hauteur de l'Ã©lÃ©ment Ã  500 pixels */
+    overflow-y: scroll; /* Active le dÃ©filement vertical */
+    display: block; /* DÃ©finit l'Ã©lÃ©ment en tant que bloc */
 }
 
-/* Styles pour le tableau, les cellules de tableau et les en-têtes de tableau */
+/* Styles pour le tableau, les cellules de tableau et les en-tÃªtes de tableau */
 table, td, th {
-    border: 1px solid #2e2e2e; /* Définit une bordure pour le tableau, les cellules et les en-têtes */
+    border: 1px solid #2e2e2e; /* DÃ©finit une bordure pour le tableau, les cellules et les en-tÃªtes */
 }
 
-/* Styles pour la ligne d'en-tête du tableau */
+/* Styles pour la ligne d'en-tÃªte du tableau */
 thead th {
-    background-color: #2e2e2e; /* Définit la couleur de fond pour l'en-tête du tableau */
-    color: #fff; /* Définit la couleur du texte pour l'en-tête du tableau */
-    width: 200vh; /* Définit la largeur de l'en-tête du tableau à 200vh */
+    background-color: #2e2e2e; /* DÃ©finit la couleur de fond pour l'en-tÃªte du tableau */
+    color: #fff; /* DÃ©finit la couleur du texte pour l'en-tÃªte du tableau */
+    width: 200vh; /* DÃ©finit la largeur de l'en-tÃªte du tableau Ã  200vh */
 }
 
-/* Styles pour les cellules d'en-tête du tableau */
+/* Styles pour les cellules d'en-tÃªte du tableau */
 tbody th {
-    background-color: darkgray; /* Définit la couleur de fond pour les cellules d'en-tête du tableau */
+    background-color: darkgray; /* DÃ©finit la couleur de fond pour les cellules d'en-tÃªte du tableau */
 }
 
-/* Styles pour les différentes lignes du tableau */
+/* Styles pour les diffÃ©rentes lignes du tableau */
 #tablerow1,
 #tablerow2 {
-    height: 50px; /* Définit la hauteur des lignes 1 et 2 du tableau à 50 pixels */
+    height: 50px; /* DÃ©finit la hauteur des lignes 1 et 2 du tableau Ã  50 pixels */
 }
 
-/* Styles pour la première ligne du tableau en position sticky en haut */
+/* Styles pour la premiÃ¨re ligne du tableau en position sticky en haut */
 #tablerow1 {
     position: sticky;
     top: 0;
 }
 
-/* Styles pour la deuxième ligne du tableau en position sticky avec un décalage de 50 pixels depuis le haut */
+/* Styles pour la deuxiÃ¨me ligne du tableau en position sticky avec un dÃ©calage de 50 pixels depuis le haut */
 #tablerow2 {
     position: sticky;
     top: 50px;
@@ -607,7 +759,7 @@ tbody th {
     background-color: whitesmoke;
 }
 
-/* Styles pour la colonne 3 du tableau avec une taille de police de 17 pixels et des marges intérieures à gauche et à droite de 1% */
+/* Styles pour la colonne 3 du tableau avec une taille de police de 17 pixels et des marges intÃ©rieures Ã  gauche et Ã  droite de 1% */
 #column3 {
     font-size: 17px;
     padding-left: 1%;
@@ -630,11 +782,11 @@ table img {
 /* Debut grid 7 */
 
 .main-grid-0-7 {
-    grid-column: 1/3; /* Occupe les colonnes 1 à 3 de la grille */
-    grid-row: 6/7; /* Occupe les lignes 5 à 6 de la grille */
-    z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
-    padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
-    overflow: hidden; /* Masque tout contenu dépassant de la boîte */
+    grid-column: 1/3; /* Occupe les colonnes 1 Ã  3 de la grille */
+    grid-row: 6/7; /* Occupe les lignes 5 Ã  6 de la grille */
+    z-index: 2; /* DÃ©finit l'ordre d'empilement pour l'Ã©lÃ©ment */
+    padding: 20px; /* Ajoute un rembourrage de 20 pixels Ã  tous les cÃ´tÃ©s de l'Ã©lÃ©ment */
+    overflow: hidden; /* Masque tout contenu dÃ©passant de la boÃ®te */
     margin-left: 5%;
     margin-right: 5%;
     background-color: whitesmoke;
@@ -645,3 +797,118 @@ table img {
 /* Fin grid 7 */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Fin main */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* debut footer */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* style footer */
+footer {
+    background-color: #333; /* donne la couleur du background */
+    color: #fff; /* donne la couleur du text */
+    padding: 40px 20px; /* eloigne les elements du footer des bords de la page */
+    display: flex; /* defini la balise comme flex */
+    justify-content: space-between; /* met un espace entre les elements du footer */
+    align-items: flex-start; /* Aligner les elements en haut */
+    flex-wrap: wrap; /* permet la bonne disposition des elements */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /* pas de modification neccessaire pour la balise footer */
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour la carte */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Style des icones sociales */
+#footer-icon {
+    list-style: none; /* permet de retirer les puces des icons */
+    margin: 0; /* positionne cette balise comme voulu */
+    padding: 0; /* positionne cette balise comme voulu */
+    display: flex; /* defini cette balise comme flex */
+    flex-direction: column; /* permet la disposition en colonne des elements de cette balise */
+    margin-right: 5%; /* positionne cette balise comme voulu */
+    padding-top: 1%; /* positionne cette balise comme voulu */
+}
+
+/* permet de definir la taille des image de la balise d'id footer-icon */
+.footer-img {
+    width: 45px; /* defini la largeur des images des balises de cette class */
+    height: 45px; /* defini la hauteur des images des balises de cette class */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    #footer-icon {
+        flex-direction: row; /* permet de mettre en ligne les elements de cette balise */
+    }
+}
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour les icones des sociales */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Style des informations de contact */
+#footer-joindre {
+    flex: 1 1 300px; /* permet a cette balise de retrecir et grandir selon les besoins avec une taille minimales de 300px */
+    margin: 0; /* positionne cette balise */
+    padding: 0; /* positionne cette balise */
+    list-style-type: square; /* Utiliser des points pour la liste */
+}
+
+/* style des balise de class footer-telephone et footer-adress-title */
+.footer-telephone, .footer-adress-title {
+    font-weight: bold; /* met le texte en gras */
+    margin-top: 10px; /* positionne le texte */
+}
+
+/* positionne les balise de class footer-numero et footer-adress */
+.footer-numero, .footer-adress {
+    margin-bottom: 10px; /* positionne le texte */
+    line-height: 1.5; /* defini la taille des lignes comme 1.5 fois plus haut que la police du texte */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /* pas de modification neccessaire pour les informations de contact */
+}
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour les informations de contact */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Style de la carte */
+.footer-map {
+    margin-left: auto; /* Aligner la carte a droite */
+}
+
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    .footer-map {
+        margin-right: 100%; /* positionne la carte */
+    }
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* pas de modification neccessaire pour la carte */
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* fin footer*/
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
