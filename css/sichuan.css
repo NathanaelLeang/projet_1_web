@@ -249,6 +249,10 @@ body {
   margin-bottom: 2%;
 }
 
+[class^="thecard"] a {
+  text-decoration: none;
+  color: #000;
+}
 
 
 [class^="thecard"]:hover{
@@ -353,7 +357,7 @@ body {
 /*################################################################################"*/
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
 
   .corps{
     margin:0;

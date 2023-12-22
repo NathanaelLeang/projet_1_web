@@ -1,6 +1,5 @@
 .conteneur{ /* nous une couleurs au background de la grille*/
     background-color: rgb(255, 247, 228); 
-
 }
 
 @media screen and (min-width: 767px) {  /* ici on initialise une grille pour le format ordinateur */
