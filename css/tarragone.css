@@ -647,3 +647,27 @@ table img {
 /* Fin grid 7 */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* Fin main */
+
+.conteneur-bouton-formulaire button{
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-image: linear-gradient(to bottom right, #970000, #ff7300);
+    border-image-slice: 1;
+    border-radius: 6px; /* Ajout du border-radius */
+    padding: 5px 10px; /* Ajout de padding pour espacer le contenu du bord */
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .conteneur-bouton-formulaire a{
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .conteneur-bouton-formulaire button:hover{
+    transform: translateY(1px) translateX(1px);
+    box-shadow: none;
+  }
