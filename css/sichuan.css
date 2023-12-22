@@ -249,6 +249,10 @@ body {
   margin-bottom: 2%;
 }
 
+[class^="thecard"] a {
+  text-decoration: none;
+  color: #000;
+}
 
 
 [class^="thecard"]:hover{
