@@ -11,26 +11,25 @@
     <link rel="stylesheet" type="text/css" href="../css/header-footer.css" />
 </head>
 <body>
-    <header>
-        <h1 class="header-title">VistaVoyage</h1> <!-- titre -->
-        <div class="header-menu-container"> <!-- menu destination -->
-            <input type="checkbox" id="header-menu-toggle"> <!-- permet de donner le type bouton a #menu-toggle -->
-            <label for="header-menu-toggle" id="header-menu-bouton">VistaDestinations</label> <!-- permet d'appliquer le type bouton grace a #menu-toggle -->
-            <nav id="header-nav"> <!-- liste des destinations -->
-                <a id="header-text1" class="header-destination" href="">Tarragone (Espagne)</a> <!-- destinations 1 -->
-                <a id="header-text2" class="header-destination" href="">Antalya (Turquie)</a> <!-- destinations 2 -->
-                <a id="header-text3" class="header-destination" href="">Sichuan (Chine)</a> <!-- destinations 3 -->
-                <a id="header-text4" class="header-destination" href="">L'Île de Paques (Chili)</a> <!-- destinations 4 -->
-                <a id="header-text5" class="header-destination" href="">Machu Picchu (Pérou)</a> <!-- destinations 5 -->
-                <div class="header-image-container"> <!-- images des destinations de la liste -->
-                    <img id="header-img1" class="header-img" src="../img/tarragone.jpg" alt="Image 1"> <!-- image 1 -->
-                    <img id="header-img2" class="header-img" src="../img/antalya.jpg" alt="Image 2"> <!-- image 2 -->
-                    <img id="header-img3" class="header-img" src="../img/sichuan.jpg" alt="Image 3"> <!-- image 3 -->
-                    <img id="header-img4" class="header-img" src="../img/paques.jpg" alt="Image 4"> <!-- image 4 -->
-                    <img id="header-img5" class="header-img" src="../img/machu.jpg" alt="Image 5"> <!-- image 5 -->
-                </div>
-            </nav>
+    <header class="header-basic">
+        <div class="header-left">
+            <h1 class="agency-name">VistaVoyage</h1>
         </div>
+        <nav>
+            <ul class="nav-list">
+                <li class="dropdown">
+                    <a class="dropbtn">Destinations</a>
+                    <div class="dropdown-content">
+                        <a href="#">Antalya</a>
+                        <a href="#">Îles de Pâques</a>
+                        <a href="#">Machu-Picchu</a>
+                        <a href="#">Sichuan</a>
+                        <a href="#">Tarragone</a>
+                    </div>
+                </li>
+                <li><a href="#">Accueil</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <div class="corps">
@@ -65,41 +64,47 @@
                 <div class="formule1-2">
                     <input type="checkbox" id="toggleFormule1" class="toggle">
                     <label for="toggleFormule1" class="toggle-button">Voir la formule Découverte</label>
-                
-                    <input type="checkbox" id="toggleFormule2" class="toggle">
-                    <label for="toggleFormule2" class="toggle-button">Voir la formule Expédition</label>
                     <div class="container2">
                         <div class="formule formule1">
-                        <h2>Formule 1</h2>
-                        <p><strong>Day 1 :</strong> Arrivé Lima -> cusco</p>
-                        <p><strong>Day 2 :</strong> visite Cusco</p>
-                        <p><strong>Day 3 :</strong> Cusco -> vallée saacrée des incas</p>
-                        <p><strong>Day 4 :</strong> quartier libre.</p>
-                        <p><strong>Day 5 :</strong> Randonnée Machu Picchu.</p>
-                        <p><strong>Day 6 :</strong> Découverte des activités locals</p>
-                        <p><strong>Day 7 :</strong> Cusco -> Lima</p>
+                            <h2>Formule 1</h2>
+                            <p><strong>Day 1 :</strong> Arrivé Lima -> cusco</p>
+                            <p><strong>Day 2 :</strong> visite Cusco</p>
+                            <p><strong>Day 3 :</strong> Cusco -> vallée saacrée des incas</p>
+                            <p><strong>Day 4 :</strong> quartier libre.</p>
+                            <p><strong>Day 5 :</strong> Randonnée Machu Picchu.</p>
+                            <p><strong>Day 6 :</strong> Découverte des activités locals</p>
+                            <p><strong>Day 7 :</strong> Cusco -> Lima</p>
                         <!-- Contenu de la formule 1 -->
                         </div>
+                    </div>
+                    <input type="checkbox" id="toggleFormule2" class="toggle">
+                    <label for="toggleFormule2" class="toggle-button">Voir la formule Expédition</label>
+                    <div class="container3">
                         <div class="formule formule2">
-                        <h2>Formule 2</h2>
-                        <p><strong>Day 1 :</strong> Avion Paris -> Arrivé Lima -> cusco</p>
-                        <p><strong>Day 2 :</strong> visite Cusco</p>
-                        <p><strong>Day 3 :</strong> Escale -> Cusco -> vallée saacrée des incas</p>
-                        <p><strong>Day 4 :</strong> Vallée sacrée des incas -> Machu pichu pueblo</p>
-                        <p><strong>Day 5 :</strong> Machu pichu pueblo -> Randonnée Machu Picchu</p>
-                        <p><strong>Day 6 :</strong> retour Cusco</p>
-                        <p><strong>Day 7 :</strong> repos (quartier libre)</p>
-                        <p><strong>Day 8 :</strong> Escale -> Laguna muyna et Laguna Waton -> Lago Titicaca (nuit)</p>
-                        <p><strong>Day 9 :</strong> Lago Titicaca -> visit -> retour nuit cusco</p>
-                        <p><strong>Day 10 :</strong> Quartier libre</p>
-                        <p><strong>Day 11 :</strong> Découverte des activités locales</p>
-                        <p><strong>Day 12 :</strong> quitte cusco -> arret ayacucho -> Lima -> avion to paris</p>
-                    
+                            <h2>Formule 2</h2>
+                            <p><strong>Day 1 :</strong> Avion Paris -> Arrivé Lima -> cusco</p>
+                            <p><strong>Day 2 :</strong> visite Cusco</p>
+                            <p><strong>Day 3 :</strong> Escale -> Cusco -> vallée saacrée des incas</p>
+                            <p><strong>Day 4 :</strong> Vallée sacrée des incas -> Machu pichu pueblo</p>
+                            <p><strong>Day 5 :</strong> Machu pichu pueblo -> Randonnée Machu Picchu</p>
+                            <p><strong>Day 6 :</strong> retour Cusco</p>
+                            <p><strong>Day 7 :</strong> repos (quartier libre)</p>
+                            <p><strong>Day 8 :</strong> Escale -> Laguna muyna et Laguna Waton -> Lago Titicaca (nuit)</p>
+                            <p><strong>Day 9 :</strong> Lago Titicaca -> visit -> retour nuit cusco</p>
+                            <p><strong>Day 10 :</strong> Quartier libre</p>
+                            <p><strong>Day 11 :</strong> Découverte des activités locales</p>
+                            <p><strong>Day 12 :</strong> quitte cusco -> arret ayacucho -> Lima -> avion to paris</p>
+                        
                         <!-- Contenu de la formule 2 -->
                         </div>
                     </div>
                 </div>
+                <div class="carte">
+                    <iframe id="carte-machu-picchu" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124130.99944987797!2d-72.02165203767622!3d-13.529838912872822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd5d826598431%3A0x2aa996cc2318315d!2zQ3V6Y28sIFDDqXJvdQ!5e0!3m2!1sfr!2sfr!4v1703012852701!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
                 <div class="hotels" id="hotels">
+                    <h2 class="hotel-title"> Notre sélection d'hotels </h2>
                     <table>
                         <tr>
                             <th class="image-tab">Image de l'hôtel</th>
@@ -162,38 +167,20 @@
             </div>
         </div>
     </main>
-    <footer>
-        <ul id="footer-icon"> <!-- icon container -->
-            <li> <!-- icon facebook + lien facebook -->
-                <a href="http://facebook.com/biblioJunia"><img class="footer-img" src="../img/facebook.png" alt="Facebook"></a>
-            </li>
-            <li> <!-- icon twitter + lien twitter -->
-                <a href="http://twitter.com/biblioJunia"><img class="footer-img" src="../img/twitter.png" alt="Twitter"></a>
-            </li>
-            <li> <!-- icon instagram + lien instagram -->
-                <a href="http://instagram.com/biblioJunia"><img class="footer-img" src="../img/instagram.png" alt="Instagram"></a>
-            </li>
+    <footer class="stylefooter">
+        <div class="social">
+            <a href="#" style="background-image: url('../img/instagram.png');"></a>
+            <a href="#" style="background-image: url('../img/twitter.png');"></a>
+            <a href="#" style="background-image: url('../img/facebook.png');"></a>
+        </div>
+        <ul class="footer-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Conditions</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
         </ul>
-
-        <dl id="footer-joindre"> <!--  -->
-            <dt class="footer-telephone">Téléphone</dt> <!-- telephone -->
-            <dd class="footer-numero">+33 1 02 03 04 05</dd> <!-- numero de telephone (numero aleatoire) -->
-            <dt class="footer-adress-title">Adresse</dt> <!-- adresse -->
-            <dd class="footer-adress"> <!-- l'adresse ou on se trouve -->
-                ISEN Lille - Institut Supérieur de l'Electronique et du Numérique <br> <!-- force le retour a la ligne -->
-                41 boulevard Vauban <br> <!-- force le retour a la ligne -->
-                59800 Lille Cedex
-            </dd>
-        </dl>
-
-        <iframe class="footer-map" 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6184678248474!
-        2d3.0487603999999875!3d50.634204099999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13
-        .1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0
-        !3m2!1sfr!2sfr!4v1695145218130!5m2!1sfr!2sfr"
-        width="200" height="150" style="border:0;" 
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe> <!-- lien + style de l'image de la carte -->
+        <p class="copyright">© 2023 VistaVoyage. Tous droits réservés.</p>
     </footer>
 </body>
 </html>
