@@ -1,202 +1,221 @@
-html {
-    background-image: url(https://www.publicdomainpictures.net/pictures/310000/velka/airplane-flying-1567518449EwC.jpg);
-    height: 150%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 /*selecteur universel qui permet de definir la police de tous les textes*/
 * {
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px; /* defini la taille de la police universel */
+    font-family: Arial; /* defini le style de la police universel */
 }
 
-/*permet de bien afficher la balise header*/
-#agence {
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+html{
+    background-color: rgba(20,20,70,0.3); /* met un background a l'html */
+}
+
+body {
+    margin: 0; /* positionne le body */
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* Debut Main  */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut de la grid 1 */
+/* style de la balise de class main-grid */
+.main-grid {
+    display: grid; /* defini la balise de class main-grid comme une grid */
+    position: relative; /* defini comme position relative */
+}
+
+/* permet d'afficher la video en background */
+#main-video-background {
+    position: absolute; /* defini comme position absolute */
+    top: 0; /* positionne le background */
+    left: 0; /* positionne le background */
+    width: 100%; /* defini la largeur du background */
+    height: 100%; /* defini la hauteur du background */
+    object-fit: cover; /* permet que le background remplice entierement le grid 1 */
+    z-index: -1; /* permet de mettre la video en arriere plan */
+}
+
+/* style de la balise p de class main-nosdestinations */
+.main-nosdestinations {
+    padding-top: 150px; /* permet de deplacer a l'endroit voulu */
+    font-size: 25px; /* modifie la taille de la police d'ecriture  */
+    color: rgb(21, 21, 199); /* donne la couleur au texte */
+    text-decoration: underline; /* souligne le texte */
+    font-weight: bold; /* met le texte en gras */
+    padding-left: 5%; /* permet de placer a l'endroit voulu */
+}
+
+/*Debut destinations liste*/
+/* permet de modifie chaque element ayant un input de type radio */
+input[type="radio"] {
+    display: none; /* permet de cacher la puce a cocher */
+}
+
+/* permet de positionner et de cacher les textes et images */
+.main-slide {
+    display: none;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    margin-left: 200px;
-    margin-right: 200px;
+}
+
+/* permet de cacher l'image actuelle et d'afficher l'image suivante */
+input:checked + .main-slide {
     display: block;
-    color: lawngreen;
-    font-family: 'Brush Script MT';
-    font-size: 70px;
-    text-decoration: underline;
-    padding: 10px 20px;
-    border-radius: 30px;
 }
 
-/*permet de mofifier la balise label*/
-label {
-    padding: 15px;
-    cursor: pointer;
-    font-size: 20px;
-    color: darkblue;
-    text-decoration: underline;
-    font-weight: bold;
+/* permet de definir la taille et position des images */
+.main-imgdest {
+    max-height: 200px; /* defini la hauteur maximale des images */
+    width: 35%; /* defini la largeur des images */
+    padding-right: 50%; /* positionne la balise de class main-imgdest */
+    height: auto; /* hauteur de l'element ajuste automatiquement en fonction du contenu */
 }
 
-/*permet de retirer la case à cocher qui se situe à cote du texte de la balise label*/
-#bouton {
-    display: none;
+/* style de la balise de class main-text */
+.main-text {
+    display: block; /* defini le texte comme block */
+    cursor: pointer; /* permet d'afficher le curseur comme un pointeur quand on passe sur la balise de class main-text */
+    background: linear-gradient(to top, black, rgba(128,128,128,0)); /* permet d'avoir un background en degrade vers le haut du noir vers du gris a 0 d'opacity */
+    color: whitesmoke; /* couleur du texte */
+    padding: 10px; /* permet de positionner a l'endroit voulu le texte */
+    width: 33.4%; /* donne la largeur au texte */
+    margin-left: 7.5%; /* permet de positionner a l'endroit voulu le texte */
+    font-size: 18px; /* definie la taille de la police du texte */
 }
 
-/*permet de cacher la balise p d'id: text*/
-#text {
-    display: none;
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    /*Debut modification de la grid 1 */
+    .main-text {
+        width:50.9% ; /* permet de definir la nouvelle largeur du texte */
+        margin-left: 22%; /* permet de repositionner a l'endroit voulu le texte*/
+    }
+    .main-imgdest {
+        max-height: 115px; /* permet de redefinir la hauteur maximale des images */
+        width: 56%; /* permet de redefinir la largeur des images */
+        padding-right: 22%; /* permet de repositinner les images comme voulu */
+        padding-left: 22%; /* permet de repositionner les images comme voulu */
+    }
+    .main-nosdestinations {
+        top: 80px; /* repositionne la balise de cette class */
+    }
+    /*Fin modification de la grid 1 */
 }
 
-/*permet d'afficher la balise p d'id:text ainsi que son background quand on click sur le label*/
-#bouton:checked + label + #text {
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-nosdestinations {
+        top: 80px; /* repositionne la balise de cette class */
+    }
+    .main-imgdest {
+        max-height: 150px; /* permet de definir la nouvelle hauteur maximale des images des balises de cette class */
+    }
+    .main-text {
+        width:32.4% ; /* permet de definir la nouvelle largeur du texte */
+    }
+}
+/* Fin destinations liste */
+
+/* Fin de la grid 1 */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Debut style de la 2eme grid */
+
+/* Debut animation background grid 2 */
+.main-grid-2 {
+    display: grid; /* defini la balise de class main-grid-2 en tant que grid */ 
+    background-size: 400% 400%; /* defini la taille du background pour l'animation */
+    background-image: linear-gradient(70deg, white 0%, white 15%, rgba(128,128,128) 30%, white  100%); /* permet d'avoir un background en degrade de 70deg avec certaine valeur associer a des % pour avoir le resultat voulu */
+    animation: AnimateBG 20s ease infinite; /* permet de parametrer l'animation (temps, direction,...) */
+}
+  
+@keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    90% {
+      background-position: 50% 0%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+/* Fin animation background grid 2 */
+
+/* permet de retirer la puce a cocher de la balise d'id main-destination-bouton*/
+#main-destination-bouton {
+    display:none;
+}
+
+/*permet de mofifier la balise de class main-destination-label*/
+.main-destination-label {
+    display: block; /* defini comme block */
+    cursor: pointer; /* permet d'afficher le curseur comme un pointeur quand on hover la balise de class main-destination-label */
+    font-size: 25px; /* definie la taille de la police */
+    color: rgb(21, 21, 199); /* donne une couleur au texte */
+    text-decoration: underline; /* souligne le texte */
+    font-weight: bold; /* met le texte en gras */
+    padding-left: 5%; /* positionne le texte a l'endroit voulu */
+    padding-top: 50px; /* positionne le texte a l'endroit voulu */
+    padding-bottom: 30px; /* positionne le texte a l'endroit voulu */
+}
+
+/*permet de cacher la balise p d'id main-destination-text*/
+#main-destination-text {
+    display: none; /* permet de cacher la balise d'id main-destination-text */
+    background-color: lightyellow; /* donne la couleur du background */
+    border: 1px solid black; /* permet d'avoir une border */
+    margin-right: 50%; /* positionne le texte a l'endroit voulu */
+    margin-left: 1%; /* positionne le texte a l'endroit voulu */
+    padding-left: 1%; /* positionne le texte a l'endroit voulu */
+    box-shadow: 8px 10px 4px rgba(0, 0, 0, 0.3); /* creer une ombre au background */
+    padding: 10px 20px; /* augmente la distance entre le texte et la bordure */
+    border-radius: 20px; /* donne la courbure de la border */
+}
+
+/*permet d'afficher la balise p d'id main-destination-text ainsi que son background quand on click sur la balise d'id main-destination-label*/
+#main-destination-bouton:checked + .main-destination-label + #main-destination-text {
     display: block;
-    background-color: white;
-    border: 1px solid black;
 }
 
-/*permet de retirer le underline de la balise label quand on click sur le label*/
-#bouton:checked + label {
+/*permet de retirer le underline de la balise main-destination-label quand on click sur cette derniere*/
+#main-destination-bouton:checked + .main-destination-label {
     text-decoration: none;
+    padding-bottom: 0;
 }
 
-/*permet de mettre la font-size voulu et de souligner la liste de destination de la balise a de class destination*/
-p.destination{
-    font-size: 20px;
-    text-decoration: underline;
-    color: darkblue;
+q::before {
+    content: "«"; /* permet d'inserer un guillemet quand debut de balise q (<q>) grace au pseudo-element before*/
+}
+q::after {
+    content: "»"; /* permet d'inserer un guillemet quand fin de balise q (</q>) grace au pseudo-element after*/
 }
 
-/*permet de changer la couleur du texte de la balise a de class destination quand deja consulte*/
-p.destination:visited {
-    text-decoration: none;
-    color: rebeccapurple;
-}
-/*permet de retirer les decoration du texte et de mettre ce dernier en gras quand la balise a de class destination est survolé*/
-p.destination:hover {
-    text-decoration: none;
-    font-weight: bold;
-    color: darkblue;
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    #main-destination-text {
+        margin-right: 5%; /* positionne le texte a l'endroit voulu */
+        margin-left: 5%; /* positionne le texte a l'endroit voulu */
+    }
 }
 
-/*permet de retirer les decoration du texte et de changer de couleur quand le click est activé sur le texte de la balise a de class destination*/
-p.destination:active {
-    text-decoration: none;
-    color: red;
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #main-destination-text {
+        margin-right: 20%; /* positionne le texte a l'endroit voulu */
+        margin-left: 5%; /* positionne le texte a l'endroit voulu */
+    }
 }
+/* Fin style de la 2eme grid */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
-/*permet de mettre en gras et couleur dakblue des balises dt d'id: joindre*/
-#joindre dt {
-    font-weight: bold;
-    color: darkblue;
-}
-
-/*permet de modifier les balises dd*/
-#joindre dd {
-    font-style: italic;
-}
-
-/*permet de modifier la 1ere balise dd dans la balise dl d'id:joindre*/
-#joindre dd:first-of-type {
-    text-decoration: underline;
-}
-
-/*permet de creer un background du footer*/
-footer {
-    padding: 15px;
-    background: rgba(124, 252, 0, 0.4);
-    margin-right: 900px;
-    border: solid black 2px;
-}
-
-/*permet de definir la taille des images d'id:socialicon*/
-#socialicon img {
-    width: 30px;
-}
-
-/*permet de modifier la balise nav*/
-nav {
-    justify-content: space-between;
-    align-items: center;
-}
-
-/*permet d'avoir une liste sans les puces decalé de 15px*/
-ul {
-    list-style: none;
-    padding: 15px;
-}
-
-/*permet de définir le type de curseur qui sera affiché lorsque le pointeur de la souris hover la balise p de class destination*/
-p.destination {
-    cursor: auto;
-}
-
-/*cache toutes les images */
-.image-container {
-    position: absolute;
-    height: 200px;
-    width: 300px;
-    top: 125px;
-    left: 250px;
-}
-/*positionne l'image1 dans le .image-container dans la taille voulu*/
-.image-container #img1 {
-    display: none;
-    position: relative;
-    height: 200px;
-    width: 300px;
-    border: solid black 2px;
-}
-/*affiche l'image1 quand text1 hover*/
-#text1:hover ~ .image-container #img1{
-    display: block;
-}
-
-/*positionne l'image2 dans le .image-container dans la taille voulu*/
-.image-container #img2 {
-    display: none;
-    position: relative;
-    height: 200px;
-    width: 300px;
-    border: solid black 2px;
-}
-/*affiche l'image2 quand text2 hover*/
-#text2:hover ~ .image-container #img2 {
-    display: block;
-}
-
-/*positionne l'image3 dans le .image-container dans la taille voulu*/
-.image-container #img3 {
-    display: none;
-    position: relative;
-    height: 200px;
-    width: 300px;
-    border: solid black 2px;
-}
-/*affiche l'image3 quand text3 hover*/
-#text3:hover ~ .image-container #img3 {
-    display: block;
-}
-
-/*positionne l'image4 dans le .image-container dans la taille voulu*/
-.image-container #img4 {
-    display: none;
-    position: relative;
-    height: 200px;
-    width: 300px;
-    border: solid black 2px;
-}
-/*affiche l'image4 quand text4 hover*/
-#text4:hover ~ .image-container #img4 {
-    display: block;
-}
-
-/*positionne l'image5 dans le .image-container dans la taille voulu*/
-.image-container #img5 {
-    display: none;
-    position: relative;
-    height: 200px;
-    width: 300px;
-    border: solid black 2px;
-}
-/*affiche l'image5 quand text5 hover*/
-#text5:hover ~ .image-container #img5 {
-    display: block;
-}
+/* Fin Main  */

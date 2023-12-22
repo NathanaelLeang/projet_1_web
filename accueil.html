@@ -1,61 +1,113 @@
 <!Doctype html>
 <html lang="fr">
 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Accueil </title>
+        <link rel="stylesheet" type="text/css" href="css/accueil.css" />
+        <link rel="stylesheet" type="text/css" href="css/header-footer.css" />
+        <link rel="icon" type="images/x-icon" href="img/logo_vistavoyage.png">
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Notre Agence de voyage </title>
-    <link rel="stylesheet" type="text/css" href="css/accueil.css" />
-</head>
-<body>
-    <header>
-        <a id="agence"> VistaVoyage </a>
-    </header>
+    <body>
+        <header class="header-basic">
+            <div class="header-left">
+                <h1 class="agency-name">VistaVoyage</h1>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li class="dropdown">
+                        <a class="dropbtn">Destinations</a>
+                        <div class="dropdown-content">
+                            <a href="#">Antalya</a>
+                            <a href="#">Îles de Pâques</a>
+                            <a href="html/Destinations/machu-picchu.html">Machu-Picchu</a>
+                            <a href="html/Destinations/sichuan.html">Sichuan</a>
+                            <a href="html/Destinations/tarragone.html">Tarragone</a>
+                        </div>
+                    </li>
+                    <li><a href="accueil.html">Accueil</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <nav>
-        <p id="text1" class="destination" href="">Tarragone (Espagne)</p>
-        <p id="text2" class="destination" href="">Antalya (Turquie)</p>
-        <p id="text3" class="destination" href="">Sichuan (Chine)</p>
-        <p id="text4" class="destination" href="">L'Île de Paques (Chili)</p>
-        <p id="text5" class="destination" href="">Machu Pichu (Pérou)</p>
-        <div class="image-container">
-            <img id="img1" src="img/tarragone.jpg" alt="Image 1">
-            <img id="img2" src="img/antalya.jpg" alt="Image 2">
-            <img id="img3" src="img/sichuan.jpg" alt="Image 3">
-            <img id="img4" src="img/paques.jpg" alt="Image 4">
-            <img id="img5" src="img/machu.jpg" alt="Image 5">
-        </div>
-    </nav>
-    <main>
-        <input type="checkbox" id="bouton" />
-        <label for="bouton"> VistaVoyage : </label>
-        <p id="text">
-            VistaVoyage vous offre une occasion de visiter des régions méconnus qui sont pourtant magnifiques. Nous vous proposons aussi des conseils comme les lieux à visiter mais encore, sur les hotêls où séjourner.
-        </p>
-        <p></p>
-    </main>
+        <main> 
+            <div class="main-grid"> <!-- 1er main container -->
+                <video autoplay muted loop id="main-video-background"> <!-- fait tourner la video en boucle et sans son -->
+                    <source src="img/video.mp4" type="video/mp4"> <!-- chemin video + definition du type -->
+                    Your browser does not support the video tag. <!-- message si la video ne s'affiche pas  -->
+                </video>
+
+                <p class="main-nosdestinations"> Nos destinations : </p> <!--  -->
+                
+                <input type="radio" id="main-slide1" name="slides" checked> <!--  -->
+                <div class="main-slide"> <!--  -->
+                    <label for="main-slide2" class="main-text">Tarragone (1/5) >></label> <!--  -->
+                    <img class="main-imgdest" src="img/tarragone.jpg" alt="Image 1"> <!--  -->
+                </div>
+
+                <input type="radio" id="main-slide2" name="slides"> <!--  -->
+                <div class="main-slide"> <!--  -->
+                    <label for="main-slide3" class="main-text">Antalya (2/5) >></label> <!--  -->
+                    <img class="main-imgdest" src="img/antalya.jpg" alt="Image 2"> <!--  -->
+                </div>
+
+                <input type="radio" id="main-slide3" name="slides"> <!--  -->
+                <div class="main-slide"> <!--  -->
+                    <label for="main-slide4" class="main-text">Sichuan (3/5) >></label> <!--  -->
+                    <img class="main-imgdest" src="img/Sichuan.jpg" alt="Image 3"> <!--  -->
+                </div>
+
+                <input type="radio" id="main-slide4" name="slides"> <!--  -->
+                <div class="main-slide"> <!--  -->
+                    <label for="main-slide5" class="main-text">L'Île de Paques (4/5) >></label> <!--  -->
+                    <img class="main-imgdest" src="img/paques.jpg" alt="Image 4"> <!--  -->
+                </div>
+
+                <input type="radio" id="main-slide5" name="slides"> <!--  -->
+                <div class="main-slide"> <!--  -->
+                    <label for="main-slide1" class="main-text">Machu Picchu (5/5) >></label> <!--  -->
+                    <img class="main-imgdest" src="img/machu.jpg" alt="Image 5"> <!--  -->
+                </div>
+            </div>
+
+            <div class="main-grid-2"> <!-- 2eme main container --> 
+                <input type="checkbox" id="main-destination-bouton" /> <!-- creer un bouton -->
+                <label class="main-destination-label" for="main-destination-bouton">Qu'est-ce que VistaVoyage ? : </label> <!-- titre + lien avec le bouton de la ligne precedante -->
+                <p id="main-destination-text"> <!-- text container -->
+                    VistaVoyage est une agence de voyage qui vous offre une occasion de visiter 
+                    des régions méconnues qui sont pourtant magnifiques.
+                    <br> Grâce à notre agence, pas besoin de vous soucier du moyen d'accès aux destinations, <!-- force le retour a la ligne -->
+                    nous vous proposons aussi des conseils comme les lieux à visiter mais encore, sur les hotêls où séjourner. 
+                    Notre agence vous propose actuellement 5 destinations, qui sont:
+                    <br> <q> La Tarragonne en Espagne </q> <!-- destination 1, force le retour a la ligne, et permet d'utiliser les pseudo-elements ::before et ::after -->
+                    <br> <q> L'Antalya en Turquie </q> <!-- destination 2, force le retour a la ligne, et permet d'utiliser les pseudo-elements ::before et ::after -->
+                    <br> <q> Sichuan en Chine </q> <!-- destination 3, force le retour a la ligne, et permet d'utiliser les pseudo-elements ::before et ::after -->
+                    <br> <q> L'île de paques au Chili </q> <!-- destination 4, force le retour a la ligne, et permet d'utiliser les pseudo-elements ::before et ::after -->
+                    <br> <q> Le Machu Picchu au Pérou </q> <!-- destination 5, force le retour a la ligne, et permet d'utiliser les pseudo-elements ::before et ::after -->
+                    <br> Notre agence est encore en croissance, ce pourquoi nous ne vous proposons que actuellement 5 destinations, 
+                    nous espérons au plus vite pouvoir vous proposer de nouvelle destination grâce 
+                    aux connexions de confiances que nous pourrons établir avec les compagnies aériennes et d'hotêls.
+                </p>
+            </div>
+        </main>
 
 
-    <footer>
-        <dl id="joindre">
-            <dt>Téléphone</dt>
-            <dd>+33 1 02 03 04 05</dd>
-            <dt>Adresse</dt>
-            <dd>
-                ISEN Lille - Institut Supérieur deElectronique et du Numérique <br>
-                41 boulevard Vauban <br>
-                59800 Lille Cedex
-            </dd>
-        </dl>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6184678248474!2d3.0487603999999875!3d50.634204099999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0!3m2!1sfr!2sfr!4v1695145218130!5m2!1sfr!2sfr" width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <ul>
-            <li id="socialicon">
-                <a href="http://facebook.com/biblioJunia"><img src="img/facebook.png" alt="Facebook"></a>
-                <a href="http://twitter.com/biblioJunia"><img src="img/twitter.png" alt="Twitter"></a>
-                <a href="http://instagram.com/biblioJunia"><img src="img/instagram.png" alt="Instagram"></a>
-            </li>
-        </ul>
-    </footer>
-</body>
+        <footer class="stylefooter">
+            <div class="social">
+                <a href="#" style="background-image: url('img/instagram.png');"></a>
+                <a href="#" style="background-image: url('img/twitter.png');"></a>
+                <a href="#" style="background-image: url('img/facebook.png');"></a>
+            </div>
+            <ul class="footer-links">
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Conditions</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+            </ul>
+            <p class="copyright">© 2023 VistaVoyage. Tous droits réservés.</p>
+        </footer>
+    </body>
 </html>
