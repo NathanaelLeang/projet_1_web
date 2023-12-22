@@ -214,6 +214,7 @@ body {
     max-height: 1000px;
 }
 
+
 /* Afficher le contenu quand la case est cochée et styliser le bouton */
 #toggleFormule1:checked ~ .container2 + .toggle-button,
 #toggleFormule2:checked ~ .container3 + .toggle-button {
