@@ -1,10 +1,3 @@
-/*selecteur universel qui permet de definir la police de tous les textes*/
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
@@ -14,7 +7,9 @@ html{
 }
 
 body {
-    margin: 0; /* positionne le body */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
@@ -45,13 +40,24 @@ main {
 }
 
 
+/* Media query pour les telephones */
 @media screen and (max-width: 767px) {
     .main-grid-0 {
-        grid-template-rows: 200px repeat(4, 800px);
-        grid-template-columns: 1fr;
-        padding: 0;
+        grid-template-rows: 200px 600px 800px repeat(2, 400px) 300px 600px 300px;/* Définit la disposition des lignes de la grille*/
+        grid-template-columns: 1fr;/* Définit la disposition des colonnes de la grille*/
+        padding: 0;/* Supprime le remplissage de la grille */
     }
 }
+
+/* Media query pour les tablettes */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-grid-0 {
+        grid-template-rows: 200px 600px 450px repeat(2, 400px) 500px 600px 300px;/* Définit la disposition des lignes de la grille pour les écrans de taille moyenne */
+        grid-template-columns: 1fr;/* Définit la disposition des colonnes de la grille pour les écrans de taille moyenne */
+        padding: 0;/* Supprime le remplissage de la grille pour les écrans de taille moyenne */
+    }
+}
+
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
@@ -174,15 +180,52 @@ main {
         border-radius: 50%; /* Rayon de la bordure à 50% (bordure arrondie, effet de cercle) */
     }
 }
+
+/* Media query pour les telephones */
 @media screen and (max-width: 767px) {
-    .area{
-        height:440vh;
+    .area {
+        height: 560vh;/* Définit la hauteur de l'élément avec la classe .area*/
     }
     
-    .circles{
-        height: 425%;
+    .circles {
+        height: 545%;/* Définit la hauteur de l'élément avec la classe .circles*/
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateY(0) rotate(0deg); /* Pas de déplacement vertical, pas de rotation */
+            opacity: 1; /* Opacité à 1 (complètement opaque) */
+            border-radius: 0; /* Rayon de la bordure à 0 (pas de bordure arrondie) */
+        }
+        100% {
+            transform: translateY(-4050px) rotate(720deg); /* Déplacement vertical de -4050px pixels, rotation de 720 degrés */
+            opacity: 0.2; /* Opacité à 0.2 (20%) */
+            border-radius: 50%; /* Rayon de la bordure à 50% (bordure arrondie, effet de cercle) */
+        }
     }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .area{
+        height:400vh;/* Définit la hauteur de l'élément avec la classe .area*/    
+    }
+    .circles{
+        height: 385%;/* Définit la hauteur de l'élément avec la classe .circles */    
+    }
+    @keyframes animate {
+        0% {
+            transform: translateY(0) rotate(0deg); /* Pas de déplacement vertical, pas de rotation */
+            opacity: 1; /* Opacité à 1 (complètement opaque) */
+            border-radius: 0; /* Rayon de la bordure à 0 (pas de bordure arrondie) */
+        }
+        100% {
+            transform: translateY(-4050px) rotate(720deg); /* Déplacement vertical de -4050 pixels, rotation de 720 degrés */
+            opacity: 0.2; /* Opacité à 0.2 (20%) */
+            border-radius: 50%; /* Rayon de la bordure à 50% (bordure arrondie, effet de cercle) */
+        }
+    }
+}
+
 /* Fin background anime */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
@@ -204,7 +247,6 @@ main {
     align-items: center; /* Centre le contenu verticalement dans l'élément parent */
     color: black; /* Définit la couleur du texte en noir */
     font-size: 70px; /* Définit la taille de police à 70 pixels */
-
     text-shadow: #353a94 5px 5px; /* Ajoute une ombre au texte avec un décalage de 5 pixels à droite et en bas */
 }
 
@@ -213,7 +255,7 @@ main {
     content: attr(data-text); /* Utilise la valeur de l'attribut data-text comme contenu du pseudo-élément ::before */
     position: absolute; /* Position absolue par rapport à l'élément parent .mirrored-text */
     top: 40px; /* Décale le texte en miroir vers le bas de 40 pixels */
-    mask-image: linear-gradient(to bottom, transparent, blue); /* Utilise un masque pour créer un dégradé du texte */
+    mask-image: linear-gradient(to bottom, transparent, black); /* Utilise un masque pour créer un dégradé du texte */
     transform: scaleY(-1); /* Effectue une symétrie par rapport à l'axe Y (effet miroir) */
     text-shadow: none; /* Aucune ombre pour le texte en miroir */
 }
@@ -222,9 +264,27 @@ main {
 /*permet de changer l'affichage quand sur telephone*/
 @media screen and (max-width: 767px) {
     .main-grid-0-0 {
+        grid-column: 1 / 2;/* L'élément s'étend sur la première colonne de la grille */
+        grid-row: 1 / 2;/* L'élément s'étend sur la première ligne de la grille */
+        width: 100%;/* La largeur de l'élément est définie à 100% de la largeur disponible */    
+        display: flex; /* Affiche les éléments enfants en tant que conteneurs flexibles */
+        justify-content: center; /* Centre le contenu horizontalement dans l'élément parent */
+    }
+    .main-grid-0-0 h1 {
+        font-size: 40px; /* Définit la taille de police à 70 pixels */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-grid-0-0 {
         grid-column: 1 / 2;
-        grid-row: 1/2;
+        /* L'élément s'étend sur la première colonne de la grille */
+        grid-row: 1 / 2;
+        /* L'élément s'étend sur la première ligne de la grille */
         width: 100%;
+        /* La largeur de l'élément est définie à 100% de la largeur disponible */  
+        display: flex; /* Affiche les éléments enfants en tant que conteneurs flexibles */
+        justify-content: center; /* Centre le contenu horizontalement dans l'élément parent */
     }
     .main-grid-0-0 h1 {
         font-size: 40px;
@@ -277,13 +337,67 @@ main {
     }
 }
 
-
+/*permet de changer l'affichage quand sur telephone*/
 @media screen and (max-width: 767px) {
     .main-grid-0-1 {
-        grid-column: 1/2;
-        grid-row: 2/3;
-        margin-right: 5%;
-        margin-left: 5%;
+        grid-column: 1 / 2;/* L'élément s'étend sur la première colonne de la grille */
+        grid-row: 2 / 3;/* L'élément s'étend sur la deuxième ligne de la grille */
+        margin-right: 5%;/* Ajoute une marge à droite de 5% à l'élément */
+        margin-left: 5%;/* Ajoute une marge à gauche de 5% à l'élément */
+    }
+
+    /* Styles pour .slider */
+    .main-grid-0-1 .slider{
+        height: 50%;
+    }
+    /* Styles pour les images à l'intérieur de .slider */
+    .slider img {
+        width: 55vh;
+    }
+
+    @keyframes slider1 {
+        0%, 20% {
+            transform: translateX(0%); /* Aucun déplacement horizontal au début et à 20% de l'animation */
+        }
+        25%, 45% {
+            transform: translateX(-55vh); /* Déplacement horizontal de -100vh à 45% de l'animation */
+        }
+        50%, 70% {
+            transform: translateX(-110vh); /* Déplacement horizontal de -200vh à 70% de l'animation */
+        }
+        75%, 80% {
+            transform: translateX(-165vh); /* Déplacement horizontal de -300vh à 80% de l'animation */
+        }
+        100% {
+            transform: translateX(0%); /* Retour à la position initiale à la fin de l'animation */
+        }
+    }
+    /* Styles pour l'élément avec la classe .mirrored-text */
+    .mirrored-text::before {
+        display: none; /* Affiche les éléments enfants en tant que conteneurs none */
+    }
+    .mirrored-text {
+        text-decoration: underline; /* souligne le texte */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-grid-0-1 {
+        grid-column: 1 / 2;/* L'élément s'étend sur la première colonne de la grille */
+        grid-row: 2 / 3;/* L'élément s'étend sur la deuxième ligne de la grille */
+        margin-right: 5%;/* Ajoute une marge à droite de 5% à l'élément */
+        margin-left: 5%;/* Ajoute une marge à gauche de 5% à l'élément */
+    }    
+    /* Styles pour .slider */
+    .main-grid-0-1 .slider{
+        height: 70%;
+    }
+    /* Styles pour l'élément avec la classe .mirrored-text */
+    .mirrored-text::before {
+        display: none; /* Affiche les éléments enfants en tant que conteneurs none */
+    }
+    .mirrored-text {
+        text-decoration: underline; /* souligne le texte */
     }
 }
 /* Fin grid 1 */
@@ -299,6 +413,10 @@ main {
     padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
     background-color: rgb(255, 255, 255, 0.5); /* Définit une couleur de fond semi-transparente */
     text-align: center; /* Centre le texte à l'intérieur de l'élément */
+}
+
+.main-grid-0-2:hover{
+    box-shadow:#353a94 5px 5px;
 }
 
 /* Styles pour les éléments enfants spécifiques au survol */
@@ -321,7 +439,7 @@ main {
 
 /* Styles pour les éléments avec la classe .police-description */
 .police-description {
-    font-size: 20px; /* Définit la taille de police à 20 pixels */
+    font-size: 19px; /* Définit la taille de police à 20 pixels */
 }
 
 /* Styles pour les éléments avec la classe .police-description-b */
@@ -329,8 +447,20 @@ main {
     font-size: 24px; /* Définit la taille de police à 24 pixels */
 }
 
-
+/*permet de changer l'affichage quand sur telephone*/
 @media screen and (max-width: 767px) {
+    .main-grid-0-2 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin-top: -180px;
+    }
+    .police-description{
+        font-size: 13px;
+    }
+}
+
+/* permet de changer l'affichage quand sur tablette */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .main-grid-0-2 {
         grid-column: 1/2;
         grid-row: 3/4;
@@ -425,6 +555,32 @@ main {
     border-radius: 0; /* Réinitialise le rayon de la bordure à 0 lorsque la case à cocher est cochée */
 }
 
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    .main-grid-0-3 {
+        grid-row: 4/5;
+        grid-column: 1/2;
+        margin-right: 5%;
+    }
+    #formule1-bouton {
+        width:99%;
+    }
+    .main-p-1 {
+        width: 92%;
+    }
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-grid-0-3 {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+    .main-p-1 {
+        width: 87%;
+    }
+}
+
 /* Fin grid 3 */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
@@ -452,7 +608,6 @@ main {
     height: 50px; /* Définit la hauteur de l'élément à 50 pixels */
     width: 90%; /* Définit la largeur de l'élément à 90% */
     margin-left: 5%; /* Définit une marge à gauche de 5% */
-    margin-top: 10%; /* Définit une marge en haut de 10% */
     border-radius: 15px; /* Définit le rayon de la bordure à 15 pixels pour créer des coins arrondis */
     text-align: center; /* Centre le texte à l'intérieur de l'élément */
     font-size: 30px; /* Définit la taille de police à 30 pixels */
@@ -490,25 +645,27 @@ main {
     border-radius: 0; /* Réinitialise le rayon de la bordure à 0 lorsque la case à cocher est cochée */
 }
 
-
+/*permet de changer l'affichage quand sur telephone*/
 @media screen and (max-width: 767px) {
-    .main-grid-0-3 {
+    .main-grid-0-4 {
         grid-column: 1/2;
-        grid-row: 4/5;
-        padding: 0;
-        padding-right: 10%;
+        grid-row: 5/6;
     }
-    #formule1-bouton {
-        width:99%;
-    }
-    #formule2-bouton {
-        width:99%;
-    }
-    .main-p-1 {
-        width: 92%;
-    }
+
     .main-p-2 {
-        width: 92%;
+        width: 84%;
+    }
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-grid-0-4 {
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+
+    .main-p-2 {
+        width: 87%;
     }
 }
 /* Fin grid 4 */
@@ -531,11 +688,11 @@ main {
     height: 675px; /* Définit la hauteur de l'élément à 675 pixels */
 }
 
-
+/*permet de changer l'affichage quand sur telephone*/
 @media screen and (max-width: 767px) {
-    .main-grid-0-4 {
+    .main-grid-0-5 {
         grid-column: 1/2;
-        grid-row: 5/6;
+        grid-row: 6/7;
         margin-left: 5%;
     }
     #map-tarragone{
@@ -544,6 +701,17 @@ main {
         height:225px;
     }
 }
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-grid-0-5 {
+        grid-column: 1 / 2;/* L'élément s'étend sur la première colonne de la grille */
+        grid-row: 6 / 7;/* L'élément s'étend sur la sixième ligne de la grille */
+        margin-left: 5%;/* Ajoute une marge à gauche de 5% à l'élément */
+        margin-right: 5%;/* Ajoute une marge à droite de 5% à l'élément */        
+    }
+}
+
 /* Fin grid 5 */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
@@ -592,7 +760,7 @@ tbody th {
 /* Styles pour la première ligne du tableau en position sticky en haut */
 #tablerow1 {
     position: sticky;
-    top: 0;
+    top: -1px;
 }
 
 /* Styles pour la deuxième ligne du tableau en position sticky avec un décalage de 50 pixels depuis le haut */
@@ -624,6 +792,50 @@ table img {
     width: 600px;
 }
 
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    .main-grid-0-6 {
+    /* Position dans la grille */
+    grid-column: 1/2;
+    grid-row: 7/8;
+    /* Marges à gauche et à droite avec une valeur de 2.5% */
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    }
+
+    thead th {
+        width: 100vh; /* Définit la largeur de l'en-tête du tableau à 200vh */
+    }
+    #tablerow3,
+    #tablerow4,
+    #tablerow5 {
+        height: 300px;
+    }
+    
+    .column2{
+        display: none; /* retire la colonne 2 du tableau pour le telephone */
+    }
+}
+
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-grid-0-6 {
+        grid-column: 1 / 2;/* L'élément s'étend sur la première colonne de la grille */
+        grid-row: 7 / 8;/* L'élément s'étend sur la septième ligne de la grille */
+        margin-left: 2.5%;/* Ajoute une marge à gauche de 2.5% à l'élément */
+        margin-right: 2.5%;/* Ajoute une marge à droite de 2.5% à l'élément */
+    }
+
+    thead th {
+        background-color: #2e2e2e; /* Définit la couleur de fond pour l'en-tête du tableau */
+        color: #fff; /* Définit la couleur du texte pour l'en-tête du tableau */
+        width: 100vh; /* Définit la largeur de l'en-tête du tableau à 200vh */
+    }
+    
+    .column2{
+        display: none;
+    }
+}
 
 /* Fin grid 6 */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
@@ -637,37 +849,64 @@ table img {
     z-index: 2; /* Définit l'ordre d'empilement pour l'élément */
     padding: 20px; /* Ajoute un rembourrage de 20 pixels à tous les côtés de l'élément */
     overflow: hidden; /* Masque tout contenu dépassant de la boîte */
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color: whitesmoke;
-    border: solid rgba(12, 3, 84, 0.7) 4px;
+    margin-left: 5%;/* Ajoute une marge à gauche de 5% à l'élément */
+    margin-right: 5%;/* Ajoute une marge à droite de 5% à l'élément */
+    background-color: whitesmoke;/* Définit la couleur de fond de l'élément sur whitesmoke */
+    border: solid rgba(12, 3, 84, 0.7) 4px;/* Ajoute une bordure solide à l'élément avec une couleur rgba(12, 3, 84, 0.7) et une largeur de 4 pixels */
 }
 
+/*permet de changer l'affichage quand sur telephone*/
+@media screen and (max-width: 767px) {
+    .main-grid-0-7 {
+        grid-column: 1 / 2;/* L'élément s'étend sur la première colonne de la grille */
+        grid-row: 8 / 9;/* L'élément s'étend sur la huitième ligne de la grille */
+        margin-left: 5%;/* Ajoute une marge à gauche de 5% à l'élément */        
+    }
+}
 
+/*permet de changer l'affichage quand sur tablette*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-grid-0-7 {
+        grid-column: 1 / 2;/* L'élément s'étend sur la première colonne de la grille */
+        grid-row: 8 / 9;/* L'élément s'étend sur la huitième ligne de la grille */
+        margin-left: 5%;/* Ajoute une marge à gauche de 5% à l'élément */   
+    }
+}
 /* Fin grid 7 */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Bouton lien formulaire */
+/* Styles pour un bouton dans un conteneur de formulaire */
+.conteneur-bouton-formulaire button {
+    display: flex; /* Utilise la boîte flexible pour le bouton */
+    margin: auto; /* Centre le bouton horizontalement */
+    margin-top: 20px; /* Ajoute une marge en haut de 20 pixels */
+    font-weight: bold; /* Définit le poids de la police en gras */
+    border: 2px solid black; /* Définit une bordure solide noire de 2 pixels */
+    border-image: linear-gradient(to bottom right, #970000, #ff7300); /* Définit une bordure avec un dégradé */
+    border-image-slice: 1; /* Spécifie la largeur du dégradé pour la bordure */
+    border-radius: 6px; /* Ajout du border-radius pour arrondir les coins */
+    padding: 5px 10px; /* Ajout de padding pour espacer le contenu du bord */
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5); /* Ajoute une ombre portée au bouton */
+    transition: all 0.2s ease-in-out; /* Ajoute une transition fluide pour les changements d'état */
+    z-index: 3; /* Définit l'ordre d'empilement du bouton */
+}
+
+/* Styles pour les liens dans le conteneur de formulaire */
+.conteneur-bouton-formulaire a {
+    text-decoration: none; /* Supprime la décoration de texte (soulignement) des liens */
+    color: #000; /* Définit la couleur du texte des liens à noir */
+}
+
+/* Effet de survol pour le bouton */
+.conteneur-bouton-formulaire button:hover {
+    transform: translateY(1px) translateX(1px); /* Ajoute un léger décalage vers le bas et la droite au survol */
+    box-shadow: none; /* Supprime l'ombre portée au survol */
+}
+
 /* Fin main */
 
-.conteneur-bouton-formulaire button{
-    display: flex;
-    margin: auto;
-    margin-top: 20px;
-    font-weight: bold;
-    border: 2px solid black;
-    border-image: linear-gradient(to bottom right, #970000, #ff7300);
-    border-image-slice: 1;
-    border-radius: 6px; /* Ajout du border-radius */
-    padding: 5px 10px; /* Ajout de padding pour espacer le contenu du bord */
-    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5);
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .conteneur-bouton-formulaire a{
-    text-decoration: none;
-    color: #000;
-  }
-  
-  .conteneur-bouton-formulaire button:hover{
-    transform: translateY(1px) translateX(1px);
-    box-shadow: none;
-  }
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
