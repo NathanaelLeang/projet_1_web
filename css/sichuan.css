@@ -326,7 +326,7 @@ header:hover {
 /*--------------------------------------------------------------------------*/
 
 
-.maincontainer {
+.hotel {
   display: flex;
   flex-wrap: wrap;
   width: 100%; /* Utilisation de la largeur disponible */
