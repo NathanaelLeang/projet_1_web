@@ -226,7 +226,7 @@ body {
 /*--------------------------------------------------------------------------*/
 
 
-.hotel {
+.conteneur-hotel {
   display: flex;
   flex-wrap: wrap;
   width: 100%; /* Utilisation de la largeur disponible */
