@@ -7,15 +7,117 @@ html{
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    margin: 0; /* positionne le body */
 }
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
+/* Debut header */
+/* Style du header */
+header {
+    position: sticky; /* Rend l'en-tête collant en haut de la fenêtre lors du défilement */
+    top: 0; /* Positionne l'en-tête en haut de la fenêtre */
+    z-index: 1000; /* Définit l'ordre d'empilement de l'en-tête au-dessus des autres éléments */
+    background-color: rgba(51, 51, 51, 0.85); /* Couleur de fond avec une certaine transparence */
+    color: #fff; /* Couleur du texte (blanc) */
+    padding: 8px; /* Ajoute du remplissage à l'en-tête */
+    display: flex; /* Utilise la boîte flexible (flexbox) pour la mise en page */
+    justify-content: space-between; /* Répartit l'espace de manière égale entre les éléments de l'en-tête */
+    align-items: center; /* Centre verticalement les éléments dans l'en-tête */
+    transition: background-color 0.3s ease; /* Ajoute un effet de transition douce aux changements de couleur de fond */
+    flex-wrap: wrap; /* Permet à l'en-tête de passer à la ligne suivante si nécessaire */
+}
+
+/* Styles pour le nom de l'agence */
+.agency-name {
+    margin-left: 10%; /* Ajoute une marge à gauche au nom de l'agence */
+    transition: transform 0.7s ease; /* Ajoute un effet de transition douce à la propriété de transformation */
+}
+
+/* Effet au survol pour le nom de l'agence */
+.agency-name:hover {
+    transform: scale(1.02); /* Effectue une mise à l'échelle légère du nom de l'agence au survol */
+}
+
+/* Styles pour la liste de navigation */
+nav ul {
+    list-style-type: none; /* Supprime le style de liste par défaut */
+    margin: 0; /* Réinitialise la marge */
+    padding: 0; /* Réinitialise le remplissage */
+    display: flex; /* Utilise la boîte flexible (flexbox) pour la liste de navigation */
+    flex-wrap: wrap; /* Permet à la liste de passer à la ligne suivante si nécessaire */
+}
+
+/* Styles pour les éléments de la liste de navigation */
+nav ul li {
+    margin-left: 20px; /* Ajoute une marge à gauche à chaque élément de la liste de navigation */
+    margin-right: 20px; /* Ajoute une marge à droite */
+}
+
+/* Styles pour les liens de la liste de navigation */
+nav ul li a {
+    text-decoration: none; /* Supprime la décoration de texte par défaut (soulignement) */
+    color: #fff; /* Couleur du texte (blanc) */
+    transition: color 0.3s ease-in-out; /* Ajoute un effet de transition douce aux changements de couleur de texte */
+}
+
+/* Animation au survol des liens */
+nav ul li a:hover {
+    color: #ffcc00; /* Change la couleur au survol */
+}
+
+/* Animation de fond au survol de l'en-tête */
+header:hover {
+    background-color: rgba(51, 51, 51, 0.96); /* Change la couleur de fond au survol de l'en-tête */
+}
+
+/* Styles pour le bouton déroulant */
+.dropbtn button {
+    /* Réinitialisation des styles */
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    /* Suppression de tout style prédéfini */
+    appearance: none;
+}
+
+/* Contenu du menu déroulant (caché par défaut) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.96);
+    min-width: 160px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Liens dans le menu déroulant */
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Affichage du menu déroulant au survol du bouton */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Fin header */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 /* Debut main */
 
@@ -77,7 +179,7 @@ main {
     top: 18vh; /* Décale l'élément vers le bas de 18vh */
     left: 0; /* Alignement à gauche de l'élément parent */
     width: 95%; /* Largeur de 95% */
-    height: 450%; /* Hauteur de 400% */
+    height: 440%; /* Hauteur de 400% */
     overflow: hidden; /* Masque tout contenu dépassant de la boîte */
 }
 
@@ -184,11 +286,11 @@ main {
 /* Media query pour les telephones */
 @media screen and (max-width: 767px) {
     .area {
-        height: 560vh;/* Définit la hauteur de l'élément avec la classe .area*/
+        height: 580vh;/* Définit la hauteur de l'élément avec la classe .area*/
     }
     
     .circles {
-        height: 545%;/* Définit la hauteur de l'élément avec la classe .circles*/
+        height: 555%;/* Définit la hauteur de l'élément avec la classe .circles*/
     }
 
     @keyframes animate {
@@ -207,10 +309,10 @@ main {
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .area{
-        height:400vh;/* Définit la hauteur de l'élément avec la classe .area*/    
+        height:390vh;/* Définit la hauteur de l'élément avec la classe .area*/    
     }
     .circles{
-        height: 385%;/* Définit la hauteur de l'élément avec la classe .circles */    
+        height: 370%;/* Définit la hauteur de l'élément avec la classe .circles */    
     }
     @keyframes animate {
         0% {
@@ -881,16 +983,15 @@ table img {
 .conteneur-bouton-formulaire button {
     display: flex; /* Utilise la boîte flexible pour le bouton */
     margin: auto; /* Centre le bouton horizontalement */
-    margin-top: 20px; /* Ajoute une marge en haut de 20 pixels */
+    margin-top: 80px; /* Ajoute une marge en haut de 20 pixels */
     font-weight: bold; /* Définit le poids de la police en gras */
     border: 2px solid black; /* Définit une bordure solide noire de 2 pixels */
     border-image: linear-gradient(to bottom right, #970000, #ff7300); /* Définit une bordure avec un dégradé */
     border-image-slice: 1; /* Spécifie la largeur du dégradé pour la bordure */
     border-radius: 6px; /* Ajout du border-radius pour arrondir les coins */
     padding: 5px 10px; /* Ajout de padding pour espacer le contenu du bord */
-    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5); /* Ajoute une ombre portée au bouton */
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5); /* Ajoute une ombre au bouton */
     transition: all 0.2s ease-in-out; /* Ajoute une transition fluide pour les changements d'état */
-    z-index: 3; /* Définit l'ordre d'empilement du bouton */
 }
 
 /* Styles pour les liens dans le conteneur de formulaire */
@@ -906,6 +1007,88 @@ table img {
 }
 
 /* Fin main */
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* debut footer */
+
+/* Style du footer */
+/* Styles pour la section du pied de page */
+.stylefooter {
+    background-color: #333; /* Couleur de fond du pied de page */
+    color: white; /* Couleur du texte dans le pied de page */
+    padding: 40px 0; /* Ajoute un remplissage en haut et en bas de 40 pixels */
+    text-align: center; /* Centre le contenu du pied de page horizontalement */
+    transition: background-color 0.3s ease-in-out; /* Ajoute une transition pour le changement de couleur de fond */
+}
+
+/* Styles pour la section des liens sociaux */
+.social {
+    margin-bottom: 20px; /* Ajoute une marge en bas de 20 pixels */
+}
+
+/* Styles pour les liens sociaux dans la section du pied de page */
+.stylefooter .social > a {
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Styles généraux pour les liens sociaux */
+.social a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+    color: inherit;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Ajoute une transition pour les effets de survol */
+}
+
+/* Effet de survol pour les liens sociaux */
+.social a:hover {
+    transform: translateY(-5px); /* Décale légèrement vers le haut au survol */
+    opacity: 0.9; /* Réduit légèrement l'opacité au survol */
+}
+
+/* Styles pour la section des liens du pied de page */
+.footer-links {
+    list-style: none; /* Supprime les puces de la liste */
+    padding: 0; /* Réinitialise le remplissage de la liste */
+}
+
+/* Styles pour chaque élément de la liste du pied de page */
+.footer-links li {
+    display: inline-block; /* Affiche les éléments de liste en ligne */
+    margin: 0 15px; /* Ajoute une marge de 0 à gauche et à droite entre les éléments de liste */
+}
+
+/* Styles pour les liens dans la section des liens du pied de page */
+.footer-links a {
+    color: white; /* Couleur du texte des liens du pied de page */
+    text-decoration: none; /* Supprime la décoration de texte (soulignement) des liens */
+    opacity: 0.8; /* Opacité initiale des liens */
+    transition: opacity 0.3s ease; /* Ajoute une transition pour les changements d'opacité */
+}
+
+/* Effet de survol pour les liens dans la section des liens du pied de page */
+.footer-links a:hover {
+    transition: color 0.3s ease-in-out; /* Ajoute une transition pour les changements de couleur au survol */
+    opacity: 1; /* Pleine opacité au survol */
+    color: #ffcc00; /* Change la couleur des liens au survol */
+}
+
+/* Styles pour le texte de droits d'auteur dans le pied de page */
+.copyright {
+    font-size: 14px; /* Taille de police du texte des droits d'auteur */
+    opacity: 0.6; /* Opacité du texte des droits d'auteur */
+}
+
+/* fin footer*/
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
